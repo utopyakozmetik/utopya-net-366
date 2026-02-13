@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fdfcf7 url('images/background/motif.png') repeat;
+  color: #333;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  height: 400px;
+}
+
+.slide {
+  flex: 1;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.brands .grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.product .gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
