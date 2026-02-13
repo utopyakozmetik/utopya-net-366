@@ -2,43 +2,74 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ütopya Kozmetik</title>
+  <title>Ütopya.net</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="/images/background/logo.png" alt="Ütopya.net">
+      </a>
+    </div>
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="parfumler.html">Parfümler</a></li>
+      <li><a href="hediye-setleri.html">Hediye Setleri</a></li>
+      <li><a href="vintage.html">Vintage</a></li>
+      <li><a href="notalar.html">Notalar</a></li>
+      <li><a href="markalar.html">Markalar</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+  </aside>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="search-box">
+      <form action="arama.html" method="get">
+        <input type="text" name="q" placeholder="Parfüm ara..." class="search-input">
+        <button type="submit">Ara</button>
+      </form>
+    </div>
+    <nav class="user-menu">
+      <ul>
+        <li><a href="uye-giris.html">Üye Girişi</a></li>
+        <li><a href="uye-kayit.html">Üye Kayıt</a></li>
+        <li><a href="siparis-takip.html">Sipariş Takip</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- Slider -->
   <section class="slider">
-    <div class="slide active">
-      <img src="images/sliders/kolaj.png" alt="Niş parfüm kolajı">
-    </div>
-    <div class="slide">
-      <img src="images/sliders/koleksiyon.png" alt="Koleksiyon görseli">
-    </div>
-    <div class="slide">
-      <img src="images/sliders/kampanya.png" alt="Kampanya görseli">
-    </div>
+    <div class="slide"><img src="/images/slider/slide1.png" alt="Slide 1"></div>
+    <div class="slide"><img src="/images/slider/slide2.png" alt="Slide 2"></div>
+    <div class="slide"><img src="/images/slider/slide3.png" alt="Slide 3"></div>
+    <div class="slide"><img src="/images/slider/slide4.png" alt="Slide 4"></div>
   </section>
 
-  <!-- Markalar -->
-  <section class="brands">
-    <h2>Markalar</h2>
-    <div class="grid">
-      <img src="images/brands/initio.png" alt="Initio">
-      <img src="images/brands/amouage.png" alt="Amouage">
-      <img src="images/brands/nishane.png" alt="Nishane">
-    </div>
-  </section>
-
-  <!-- Ürün -->
-  <section class="product">
-    <h2>INITIO Side Effect</h2>
-    <div class="gallery">
-      <img src="images/side-effect/bottle.jpg" alt="Side Effect Şişe">
-      <img src="images/side-effect/packshot.jpg" alt="Side Effect Ambalaj">
-    </div>
-  </section>
+  <!-- Main Content -->
+  <div class="main-content">
+    <section class="products">
+      <h2>Tüm Parfümler</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="/images/products/initio-side-1.jpg" alt="Initio Side Effect">
+          <h3>Initio Side Effect</h3>
+          <p>Unisex - 100 ml</p>
+          <p class="price">₺5.700</p>
+        </div>
+        <div class="product-card">
+          <img src="/images/products/loewe7-1.jpg" alt="Loewe 7">
+          <h3>Loewe 7</h3>
+          <p>Erkek - 100 ml</p>
+          <p class="price">₺3.200</p>
+        </div>
+      </div>
+    </section>
+  </div>
 
 </body>
 </html>
