@@ -1,0 +1,5 @@
+﻿{
+  "redirects": [
+    { "source": "/(.*)", "destination": "https://www.xn--topya-jva.net/$1", "permanent": true }
+  ]
+}
