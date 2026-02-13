@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://www.xn--topya-jva.net/:path*",
-      "permanent": true
-    }
-  ]
-}
