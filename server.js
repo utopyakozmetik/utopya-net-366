@@ -4,7 +4,7 @@ import fs from "fs";
 
 const app = express();
 app.use(express.json());
-app.use(express.static(".")); // index.html ve products.json için
+app.use(express.static("public")); // statik dosyaları public klasöründen sun
 
 // Ürün ekleme endpoint
 app.post("/addProduct", async (req, res) => {
@@ -26,7 +26,7 @@ app.post("/addProduct", async (req, res) => {
   };
 
   try {
-    // Barkoddan ürün bilgisi (UPCitemdb)
+    // Barkoddan ürün bilgisi
     if (barcode) {
       const upcRes = await fetch(`https://api.upcitemdb.com/prod/trial/lookup?upc=${barcode}`);
       const upcData = await upcRes.json();
@@ -56,10 +56,12 @@ app.post("/addProduct", async (req, res) => {
       }
     }
 
-    // Scraping (Fragrantica/Parfumo) → hikâye + nota piramidi
-    product.story = "Bu parfüm, özgün hikâyesiyle dikkat çeker.";
-    product.notes = { top: ["Rum"], middle: ["Vanilya"], base: ["Sandal ağacı"] };
-    product.philosophy = "Markanın parfüm felsefesi: duyguları harekete geçirmek.";
+    // Placeholder içerikler
+    product.story = product.story || "Bu parfüm, özgün hikâyesiyle dikkat çeker.";
+    product.notes = product.notes.top.length
+      ? product.notes
+      : { top: ["Rum"], middle: ["Vanilya"], base: ["Sandal ağacı"] };
+    product.philosophy = product.philosophy || "Markanın parfüm felsefesi: duyguları harekete geçirmek.";
 
     // JSON’a kaydet
     let products = [];
@@ -71,8 +73,8 @@ app.post("/addProduct", async (req, res) => {
 
     res.json(product);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Ürün eklenemedi" });
+    console.error("Ürün ekleme hatası:", err);
+    res.status(500).json({ error: "Ürün eklenemedi, lütfen tekrar deneyin." });
   }
 });
 
