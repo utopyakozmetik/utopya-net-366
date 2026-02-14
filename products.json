@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "1234567890123",
+    "name": "Side Effect",
+    "brand": "Initio",
+    "logo": "/images/brands/initio.png",
+    "concentration": "EDP",
+    "ml": "100 ml",
+    "image": "/images/products/initio-side.jpg",
+    "story": "Initio Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla...",
+    "notes": {
+      "top": ["Rum", "Tütün"],
+      "middle": ["Vanilya", "Baharatlar"],
+      "base": ["Sandal ağacı", "Misk"]
+    },
+    "philosophy": "Duyguları harekete geçiren, bağımlılık yaratan bir parfüm felsefesi.",
+    "price": "",
+    "stock": ""
+  }
+]
+
