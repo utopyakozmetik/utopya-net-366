@@ -34,5 +34,23 @@
     "philosophy": "Modern erkeğin özgüvenini ve karizmasını yansıtır.",
     "price": "",
     "stock": ""
+  },
+  {
+    "id": "5555555555555",
+    "name": "Loewe 7",
+    "brand": "Loewe",
+    "logo": "/images/logos/memo.png",
+    "concentration": "EDT",
+    "ml": "100 ml",
+    "image": "/images/products/loewe7-1.jpg",
+    "story": "Loewe 7, modern ve sofistike bir parfüm deneyimi sunar.",
+    "notes": {
+      "top": ["Tütsü"],
+      "middle": ["Baharatlar"],
+      "base": ["Misk"]
+    },
+    "philosophy": "Zarafet ve modernliği bir araya getirir.",
+    "price": "",
+    "stock": ""
   }
 ]
