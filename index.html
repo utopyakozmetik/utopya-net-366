@@ -48,10 +48,10 @@
 
   <!-- Slider -->
   <section class="slider">
-    <img src="/images/slider/slide1.jpg" alt="Slide 1">
-    <img src="/images/slider/slide2.jpg" alt="Slide 2">
-    <img src="/images/slider/slide3.jpg" alt="Slide 3">
-    <img src="/images/slider/slide4.jpg" alt="Slide 4">
+    <img src="/images/slider/slide1.png" alt="Slide 1">
+    <img src="/images/slider/slide2.png" alt="Slide 2">
+    <img src="/images/slider/slide3.png" alt="Slide 3">
+    <img src="/images/slider/slide4.png" alt="Slide 4">
   </section>
 
   <!-- Main Content -->
@@ -74,20 +74,6 @@
             <p>${p.concentration} - ${p.ml}</p>
             <p class="price">${p.price || '₺___'}</p>
             <p>Stok: ${p.stock || '___'}</p>
-            <div class="notes">
-              <strong>Nota Piramidi:</strong>
-              <p>Üst: ${p.notes.top.join(', ')}</p>
-              <p>Orta: ${p.notes.middle.join(', ')}</p>
-              <p>Alt: ${p.notes.base.join(', ')}</p>
-            </div>
-            <div class="story">
-              <strong>Hikâye:</strong>
-              <p>${p.story}</p>
-            </div>
-            <div class="philosophy">
-              <strong>Felsefe:</strong>
-              <p>${p.philosophy}</p>
-            </div>
           </div>
         `).join('');
       });
