@@ -11,7 +11,7 @@
   <aside class="sidebar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/logo.png" alt="Ütopya.net">
+        <img src="/images/background/logo.png" alt="Ütopya.net">
       </a>
     </div>
     <ul>
@@ -22,6 +22,8 @@
       <li><a href="notalar.html">Notalar</a></li>
       <li><a href="brands/index.html">Markalar</a></li>
       <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+      <li><a href="kampanyalar.html">Kampanyalar</a></li>
     </ul>
   </aside>
 
@@ -38,16 +40,18 @@
         <li><a href="uye-giris.html">Üye Girişi</a></li>
         <li><a href="uye-kayit.html">Üye Kayıt</a></li>
         <li><a href="siparis-takip.html">Sipariş Takip</a></li>
+        <li><a href="sepet.html">Sepetim</a></li>
+        <li><a href="favoriler.html">Favorilerim</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Slider -->
   <section class="slider">
-    <img src="images/slider/slide1.jpg" alt="Slide 1">
-    <img src="images/slider/slide2.jpg" alt="Slide 2">
-    <img src="images/slider/slide3.jpg" alt="Slide 3">
-    <img src="images/slider/slide4.jpg" alt="Slide 4">
+    <img src="/images/slider/slide1.jpg" alt="Slide 1">
+    <img src="/images/slider/slide2.jpg" alt="Slide 2">
+    <img src="/images/slider/slide3.jpg" alt="Slide 3">
+    <img src="/images/slider/slide4.jpg" alt="Slide 4">
   </section>
 
   <!-- Main Content -->
@@ -59,7 +63,7 @@
   </div>
 
   <script>
-    fetch('products.json')
+    fetch('/products.json')
       .then(res => res.json())
       .then(products => {
         const grid = document.getElementById('productGrid');
