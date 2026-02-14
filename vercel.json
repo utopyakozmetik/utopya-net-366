@@ -1,10 +1,4 @@
 ﻿{
-  "builds": [
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "style.css", "use": "@vercel/static" },
-    { "src": "products.json", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" }
-  ],
   "routes": [
     { "src": "/(.*)", "dest": "/$1" }
   ]
