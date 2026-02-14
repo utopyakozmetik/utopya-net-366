@@ -1,81 +1,77 @@
-import express from "express";
-import fetch from "node-fetch";
-import fs from "fs";
+const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const stripe = require('stripe')('STRIPE_SECRET_KEY'); // kendi Stripe secret keyini buraya koy
 
 const app = express();
-app.use(express.json());
-app.use(express.static("public")); // statik dosyaları public klasöründen sun
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Ürün ekleme endpoint
-app.post("/addProduct", async (req, res) => {
-  const { barcode, brand, ml, price, concentration } = req.body;
+// Session ayarı (admin login için)
+app.use(session({
+  secret: 'supersecretkey',
+  resave: false,
+  saveUninitialized: true
+}));
 
-  let product = {
-    id: barcode || Date.now(),
-    name: "",
-    brand: brand || "",
-    logo: "",
-    concentration: concentration || "",
-    ml: ml || "",
-    image: "",
-    story: "",
-    notes: { top: [], middle: [], base: [] },
-    philosophy: "",
-    price: price || "",
-    stock: ""
-  };
+// Basit kullanıcı listesi (gerçekte DB olmalı)
+const users = [
+  { username: 'admin', password: '12345' }
+];
 
-  try {
-    // Barkoddan ürün bilgisi
-    if (barcode) {
-      const upcRes = await fetch(`https://api.upcitemdb.com/prod/trial/lookup?upc=${barcode}`);
-      const upcData = await upcRes.json();
-      if (upcData.items && upcData.items.length > 0) {
-        const item = upcData.items[0];
-        product.name = item.title || product.name;
-        product.brand = item.brand || product.brand;
-        product.ml = item.size || product.ml;
-      }
-    }
+// Admin login formu
+app.get('/admin/login', (req, res) => {
+  res.send(`
+    <form method="post" action="/admin/login">
+      <input type="text" name="username" placeholder="Kullanıcı adı" />
+      <input type="password" name="password" placeholder="Şifre" />
+      <button type="submit">Giriş</button>
+    </form>
+  `);
+});
 
-    // Google Custom Search API → ürün görseli
-    if (product.name) {
-      const googleRes = await fetch(`https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(product.name)} perfume&searchType=image&key=YOUR_API_KEY&cx=YOUR_CX`);
-      const googleData = await googleRes.json();
-      if (googleData.items && googleData.items.length > 0) {
-        product.image = googleData.items[0].link;
-      }
-    }
-
-    // Google Custom Search API → marka logosu
-    if (product.brand) {
-      const logoRes = await fetch(`https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(product.brand)} logo&searchType=image&key=YOUR_API_KEY&cx=YOUR_CX`);
-      const logoData = await logoRes.json();
-      if (logoData.items && logoData.items.length > 0) {
-        product.logo = logoData.items[0].link;
-      }
-    }
-
-    // Placeholder içerikler
-    product.story = product.story || "Bu parfüm, özgün hikâyesiyle dikkat çeker.";
-    product.notes = product.notes.top.length
-      ? product.notes
-      : { top: ["Rum"], middle: ["Vanilya"], base: ["Sandal ağacı"] };
-    product.philosophy = product.philosophy || "Markanın parfüm felsefesi: duyguları harekete geçirmek.";
-
-    // JSON’a kaydet
-    let products = [];
-    if (fs.existsSync("products.json")) {
-      products = JSON.parse(fs.readFileSync("products.json"));
-    }
-    products.push(product);
-    fs.writeFileSync("products.json", JSON.stringify(products, null, 2));
-
-    res.json(product);
-  } catch (err) {
-    console.error("Ürün ekleme hatası:", err);
-    res.status(500).json({ error: "Ürün eklenemedi, lütfen tekrar deneyin." });
+// Admin login kontrol
+app.post('/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  const user = users.find(u => u.username === username && u.password === password);
+  if (user) {
+    req.session.user = user;
+    res.redirect('/admin/dashboard');
+  } else {
+    res.send('Hatalı giriş');
   }
 });
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+// Admin dashboard
+app.get('/admin/dashboard', (req, res) => {
+  if (!req.session.user) {
+    return res.redirect('/admin/login');
+  }
+  res.send('Admin paneline hoş geldin!');
+});
+
+// Admin logout
+app.get('/admin/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/admin/login');
+});
+
+// Stripe ödeme route
+app.post('/checkout', async (req, res) => {
+  try {
+    const { amount, currency, token } = req.body;
+
+    const charge = await stripe.charges.create({
+      amount: amount, // kuruş cinsinden (ör: 1000 = 10.00 TL)
+      currency: currency,
+      source: token,
+      description: 'Ütopya.net alışverişi'
+    });
+
+    res.json({ success: true, charge });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.listen(3000, () => console.log('Server çalışıyor http://localhost:3000'));

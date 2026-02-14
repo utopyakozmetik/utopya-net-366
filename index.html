@@ -15,15 +15,15 @@
       </a>
     </div>
     <ul>
-      <li><a href="/index.html">Ana Sayfa</a></li>
-      <li><a href="/parfumer/index.html">Parfümler</a></li>
-      <li><a href="/hediye-setleri.html">Hediye Setleri</a></li>
-      <li><a href="/vintage.html">Vintage</a></li>
-      <li><a href="/notalar.html">Notalar</a></li>
-      <li><a href="/brands/index.html">Markalar</a></li>
-      <li><a href="/hakkimizda.html">Hakkımızda</a></li>
-      <li><a href="/iletisim.html">İletişim</a></li>
-      <li><a href="/kampanyalar.html">Kampanyalar</a></li>
+      <li><a href="/index.html"><img src="/images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
+      <li><a href="/parfumer/index.html"><img src="/images/menu/parfumer.png" alt="Parfümler"></a></li>
+      <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
+      <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage"></a></li>
+      <li><a href="/notalar.html"><img src="/images/menu/notalar.png" alt="Notalar"></a></li>
+      <li><a href="/brands/index.html"><img src="/images/menu/markalar.png" alt="Markalar"></a></li>
+      <li><a href="/hakkimizda.html"><img src="/images/menu/hakkimizda.png" alt="Hakkımızda"></a></li>
+      <li><a href="/iletisim.html"><img src="/images/menu/iletisim.png" alt="İletişim"></a></li>
+      <li><a href="/kampanyalar.html"><img src="/images/menu/kampanyalar.png" alt="Kampanyalar"></a></li>
     </ul>
   </aside>
 
@@ -60,21 +60,32 @@
       <h2>Tüm Parfümler</h2>
       <div class="product-grid" id="productGrid"></div>
     </section>
+
+    <!-- Checkout Form -->
+    <section class="checkout">
+      <h2>Ödeme</h2>
+      <form id="payment-form">
+        <div id="card-element"></div>
+        <button type="submit">Ödeme Yap</button>
+      </form>
+    </section>
   </div>
 
+  <script src="https://js.stripe.com/v3/"></script>
   <script>
+    // Ürün grid doldurma
     fetch('/products.json')
       .then(res => res.json())
       .then(products => {
         const grid = document.getElementById('productGrid');
         grid.innerHTML = products.map(p => `
-          <div class="product-card">
+          <a href="${p.url}" class="product-card">
             <img src="${p.image}" alt="${p.name}">
             <h3>${p.brand} ${p.name}</h3>
             <p>${p.concentration} - ${p.ml}</p>
             <p class="price">${p.price || '₺___'}</p>
             <p>Stok: ${p.stock || '___'}</p>
-          </div>
+          </a>
         `).join('');
       });
 
@@ -92,7 +103,35 @@
     }
     showSlide(currentSlide);
     setInterval(nextSlide, 3000);
+
+    // Stripe checkout
+    const stripe = Stripe('STRIPE_PUBLIC_KEY'); // kendi public keyini buraya koy
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { token, error } = await stripe.createToken(cardElement);
+      if (error) {
+        alert(error.message);
+      } else {
+        const res = await fetch('/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ amount: 1000, currency: 'try', token: token.id })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Ödeme başarılı!');
+        } else {
+          alert('Ödeme hatası: ' + data.error);
+        }
+      }
+    });
   </script>
 
 </body>
 </html>
+

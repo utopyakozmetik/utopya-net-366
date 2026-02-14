@@ -14,8 +14,9 @@
       "base": ["Sandal ağacı", "Misk"]
     },
     "philosophy": "Duyguları harekete geçiren, bağımlılık yaratan bir parfüm felsefesi.",
-    "price": "",
-    "stock": ""
+    "price": "₺3500",
+    "stock": "Stokta var",
+    "url": "/products/side-effect.html"
   },
   {
     "id": "9876543210987",
@@ -24,7 +25,7 @@
     "logo": "/images/logos/creed.png",
     "concentration": "EDP",
     "ml": "100 ml",
-    "image": "/images/products/bottle.jpg",
+    "image": "/images/products/aventus.jpg",
     "story": "Creed Aventus, güç ve başarıyı simgeleyen ikonik bir parfümdür.",
     "notes": {
       "top": ["Ananas", "Bergamot"],
@@ -32,25 +33,27 @@
       "base": ["Misk", "Meşe yosunu"]
     },
     "philosophy": "Modern erkeğin özgüvenini ve karizmasını yansıtır.",
-    "price": "",
-    "stock": ""
+    "price": "₺4200",
+    "stock": "Stokta yok",
+    "url": "/products/aventus.html"
   },
   {
     "id": "5555555555555",
-    "name": "Loewe 7",
-    "brand": "Loewe",
-    "logo": "/images/logos/memo.png",
-    "concentration": "EDT",
-    "ml": "100 ml",
-    "image": "/images/products/loewe7-1.jpg",
-    "story": "Loewe 7, modern ve sofistike bir parfüm deneyimi sunar.",
+    "name": "La Vie Est Belle",
+    "brand": "Lancôme",
+    "logo": "/images/logos/lancome.png",
+    "concentration": "EDP",
+    "ml": "75 ml",
+    "image": "/images/products/la-vie-est-belle.jpg",
+    "story": "Lancôme La Vie Est Belle, mutluluğu ve özgürlüğü simgeleyen kadın parfümü.",
     "notes": {
-      "top": ["Tütsü"],
-      "middle": ["Baharatlar"],
-      "base": ["Misk"]
+      "top": ["Siyah frenk üzümü", "Armut"],
+      "middle": ["İris", "Yasemin", "Portakal çiçeği"],
+      "base": ["Pralin", "Vanilya", "Tonka fasulyesi", "Paçuli"]
     },
-    "philosophy": "Zarafet ve modernliği bir araya getirir.",
-    "price": "",
-    "stock": ""
+    "philosophy": "Hayatı güzel kılan küçük mutlulukları kutlar.",
+    "price": "₺2800",
+    "stock": "Stokta var",
+    "url": "/products/la-vie-est-belle.html"
   }
 ]
