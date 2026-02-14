@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Ürün Ekle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="addProduct">
+  <h2>Ürün Ekle</h2>
+
+  <input name="barcode" placeholder="Barkod veya Ürün Adı" required>
+
+  <select name="brand">
+    <option value="Creed">Creed</option>
+    <option value="Montale">Montale</option>
+    <option value="Mancera">Mancera</option>
+    <option value="Initio">Initio</option>
+    <option value="Amouage">Amouage</option>
+    <option value="Memo">Memo</option>
+  </select>
+
+  <input name="ml" placeholder="ML">
+  <input name="price" placeholder="Fiyat">
+
+  <select name="concentration">
+    <option value="EDP">EDP</option>
+    <option value="EDT">EDT</option>
+  </select>
+
+  <button type="submit">Hazır Sayfa Oluştur</button>
+</form>
+
+<script>
+document.getElementById('addProduct').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+
+  const response = await fetch('/addProduct', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json' }
+  });
+
+  const product = await response.json();
+  alert("Ürün eklendi: " + product.name);
+});
+</script>
+</body>
+</html>

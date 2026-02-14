@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  background: #f7f7f7;
+}
+.box {
+  background: #fff;
+  padding: 30px;
+  margin: 60px;
+  border: 1px solid #ddd;
+}
+a {
+  display: block;
+  margin: 12px 0;
+}
+form {
+  max-width: 600px;
+  margin: 60px;
+}
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+button {
+  padding: 10px 20px;
+  background: #a67c52;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #8b5e3c;
+}
