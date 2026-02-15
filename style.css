@@ -96,25 +96,22 @@ aside.sidebar {
 /* Hero Title */
 .hero-title {
   margin: 0;
-  padding: 0;
+  padding: 20px 0;
   text-align: center;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
+  margin-left: 220px; /* sidebar boşluğu */
   background: transparent;
 }
 
 .hero-title img.hero-logo {
+  max-width: calc(100% - 220px); /* sidebar’ı geçmesin */
   transform: scale(2); /* 2 kat büyütülmüş */
   display: inline-block;
 }
 
 /* Slider */
 .swiper {
-  margin: 200px auto 20px auto; /* hero’nun hemen altında */
-  width: 25%;
+  margin: 40px auto;
+  width: 60%; /* sidebar’ı geçmez */
 }
 
 .swiper-slide img {
