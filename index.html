@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Ütopya.net</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -50,50 +50,18 @@
 
   <!-- Slider -->
   <section class="slider">
-    <img src="/images/slider/slide1.jpeg" alt="Slide 1">
-    <img src="/images/slider/slide2.jpeg" alt="Slide 2">
-    <img src="/images/slider/slide3.jpeg" alt="Slide 3">
-    <img src="/images/slider/slide4.jpeg" alt="Slide 4">
+    <img src="/images/slider/slide1.png" alt="Slide 1">
+    <img src="/images/slider/slide2.png" alt="Slide 2">
+    <img src="/images/slider/slide3.png" alt="Slide 3">
   </section>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="product-grid" id="productGrid"></div>
-  </div>
-
-  <script>
-    fetch('/products.json')
-      .then(res => res.json())
-      .then(products => {
-        const grid = document.getElementById('productGrid');
-        grid.innerHTML = products.map(p => `
-          <div class="product-card">
-            <a href="${p.url}">
-              <img src="${p.image}" alt="${p.name}">
-              <h3><img src="${p.logo}" alt="${p.brand}" class="brand-logo"> ${p.name}</h3>
-            </a>
-            <p class="price">${p.price}</p>
-            <p>Çıkış yılı: ${p.year}</p>
-            <p>Parfümör: <a href="/parfumorler.html#${p.perfumerId}">${p.perfumer}</a></p>
-          </div>
-        `).join('');
-      });
-
-    // Slider otomatik geçiş
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slider img');
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.display = (i === index) ? 'block' : 'none';
-      });
-    }
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-    showSlide(currentSlide);
-    setInterval(nextSlide, 4000);
-  </script>
+  <!-- Main content -->
+  <main class="main-content">
+    <h1>Hoşgeldiniz Ütopya.net</h1>
+    <div class="product-grid">
+      <!-- ürün kartları buraya gelecek -->
+    </div>
+  </main>
 
 </body>
 </html>
