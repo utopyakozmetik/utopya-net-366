@@ -7,46 +7,13 @@
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="logo">
-      <a href="/index.html">
-        <img src="/images/background/logo.png" alt="Ütopya.net">
-      </a>
-    </div>
-    <ul>
-      <li>
-        <a href="/parfumler/index.html"><img src="/images/menu/parfumler.png" alt="Parfümler"></a>
-        <ul class="submenu">
-          <li><a href="/parfumler/erkek.html">Erkek</a></li>
-          <li><a href="/parfumler/kadin.html">Kadın</a></li>
-          <li><a href="/parfumler/uniseks.html">Uniseks</a></li>
-        </ul>
-      </li>
-      <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
-      <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage"></a></li>
-      <li><a href="/parfumorler.html"><img src="/images/menu/parfumorler.png" alt="Parfümörler"></a></li>
-    </ul>
-  </aside>
+  <!-- Ortak header -->
+  <div id="header"></div>
 
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="search-box">
-      <form>
-        <input type="text" placeholder="Parfüm ara..." class="search-input">
-        <button type="submit">Ara</button>
-      </form>
-    </div>
-    <nav class="user-menu">
-      <ul>
-        <li><a href="/uye-giris.html">Üye Girişi</a></li>
-        <li><a href="/uye-kayit.html">Üye Kayıt</a></li>
-        <li><a href="/siparis-takip.html">Sipariş Takip</a></li>
-        <li><a href="/sepet.html">Sepetim</a></li>
-        <li><a href="/takip-listem.html">Takip Listem</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Üst başlık -->
+  <section class="hero-title">
+    <h1>Kokular Ütopyasına Hoşgeldiniz...</h1>
+  </section>
 
   <!-- Slider -->
   <section class="slider">
@@ -59,9 +26,37 @@
   <main class="main-content">
     <h1>Hoşgeldiniz Ütopya.net</h1>
     <div class="product-grid">
-      <!-- ürün kartları buraya gelecek -->
+      <div class="product-card">
+        <img src="/images/products/hediye1.png" alt="Hediye Seti 1">
+        <h3>Hediye Seti 1</h3>
+        <p class="price">₺299</p>
+      </div>
+      <div class="product-card">
+        <img src="/images/products/hediye2.png" alt="Hediye Seti 2">
+        <h3>Hediye Seti 2</h3>
+        <p class="price">₺399</p>
+      </div>
+      <div class="product-card">
+        <img src="/images/products/hediye3.png" alt="Hediye Seti 3">
+        <h3>Hediye Seti 3</h3>
+        <p class="price">₺499</p>
+      </div>
     </div>
   </main>
+
+  <!-- Ortak footer -->
+  <div id="footer"></div>
+
+  <!-- Include script -->
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('header').innerHTML = html; });
+
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; });
+  </script>
 
 </body>
 </html>
