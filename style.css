@@ -63,7 +63,10 @@ aside.sidebar {
   align-items: center;
   padding: 0 20px;
   box-shadow: none; /* alt beyaz katman kaldırıldı */
-  position: relative;
+  position: fixed; /* sabit üstte */
+  top: 0;
+  right: 0;
+  left: 220px; /* sidebar boşluğu */
   z-index: 10;
 }
 
