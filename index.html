@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Ütopya.net</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Swiper CSS ve JS eklemeyi unutma -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -88,6 +91,16 @@
       </div>
     </div>
   </div>
+
+  <script>
+    var swiper = new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: true
+    });
+  </script>
 
 </body>
 </html>

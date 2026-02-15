@@ -1,4 +1,3 @@
-/* Genel */
 html, body {
   margin: 0;
   padding: 0;
@@ -6,6 +5,7 @@ html, body {
   background-size: cover;
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   color: #333;
+  overflow-x: hidden;
 }
 
 /* Sidebar */
@@ -13,7 +13,7 @@ aside.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 220px;
+  width: 260px; /* büyütüldü */
   height: 100vh;
   background: url("images/background/motif.png") repeat fixed;
   background-size: cover;
@@ -24,26 +24,12 @@ aside.sidebar {
 }
 
 .sidebar .site-logo {
-  max-width: 120px;
-  transform: scale(1.2);
+  max-width: 140px; /* biraz büyütüldü */
   margin-bottom: 20px;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.sidebar ul li {
-  margin: 10px 0;
-  text-align: center;
-}
-
 .sidebar ul img {
-  max-width: 90px;
-  transform: scale(1.0);
+  max-width: 110px; /* ikonlar büyütüldü */
   transition: transform 0.3s;
 }
 
@@ -53,7 +39,7 @@ aside.sidebar {
 
 /* Topbar */
 .topbar {
-  margin-left: 220px;
+  margin-left: 260px;
   height: 60px;
   background: transparent;
   display: flex;
@@ -64,33 +50,8 @@ aside.sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  left: 220px;
+  left: 260px;
   z-index: 10;
-}
-
-.user-menu {
-  display: flex;
-  align-items: center;
-}
-
-.user-menu a {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  text-decoration: none;
-  color: #6A1B9A;
-  font-weight: 600;
-}
-
-.cart {
-  display: flex;
-  align-items: center;
-  margin-left: 30px;
-}
-
-.cart img {
-  width: 32px;
-  height: 32px;
 }
 
 /* Hero Title */
@@ -98,13 +59,13 @@ aside.sidebar {
   margin: 0;
   padding: 20px 0;
   text-align: center;
-  margin-left: 220px; /* sidebar boşluğu */
+  margin-left: 260px;
   background: transparent;
   position: relative;
 }
 
 .hero-title img.hero-logo {
-  max-width: 700px; /* sidebar’ı geçmesin */
+  max-width: 850px; /* daha büyük */
   width: 100%;
   height: auto;
   display: inline-block;
@@ -112,13 +73,14 @@ aside.sidebar {
 
 /* Slider */
 .swiper {
-  margin: 20px auto;
-  width: 60%; /* sidebar’ı geçmez */
+  margin: 40px auto;
+  width: 70%;
+  height: 400px; /* sabit yükseklik */
 }
 
 .swiper-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -129,7 +91,7 @@ aside.sidebar {
 
 /* Main content */
 .main-content {
-  margin-left: 220px;
+  margin-left: 260px;
   padding: 20px;
 }
 
