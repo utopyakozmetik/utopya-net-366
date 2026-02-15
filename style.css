@@ -1,4 +1,5 @@
-body, .main-content, .product-detail {
+/* Genel */
+body {
   margin: 0;
   padding: 0;
   background-image: url("/images/background/motif.png");
@@ -6,22 +7,24 @@ body, .main-content, .product-detail {
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
 }
 
 /* Sidebar */
 aside.sidebar {
-  flex: 0 0 220px;
-  min-height: 100vh;
-  background: rgba(255,255,255,0.9);
+  width: 240px;
+  height: 100vh;
+  background: rgba(255,255,255,0.95);
   padding: 20px 10px;
   box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .logo img {
-  max-width: 160px;
+  max-width: 200px;
   height: auto;
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
 }
 .sidebar ul {
   list-style: none;
@@ -48,14 +51,14 @@ aside.sidebar {
 /* Topbar */
 .topbar {
   background: rgba(255,255,255,0.9);
-  padding: 10px 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 220px);
+  width: calc(100% - 240px);
   position: fixed;
   top: 0;
-  left: 220px;
+  left: 240px;
   z-index: 1000;
 }
 .topbar a {
@@ -100,32 +103,34 @@ aside.sidebar {
 
 /* Slider */
 .slider {
-  margin-top: 60px;
-  position: relative;
-  width: calc(100% - 220px);
-  max-height: 400px;
+  margin-top: 80px; /* topbar yüksekliği */
+  margin-left: 240px; /* sidebar genişliği */
+  width: calc(100% - 240px);
+  height: 450px; /* sabit yükseklik */
   overflow: hidden;
+  position: relative;
 }
 .slider img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
   display: none;
 }
 
 /* Main content */
 .main-content {
-  flex: 1;
+  margin-left: 240px;
+  margin-top: 100px; /* topbar boşluğu */
   padding: 20px;
-  margin-top: 20px;
-  margin-left: 220px;
+  text-align: center;
 }
 
 /* Product grid */
 .product-grid {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 .product-card {
   background: rgba(255,255,255,0.8);
@@ -141,3 +146,72 @@ aside.sidebar {
 }
 .product-card img {
   max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.product-card h3 {
+  margin: 10px 0 5px;
+}
+.product-card .price {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+/* Markalar grid */
+.brand-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.brand-grid img {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.brand-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* Ürün detay sayfası butonları */
+.product-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.btn.primary {
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+}
+.btn.primary:hover {
+  background: #388e3c;
+}
+.btn.secondary {
+  background: #f44336;
+  color: #fff;
+  border: none;
+}
+.btn.secondary:hover {
+  background: #d32f2f;
+}
+.btn.outline {
+  background: transparent;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+}
+.btn.outline:hover {
+  background: #4CAF50;
+  color: #fff;
+}

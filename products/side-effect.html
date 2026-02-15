@@ -2,51 +2,55 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Initio Side Effect - Ütopya.net</title>
+  <title>Initio Side Effect</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-  <header class="topbar">
-    <a href="/index.html">← Ana Sayfa</a>
-  </header>
+  <!-- Sidebar ve Topbar sabit -->
+  <aside class="sidebar"> ... </aside>
+  <header class="topbar"> ... </header>
 
-  <main class="product-detail">
+  <main class="main-content product-detail">
     <h1>Initio Side Effect</h1>
-    <img src="/images/products/initio-side-1.jpg" alt="Initio Side Effect" class="product-image">
+    <div class="product-info">
+      <img src="/images/products/initio-side-1.jpg" alt="Side Effect">
+      <p class="price">€290</p>
+      <p>Çıkış yılı: 2016</p>
+      <p>Parfümör: <a href="/parfumorler.html#pierre-constantin-gueros">Pierre-Constantin Guéros</a></p>
 
-    <section class="product-info">
-      <h2>Ürün Bilgisi</h2>
-      <p><strong>Marka:</strong> Initio</p>
-      <p><strong>Konsantrasyon:</strong> EDP</p>
-      <p><strong>Boyut:</strong> 100 ml</p>
-      <p><strong>Fiyat:</strong> ₺3500</p>
-      <p><strong>Stok:</strong> Stokta var</p>
-    </section>
+      <!-- Butonlar -->
+      <div class="product-actions">
+        <!-- Stok kontrolü -->
+        <button class="btn primary" id="cartBtn">Sepete Ekle</button>
+        <button class="btn secondary" id="notifyBtn" style="display:none;">Stoğa Girince Haber Ver</button>
 
-    <section class="product-story">
-      <h2>Hikâye</h2>
-      <p>Initio Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar.</p>
-    </section>
-
-    <section class="product-notes">
-      <h2>Notalar</h2>
-      <p><strong>Üst:</strong> Rum, Tütün</p>
-      <p><strong>Orta:</strong> Vanilya, Baharatlar</p>
-      <p><strong>Dip:</strong> Sandal ağacı, Misk</p>
-    </section>
-
-    <section class="product-philosophy">
-      <h2>Felsefe</h2>
-      <p>Duyguları harekete geçiren, bağımlılık yaratan bir parfüm felsefesi.</p>
-    </section>
-
-    <section class="buy-now">
-      <form id="buy-form">
-        <button type="submit">Sepete Ekle</button>
-      </form>
-    </section>
+        <!-- Ekstra aksiyonlar -->
+        <button class="btn outline">Takip Listene Ekle</button>
+        <button class="btn outline">Soru Sor</button>
+        <button class="btn outline">Yorum Yaz</button>
+      </div>
+    </div>
   </main>
+
+  <script>
+    // Stok kontrolü
+    const inStock = true; // JSON'dan gelecek
+    if (!inStock) {
+      document.getElementById('cartBtn').style.display = 'none';
+      document.getElementById('notifyBtn').style.display = 'inline-block';
+    }
+
+    // Soru Sor → admin paneline yönlendirme
+    document.querySelector('.btn.outline:nth-child(2)').addEventListener('click', () => {
+      window.location.href = "/admin-panel/sorular.html?product=side-effect";
+    });
+
+    // Yorum Yaz → yorum formuna yönlendirme
+    document.querySelector('.btn.outline:nth-child(3)').addEventListener('click', () => {
+      window.location.href = "/yorumlar/side-effect.html";
+    });
+  </script>
 
 </body>
 </html>

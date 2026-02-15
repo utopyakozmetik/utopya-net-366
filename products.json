@@ -4,6 +4,9 @@
     "barcode": "1234567890123",
     "name": "Side Effect",
     "brand": "Initio",
+    "year": "2016",
+    "perfumer": "Pierre-Constantin Guéros",
+    "perfumerId": "pierre-constantin-gueros",
     "logo": "/images/logos/initio.png",
     "collection": "Carnal Blends",
     "concentration": "Extrait de Parfum",
@@ -43,6 +46,9 @@
     "barcode": "9876543210987",
     "name": "Aventus",
     "brand": "Creed",
+    "year": "2010",
+    "perfumer": "Jean-Christophe Hérault",
+    "perfumerId": "jean-christophe-herault",
     "logo": "/images/logos/creed.png",
     "collection": "Main Collection",
     "concentration": "Eau de Parfum",
@@ -75,7 +81,7 @@
     },
     "video": "https://www.youtube.com/embed/VIDEO_ID",
     "price": "€350",
-    "stock": "Stokta var",
+    "stock": "Stokta yok",
     "url": "/parfumler/aventus.html",
     "background_collage": "/images/background/creed-collage.jpg"
   }

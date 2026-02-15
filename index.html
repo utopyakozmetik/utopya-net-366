@@ -69,13 +69,24 @@
       .then(products => {
         const grid = document.getElementById('productGrid');
         grid.innerHTML = products.map(p => `
-          <a href="${p.url}" class="product-card">
-            <img src="${p.image}" alt="${p.name}">
-            <h3>${p.brand} ${p.name}</h3>
+          <div class="product-card">
+            <a href="${p.url}">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.brand} ${p.name}</h3>
+            </a>
             <p>${p.concentration} - ${p.ml}</p>
             <p class="price">${p.price}</p>
-            <p>Stok: ${p.stock}</p>
-          </a>
+            <p>Çıkış yılı: ${p.year}</p>
+            <p>Parfümör: <a href="/parfumorler.html#${p.perfumerId}">${p.perfumer}</a></p>
+            <div class="product-actions">
+              ${p.stock === "Stokta var" 
+                ? '<button class="btn primary">Sepete Ekle</button>' 
+                : '<button class="btn secondary">Stoğa Girince Haber Ver</button>'}
+              <button class="btn outline">Takip Listene Ekle</button>
+              <button class="btn outline" onclick="window.location.href='/admin-panel/sorular.html?product=${p.id}'">Soru Sor</button>
+              <button class="btn outline" onclick="window.location.href='/yorumlar/${p.id}.html'">Yorum Yaz</button>
+            </div>
+          </div>
         `).join('');
       });
 
