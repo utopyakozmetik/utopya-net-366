@@ -24,7 +24,16 @@
 
   <!-- Main content -->
   <main class="main-content">
-    <div class="product-grid"></div>
+    <div class="product-grid">
+      <div class="product-card"><img src="/images/products/p1.png" alt="Ürün 1"><h3>Ürün 1</h3><p class="price">₺500</p></div>
+      <div class="product-card"><img src="/images/products/p2.png" alt="Ürün 2"><h3>Ürün 2</h3><p class="price">₺600</p></div>
+      <div class="product-card"><img src="/images/products/p3.png" alt="Ürün 3"><h3>Ürün 3</h3><p class="price">₺700</p></div>
+      <div class="product-card"><img src="/images/products/p4.png" alt="Ürün 4"><h3>Ürün 4</h3><p class="price">₺800</p></div>
+      <div class="product-card"><img src="/images/products/p5.png" alt="Ürün 5"><h3>Ürün 5</h3><p class="price">₺900</p></div>
+      <div class="product-card"><img src="/images/products/p6.png" alt="Ürün 6"><h3>Ürün 6</h3><p class="price">₺1000</p></div>
+      <div class="product-card"><img src="/images/products/p7.png" alt="Ürün 7"><h3>Ürün 7</h3><p class="price">₺1100</p></div>
+      <div class="product-card"><img src="/images/products/p8.png" alt="Ürün 8"><h3>Ürün 8</h3><p class="price">₺1200</p></div>
+    </div>
   </main>
 
   <!-- Ortak footer -->
@@ -32,7 +41,6 @@
 
   <!-- Include script -->
   <script>
-    // Header ve footer yükleme
     fetch('/header.html')
       .then(res => res.text())
       .then(html => { document.getElementById('header').innerHTML = html; });
@@ -40,26 +48,6 @@
     fetch('/footer.html')
       .then(res => res.text())
       .then(html => { document.getElementById('footer').innerHTML = html; });
-
-    // Ürünleri JSON’dan doldurma
-    fetch('/products.json')
-      .then(res => res.json())
-      .then(products => {
-        const grid = document.querySelector('.product-grid');
-        products.forEach(p => {
-          const card = document.createElement('div');
-          card.className = 'product-card';
-          card.innerHTML = `
-            <a href="${p.url}">
-              <img src="${p.image}" alt="${p.name}">
-              <h3>${p.name}</h3>
-              <p class="price">${p.price}</p>
-              <p>${p.brand} - ${p.year}</p>
-            </a>
-          `;
-          grid.appendChild(card);
-        });
-      });
   </script>
 
 </body>

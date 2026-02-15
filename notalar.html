@@ -6,12 +6,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <aside class="sidebar"> ... </aside>
-  <header class="topbar"> ... </header>
 
-  <div class="main-content">
-    <h2>Notalar</h2>
-    <img src="/images/notes/pyramid.png" alt="Nota Piramidi" style="max-width:600px;">
-  </div>
+  <!-- Ortak header -->
+  <div id="header"></div>
+
+  <!-- Sayfa içeriği -->
+  <main class="main-content">
+    <h1>Notalar</h1>
+    <p>Burada notalarla ilgili içerik olacak...</p>
+    <section class="notes-list">
+      <ul>
+        <li>Çiçeksi notalar</li>
+        <li>Odunsu notalar</li>
+        <li>Baharatlı notalar</li>
+        <li>Ferah notalar</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Ortak footer -->
+  <div id="footer"></div>
+
+  <!-- Include script -->
+  <script>
+    // Header ve footer yükleme
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('header').innerHTML = html; });
+
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; });
+  </script>
+
 </body>
 </html>
