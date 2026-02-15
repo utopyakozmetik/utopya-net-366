@@ -16,7 +16,7 @@ body::before {
   z-index: -1;
 }
 
-/* Sidebar */
+/* Sidebar (revize) */
 aside.sidebar {
   width: 240px;
   height: 100vh;
@@ -26,15 +26,41 @@ aside.sidebar {
   top: 0;
   left: 0;
   z-index: 2000;
+
+  display: flex;              /* logo + menü sabit */
+  flex-direction: column;     /* alt alta */
+  align-items: center;        /* ortala */
+}
+.logo {
+  margin-bottom: 30px;
 }
 .logo img {
   max-width: 330px; /* 1.5 kat büyütüldü */
   display: block;
-  margin: 0 auto 30px;
   filter: brightness(1.2) contrast(1.1);
 }
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;                /* blok halinde */
+}
+.sidebar li {
+  margin-bottom: 15px;
+  display: block;             /* blok öğe */
+  text-align: center;
+}
+.sidebar a {
+  display: block;             /* her menü öğesi blok */
+  width: 100%;
+}
+.sidebar img {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
 
-/* Topbar */
+/* Topbar (header için ekleme) */
 .topbar {
   background: rgba(255,255,255,0.05);
   padding: 15px 20px;
@@ -149,4 +175,32 @@ aside.sidebar {
 .related-products h3 {
   font-size: 22px;
   font-weight: 700;
+}
+
+/* Footer için ekleme */
+.site-footer {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  text-align: center;
+  margin-left: 240px; /* sidebar boşluğu */
+  margin-top: 40px;
+}
+.site-footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+.site-footer a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.social-links {
+  margin-top: 10px;
+}
+.social-links a {
+  margin: 0 10px;
 }

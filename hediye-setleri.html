@@ -6,12 +6,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <aside class="sidebar"> ... </aside>
-  <header class="topbar"> ... </header>
 
-  <div class="main-content">
-    <h2>Hediye Setleri</h2>
-    <p>Burada hediye setleri listelenecek.</p>
-  </div>
+  <!-- Ortak header -->
+  <div id="header"></div>
+
+  <!-- Sayfa içeriği -->
+  <main class="main-content">
+    <h1>Hediye Setleri</h1>
+    <div class="product-grid">
+      <!-- ürün kartları buraya gelecek -->
+    </div>
+  </main>
+
+  <!-- Ortak footer -->
+  <div id="footer"></div>
+
+  <!-- Include script -->
+  <script>
+    // Header yükle
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+
+    // Footer yükle
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      });
+  </script>
+
 </body>
 </html>
