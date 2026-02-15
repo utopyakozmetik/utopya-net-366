@@ -1,36 +1,82 @@
-{
-  "id": "1234567890123",
-  "barcode": "1234567890123",
-  "name": "Side Effect",
-  "brand": "Initio",
-  "logo": "/images/logos/initio.png",
-  "concentration": "EDP",
-  "ml": "100 ml",
-  "images": [
-    "/images/products/initio-side-1.jpg",
-    "/images/products/initio-side-2.jpg",
-    "/images/products/initio-side-3.jpg"
-  ],
-  "story": "Initio Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir. Bu parfüm, duyguları harekete geçiren ve bağımlılık yaratan bir karakter taşır.",
-  "notes": {
-    "top": ["Rum", "Tütün"],
-    "middle": ["Vanilya", "Baharatlar"],
-    "base": ["Sandal ağacı", "Misk"],
+[
+  {
+    "id": "1234567890123",
+    "barcode": "1234567890123",
+    "name": "Side Effect",
+    "brand": "Initio",
+    "logo": "/images/logos/initio.png",
+    "collection": "Carnal Blends",
+    "concentration": "Extrait de Parfum",
+    "ml": "90 ml",
+    "image": "/images/products/initio-side-1.jpg",
     "images": [
-      {"name":"Rum","src":"/images/notes/rum.png"},
-      {"name":"Tütün","src":"/images/notes/tobacco.png"},
-      {"name":"Vanilya","src":"/images/notes/vanilla.png"},
-      {"name":"Baharatlar","src":"/images/notes/spices.png"},
-      {"name":"Sandal ağacı","src":"/images/notes/sandalwood.png"},
-      {"name":"Misk","src":"/images/notes/musk.png"}
-    ]
+      "/images/products/initio-side-1.jpg",
+      "/images/products/initio-side-2.jpg",
+      "/images/products/initio-side-3.jpg"
+    ],
+    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.",
+    "notes": {
+      "top": ["Rum", "Tütün"],
+      "middle": ["Vanilya", "Baharatlar"],
+      "base": ["Sandal ağacı", "Misk"],
+      "images": [
+        {"name":"Rum","src":"/images/notes/rum.png"},
+        {"name":"Tütün","src":"/images/notes/tobacco.png"},
+        {"name":"Vanilya","src":"/images/notes/vanilla.png"},
+        {"name":"Baharatlar","src":"/images/notes/spices.png"},
+        {"name":"Sandal ağacı","src":"/images/notes/sandalwood.png"},
+        {"name":"Misk","src":"/images/notes/musk.png"}
+      ]
+    },
+    "fragrantica": {
+      "score": "4.3",
+      "url": "https://www.fragrantica.com/perfume/Initio/Side-Effect-12345.html"
+    },
+    "video": "https://www.youtube.com/embed/VIDEO_ID",
+    "price": "€290",
+    "stock": "Stokta var",
+    "url": "/parfumler/side-effect.html",
+    "background_collage": "/images/background/initio-collage.jpg"
   },
-  "fragrantica": {
-    "score": "4.3",
-    "url": "https://www.fragrantica.com/perfume/Initio/Side-Effect-12345.html"
-  },
-  "price": "₺3500",
-  "stock": "Stokta var",
-  "url": "/products/side-effect.html",
-  "background_collage": "/images/background/initio-collage.jpg"
-}
+  {
+    "id": "9876543210987",
+    "barcode": "9876543210987",
+    "name": "Aventus",
+    "brand": "Creed",
+    "logo": "/images/logos/creed.png",
+    "collection": "Main Collection",
+    "concentration": "Eau de Parfum",
+    "ml": "100 ml",
+    "image": "/images/products/aventus-1.jpg",
+    "images": [
+      "/images/products/aventus-1.jpg",
+      "/images/products/aventus-2.jpg",
+      "/images/products/aventus-3.jpg"
+    ],
+    "story": "Creed Aventus, güç ve başarıyı simgeleyen ananas, bergamot ve misk karışımıyla ikonik bir parfümdür.",
+    "notes": {
+      "top": ["Ananas", "Bergamot", "Siyah Frenk Üzümü"],
+      "middle": ["Yasemin", "Paçuli"],
+      "base": ["Misk", "Meşe Yosunu", "Ambergris"],
+      "images": [
+        {"name":"Ananas","src":"/images/notes/ananas.png"},
+        {"name":"Bergamot","src":"/images/notes/bergamot.png"},
+        {"name":"Siyah Frenk Üzümü","src":"/images/notes/blackcurrant.png"},
+        {"name":"Yasemin","src":"/images/notes/jasmine.png"},
+        {"name":"Paçuli","src":"/images/notes/patchouli.png"},
+        {"name":"Misk","src":"/images/notes/musk.png"},
+        {"name":"Meşe Yosunu","src":"/images/notes/oakmoss.png"},
+        {"name":"Ambergris","src":"/images/notes/ambergris.png"}
+      ]
+    },
+    "fragrantica": {
+      "score": "4.6",
+      "url": "https://www.fragrantica.com/perfume/Creed/Aventus-12345.html"
+    },
+    "video": "https://www.youtube.com/embed/VIDEO_ID",
+    "price": "€350",
+    "stock": "Stokta var",
+    "url": "/parfumler/aventus.html",
+    "background_collage": "/images/background/creed-collage.jpg"
+  }
+]

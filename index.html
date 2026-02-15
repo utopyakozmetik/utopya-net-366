@@ -16,21 +16,13 @@
     </div>
     <ul>
       <li><a href="/index.html"><img src="/images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li>
-        <a href="/parfumer/index.html"><img src="/images/menu/parfumer.png" alt="Parfümler"></a>
-        <ul class="submenu">
-          <li><a href="/parfumer/kadin.html">Kadın</a></li>
-          <li><a href="/parfumer/erkek.html">Erkek</a></li>
-          <li><a href="/parfumer/uniseks.html">Uniseks</a></li>
-          <li><a href="/parfumer/nadir.html">Niş / Nadir / Vintage</a></li>
-        </ul>
-      </li>
-      <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri ve Yan Ürünler"></a></li>
-      <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage / Antika / Bit Pazarı"></a></li>
+      <li><a href="/parfumler/index.html"><img src="/images/menu/parfumler.png" alt="Parfümler"></a></li>
+      <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
+      <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage"></a></li>
       <li><a href="/kokunun-yolculugu.html"><img src="/images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
       <li><a href="/notalar.html"><img src="/images/menu/notalar.png" alt="Notalar"></a></li>
       <li><a href="/parfumorler.html"><img src="/images/menu/parfumorler.png" alt="Parfümörler"></a></li>
-      <li><a href="/markalar.html"><img src="/images/menu/markalar.png" alt="Parfüm Evleri ve Markalar"></a></li>
+      <li><a href="/markalar.html"><img src="/images/menu/markalar.png" alt="Markalar"></a></li>
       <li><a href="/biz.html"><img src="/images/menu/biz.png" alt="Biz"></a></li>
     </ul>
   </aside>
@@ -68,18 +60,8 @@
       <h2>Tüm Parfümler</h2>
       <div class="product-grid" id="productGrid"></div>
     </section>
-
-    <!-- Checkout Form -->
-    <section class="checkout">
-      <h2>Ödeme</h2>
-      <form id="payment-form">
-        <div id="card-element"></div>
-        <button type="submit">Ödeme Yap</button>
-      </form>
-    </section>
   </div>
 
-  <script src="https://js.stripe.com/v3/"></script>
   <script>
     // Ürün grid doldurma
     fetch('/products.json')

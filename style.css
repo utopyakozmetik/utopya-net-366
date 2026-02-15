@@ -1,12 +1,12 @@
-body {
+body, .main-content, .product-detail {
   margin: 0;
   padding: 0;
-  display: flex;
   background-image: url("/images/background/motif.png");
   background-repeat: repeat;
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
 }
 
 /* Sidebar */
@@ -45,24 +45,6 @@ aside.sidebar {
   filter: drop-shadow(0 0 6px rgba(0,128,0,0.6));
 }
 
-/* Alt menü */
-.submenu {
-  list-style: none;
-  padding: 5px 0;
-  margin: 0;
-}
-.submenu li {
-  margin: 5px 0;
-}
-.submenu li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-.submenu li a:hover {
-  color: #4CAF50;
-}
-
 /* Topbar */
 .topbar {
   background: rgba(255,255,255,0.9);
@@ -70,7 +52,11 @@ aside.sidebar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 220px);
+  position: fixed;
+  top: 0;
+  left: 220px;
+  z-index: 1000;
 }
 .topbar a {
   text-decoration: none;
@@ -78,16 +64,51 @@ aside.sidebar {
   font-weight: bold;
 }
 
+/* Arama kutusu */
+.search-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+.search-input {
+  width: 300px;
+  padding: 10px 15px;
+  border: 2px solid #4CAF50;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}
+.search-box button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background: #4CAF50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.search-box button:hover {
+  background: #388e3c;
+}
+
 /* Slider */
 .slider {
+  margin-top: 60px;
   position: relative;
-  width: 100%;
+  width: calc(100% - 220px);
   max-height: 400px;
   overflow: hidden;
 }
 .slider img {
   width: 100%;
-  height: 100%;
+  height: 400px;
   object-fit: cover;
   display: none;
 }
@@ -96,12 +117,14 @@ aside.sidebar {
 .main-content {
   flex: 1;
   padding: 20px;
+  margin-top: 20px;
+  margin-left: 220px;
 }
 
 /* Product grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
 .product-card {
@@ -111,109 +134,10 @@ aside.sidebar {
   text-align: center;
   text-decoration: none;
   color: #000;
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
 }
 .product-card img {
   max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-.product-card h3 {
-  margin: 10px 0 5px;
-}
-.product-card .price {
-  font-weight: bold;
-  color: #4CAF50;
-}
-
-/* Checkout */
-.checkout {
-  margin-top: 40px;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 8px;
-}
-#card-element {
-  margin-bottom: 15px;
-}
-
-/* Product detail pages */
-.product-detail {
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 8px;
-}
-.product-detail h1 {
-  text-align: center;
-}
-.product-image {
-  display: block;
-  max-width: 300px;
-  margin: 0 auto 20px;
-}
-.product-info, .product-story, .product-notes, .product-philosophy {
-  margin-bottom: 20px;
-}
-.buy-now {
-  text-align: center;
-}
-.buy-now button {
-  background: #4CAF50;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.buy-now button:hover {
-  background: #45a049;
-}
-
-/* Product slider */
-.product-slider {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto 20px;
-  overflow: hidden;
-}
-.product-slider img {
-  width: 100%;
-  display: none;
-}
-.product-slider img.active {
-  display: block;
-}
-
-/* Nota piramidi */
-.notes-pyramid {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.top-notes, .middle-notes, .base-notes {
-  margin: 10px 0;
-  font-weight: bold;
-}
-.notes-images {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-.notes-images img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-/* Fragrantica puanı */
-.fragrantica-score {
-  text-align: center;
-  margin: 20px 0;
-}
-.fragrantica-score a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-.fragrantica-score a:hover {
-  text-decoration: underline;
-}
