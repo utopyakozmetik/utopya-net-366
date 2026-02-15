@@ -45,12 +45,24 @@ aside.sidebar {
 
 /* Hero Title */
 .hero-title { margin-left: 200px; margin-top: 10px; text-align: center; position: relative; }
-.hero-title h1 { position: absolute; left: -9999px; }
+.hero-title h1 {
+  font-size: 64px;   /* 2 kat büyütüldü */
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #8E24AA;
+}
 .hero-title img { max-width: 800px; }
 
 /* Slider */
 .swiper { margin-left: 200px; margin-top: 10px; width: calc(100% - 200px); }
-.swiper-slide img { width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.swiper-slide img {
+  width: 100%;
+  max-height: 300px;   /* küçültüldü */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
 
 /* Main content */
 .main-content { margin-left: 200px; margin-top: 15px; padding: 0 20px; }
@@ -95,4 +107,15 @@ aside.sidebar {
 .btn.outline { background: transparent; border: 1px solid #8E24AA; color: #8E24AA; }
 
 /* Footer */
-.site-footer { background: rgba(255,255,255,0.05); padding: 15px; text-align: center; margin-left:
+.site-footer { background: rgba(255,255,255,0.05); padding: 15px; text-align: center; margin-left: 200px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  aside.sidebar { width: 100%; height: auto; position: relative; }
+  .topbar { left: 0; width: 100%; }
+  .hero-title { margin-left: 0; }
+  .swiper { margin-left: 0; width: 100%; }
+  .swiper-slide img { max-height: 180px; } /* mobil için daha küçük */
+  .main-content { margin-left: 0; }
+  .product-grid { grid-template-columns: 1fr; }
+}

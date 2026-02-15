@@ -49,12 +49,13 @@
 
   <!-- Include script -->
   <script>
-    fetch('/sidebar.html').then(r=>r.text()).then(h=>{document.getElementById('sidebar').innerHTML=h});
-    fetch('/topbar.html').then(r=>r.text()).then(h=>{document.getElementById('topbar').innerHTML=h});
-    fetch('/footer.html').then(r=>r.text()).then(h=>{document.getElementById('footer').innerHTML=h});
+    // Ortak parçaları yükle
+    fetch('sidebar.html').then(r=>r.text()).then(h=>{document.getElementById('sidebar').innerHTML=h});
+    fetch('topbar.html').then(r=>r.text()).then(h=>{document.getElementById('topbar').innerHTML=h});
+    fetch('footer.html').then(r=>r.text()).then(h=>{document.getElementById('footer').innerHTML=h});
 
     // Ürünleri JSON'dan çek
-    fetch('/products.json')
+    fetch('products.json')
       .then(res => res.json())
       .then(products => {
         const grid = document.getElementById('product-grid');
