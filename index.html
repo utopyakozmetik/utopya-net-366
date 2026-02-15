@@ -25,11 +25,7 @@
       </li>
       <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
       <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage"></a></li>
-      <li><a href="/kokunun-yolculugu.html"><img src="/images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
-      <li><a href="/notalar.html"><img src="/images/menu/notalar.png" alt="Notalar"></a></li>
       <li><a href="/parfumorler.html"><img src="/images/menu/parfumorler.png" alt="Parfümörler"></a></li>
-      <li><a href="/markalar.html"><img src="/images/menu/markalar.png" alt="Markalar"></a></li>
-      <li><a href="/biz.html"><img src="/images/menu/biz.png" alt="Biz"></a></li>
     </ul>
   </aside>
 
@@ -62,10 +58,7 @@
 
   <!-- Main Content -->
   <div class="main-content">
-    <section class="products">
-      <h2>Tüm Parfümler</h2>
-      <div class="product-grid" id="productGrid"></div>
-    </section>
+    <div class="product-grid" id="productGrid"></div>
   </div>
 
   <script>
@@ -77,9 +70,8 @@
           <div class="product-card">
             <a href="${p.url}">
               <img src="${p.image}" alt="${p.name}">
-              <h3>${p.brand} ${p.name}</h3>
+              <h3><img src="${p.logo}" alt="${p.brand}" class="brand-logo"> ${p.name}</h3>
             </a>
-            <p>${p.concentration} - ${p.ml}</p>
             <p class="price">${p.price}</p>
             <p>Çıkış yılı: ${p.year}</p>
             <p>Parfümör: <a href="/parfumorler.html#${p.perfumerId}">${p.perfumer}</a></p>

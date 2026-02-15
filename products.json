@@ -1,74 +1,13 @@
 [
   {
     "id": "1234567890123",
-    "barcode": "1234567890123",
     "name": "Side Effect",
     "brand": "Initio",
     "year": "2016",
     "perfumer": "Pierre-Constantin Guéros",
     "perfumerId": "pierre-constantin-gueros",
     "logo": "/images/logos/initio.png",
-    "collection": "Carnal Blends",
     "concentration": "Extrait de Parfum",
     "ml": "90 ml",
     "image": "/images/products/initio-side-1.jpg",
-    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar.",
-    "notes": {
-      "top": ["Rum", "Tütün"],
-      "middle": ["Vanilya", "Baharatlar"],
-      "base": ["Sandal ağacı", "Misk"]
-    },
-    "price": "€290",
-    "stock": "Stokta var",
-    "url": "/parfumler/side-effect.html",
-    "category": "uniseks"
-  },
-  {
-    "id": "9876543210987",
-    "barcode": "9876543210987",
-    "name": "Aventus",
-    "brand": "Creed",
-    "year": "2010",
-    "perfumer": "Jean-Christophe Hérault",
-    "perfumerId": "jean-christophe-herault",
-    "logo": "/images/logos/creed.png",
-    "collection": "Main Collection",
-    "concentration": "Eau de Parfum",
-    "ml": "100 ml",
-    "image": "/images/products/aventus-1.jpg",
-    "story": "Creed Aventus, güç ve başarıyı simgeleyen ananas, bergamot ve misk karışımıyla ikonik bir parfümdür.",
-    "notes": {
-      "top": ["Ananas", "Bergamot", "Siyah Frenk Üzümü"],
-      "middle": ["Yasemin", "Paçuli"],
-      "base": ["Misk", "Meşe Yosunu", "Ambergris"]
-    },
-    "price": "€350",
-    "stock": "Stokta yok",
-    "url": "/parfumler/aventus.html",
-    "category": "erkek"
-  },
-  {
-    "id": "5555555555555",
-    "barcode": "5555555555555",
-    "name": "La Vie Est Belle",
-    "brand": "Lancôme",
-    "year": "2012",
-    "perfumer": "Anne Flipo",
-    "perfumerId": "anne-flipo",
-    "logo": "/images/logos/lancome.png",
-    "collection": "Main Collection",
-    "concentration": "Eau de Parfum",
-    "ml": "75 ml",
-    "image": "/images/products/la-vie-est-belle.jpg",
-    "story": "Lancôme La Vie Est Belle, tatlı ve çiçeksi kompozisyonuyla kadınların vazgeçilmezi.",
-    "notes": {
-      "top": ["Siyah Frenk Üzümü", "Armut"],
-      "middle": ["İris", "Yasemin", "Portakal Çiçeği"],
-      "base": ["Pralin", "Vanilya", "Tonka Fasulyesi", "Paçuli"]
-    },
-    "price": "€120",
-    "stock": "Stokta var",
-    "url": "/parfumler/la-vie-est-belle.html",
-    "category": "kadin"
-  }
-]
+    "price
