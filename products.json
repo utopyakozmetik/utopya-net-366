@@ -1,17 +1,26 @@
 [
   {
-    "id": "1234567890123",
-    "name": "Side Effect",
-    "brand": "Initio",
-    "year": "2016",
-    "perfumer": "Pierre-Constantin Guéros",
-    "perfumerId": "pierre-constantin-gueros",
-    "logo": "/images/logos/initio.png",
-    "concentration": "Extrait de Parfum",
-    "ml": "90 ml",
-    "image": "/images/products/initio-side-1.jpg",
-    "price": "€290",
-    "url": "/parfumler/side-effect.html",
-    "category": "uniseks"
+    "name": "Chanel No.5",
+    "slug": "chanel-no5",
+    "image": "images/products/chanel-no5.png",
+    "price": "2500 TL"
+  },
+  {
+    "name": "Dior Sauvage",
+    "slug": "dior-sauvage",
+    "image": "images/products/dior-sauvage.png",
+    "price": "2200 TL"
+  },
+  {
+    "name": "Tom Ford Oud Wood",
+    "slug": "tomford-oudwood",
+    "image": "images/products/tomford-oudwood.png",
+    "price": "2800 TL"
+  },
+  {
+    "name": "Creed Aventus",
+    "slug": "creed-aventus",
+    "image": "images/products/creed-aventus.png",
+    "price": "3000 TL"
   }
 ]
