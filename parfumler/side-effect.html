@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <!-- Sidebar ve Topbar sabit -->
+  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="logo">
       <a href="/index.html">
@@ -29,6 +29,7 @@
     </ul>
   </aside>
 
+  <!-- Topbar -->
   <header class="topbar">
     <div class="search-box">
       <form>
@@ -47,19 +48,31 @@
     </nav>
   </header>
 
+  <!-- Ürün Detay -->
   <main class="main-content product-detail">
-    <h1>Initio Side Effect</h1>
-    <img src="/images/products/initio-side-1.jpg" alt="Side Effect">
-    <p class="price">€290</p>
-    <p>Kategori: Uniseks</p>
-    <p>Çıkış yılı: 2016</p>
-    <p>Parfümör: <a href="/parfumorler.html#pierre-constantin-gueros">Pierre-Constantin Guéros</a></p>
+    <div class="brand-header">
+      <a href="/markalar/initio.html">
+        <img src="/images/logos/initio.png" alt="Initio" class="brand-logo-large">
+      </a>
+    </div>
+
+    <h1 class="product-title">Side Effect</h1>
+    <img src="/images/products/initio-side-1.jpg" alt="Side Effect" class="product-image">
+
+    <div class="product-meta">
+      <p class="price">€290</p>
+      <p>Kategori: Uniseks</p>
+      <p>Çıkış yılı: 2016</p>
+      <p>Parfümör: <a href="/parfumorler.html#pierre-constantin-gueros">Pierre-Constantin Guéros</a></p>
+      <p>Konsantrasyon: Extrait de Parfum</p>
+      <p>Hacim: 90 ml</p>
+    </div>
 
     <h3>Hikaye</h3>
     <p>Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.</p>
 
     <h3>Notalar</h3>
-    <ul>
+    <ul class="notes">
       <li>Üst: Rum, Tütün</li>
       <li>Orta: Vanilya, Baharatlar</li>
       <li>Dip: Sandal ağacı, Misk</li>
@@ -68,10 +81,35 @@
     <div class="product-actions">
       <button class="btn primary">Sepete Ekle</button>
       <button class="btn outline">Takip Listene Ekle</button>
-      <button class="btn outline" onclick="window.location.href='/admin-panel/sorular.html?product=1234567890123'">Soru Sor</button>
-      <button class="btn outline" onclick="window.location.href='/yorumlar/1234567890123.html'">Yorum Yaz</button>
+      <button class="btn outline">Soru Sor</button>
+      <button class="btn outline">Yorum Yaz</button>
     </div>
+
+    <!-- Marka ürünleri -->
+    <section class="related-products">
+      <h3>Initio Markasından Diğer Ürünler</h3>
+      <div class="product-grid" id="relatedGrid"></div>
+    </section>
   </main>
+
+  <script>
+    // Initio markasının ürünlerini listele
+    fetch('/products.json')
+      .then(res => res.json())
+      .then(products => {
+        const related = products.filter(p => p.brand === "Initio");
+        const grid = document.getElementById('relatedGrid');
+        grid.innerHTML = related.map(p => `
+          <div class="product-card">
+            <a href="${p.url}">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+            </a>
+            <p class="price">${p.price}</p>
+          </div>
+        `).join('');
+      });
+  </script>
 
 </body>
 </html>
