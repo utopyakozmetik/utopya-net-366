@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <title>Ütopya Net</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Sidebar -->
   <aside class="sidebar">
-    <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
+    <a href="index.html">
+      <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
+    </a>
     <ul>
-      <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li><a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a></li>
-      <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt="Hediye Setleri ve Yan Ürünler"></a></li>
-      <li><a href="kadin.html"><img src="images/menu/kadin.png" alt="Kadın"></a></li>
-      <li><a href="erkek.html"><img src="images/menu/erkek.png" alt="Erkek"></a></li>
-      <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt="Uniseks"></a></li>
-      <li><a href="nisnadir.html"><img src="images/menu/nisnadir.png" alt="Niş/Nadir"></a></li>
-      <li><a href="vintage.html"><img src="images/menu/vintage.png" alt="Vintage / Antika / Bir Pazarı"></a></li>
+      <li>
+        <a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a>
+      </li>
+      <li>
+        <a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a>
+        <ul class="submenu">
+          <li><a href="kadin.html"><img src="images/menu/kadin.png" alt="Kadın"></a></li>
+          <li><a href="erkek.html"><img src="images/menu/erkek.png" alt="Erkek"></a></li>
+          <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt="Uniseks"></a></li>
+          <li><a href="nisnadir.html"><img src="images/menu/nisnadir.png" alt="Niş/Nadir"></a></li>
+        </ul>
+      </li>
+      <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
+      <li><a href="vintage.html"><img src="images/menu/vintage.png" alt="Vintage"></a></li>
       <li><a href="kokununyolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
       <li><a href="notalar.html"><img src="images/menu/notalar.png" alt="Notalar"></a></li>
       <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt="Parfümörler"></a></li>
@@ -29,34 +39,75 @@
   <!-- Topbar -->
   <div class="topbar">
     <div class="user-menu">
-      <a href="login.html">
-        <img src="images/uye-girisi.png" alt="Üye Girişi"> Üye Girişi
-      </a>
+      <a href="login.html"><img src="images/uye-girisi.png" alt="Üye Girişi"></a>
       <a href="register.html">Üye Ol</a>
       <a href="orders.html">Siparişlerim</a>
       <a href="wishlist.html">Takip Listem</a>
     </div>
     <div class="cart">
-      <a href="cart.html">
-        <img src="images/menu/sepet.png" alt="Sepetim">
-        <span class="cart-label">Sepetim</span>
-      </a>
+      <a href="cart.html"><img src="images/menu/sepet.png" alt="Sepetim"></a>
     </div>
   </div>
 
-  <!-- Hero Title (PNG başlık, yazı yok) -->
+  <!-- Hero Title -->
   <div class="hero-title">
     <img src="images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
   </div>
 
+  <!-- Slider -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/slider/slide1.png" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="images/slider/slide2.png" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="images/slider/slide3.png" alt="Slide 3"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
   <!-- Main content -->
   <div class="main-content">
-    <!-- ürün grid vs. buraya gelecek -->
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/products/chanel-no5.png" alt="Chanel No.5">
+        <h3>Chanel No.5</h3>
+        <div class="price">2500 TL</div>
+        <div class="stock">Stokta var</div>
+        <button class="btn primary">Sepete Ekle</button>
+      </div>
+      <div class="product-card">
+        <img src="images/products/dior-sauvage.png" alt="Dior Sauvage">
+        <h3>Dior Sauvage</h3>
+        <div class="price">2200 TL</div>
+        <div class="stock">Stokta var</div>
+        <button class="btn primary">Sepete Ekle</button>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
   <div id="footer">
     © 2026 Ütopya Net
   </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".swiper", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 4000,
+      },
+    });
+  </script>
 </body>
 </html>
