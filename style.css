@@ -24,7 +24,7 @@ aside.sidebar {
 }
 
 .sidebar .site-logo {
-  max-width: 120px;   /* küçültülmüş logo */
+  max-width: 120px;
   transform: scale(1.2);
   margin-bottom: 20px;
 }
@@ -42,7 +42,7 @@ aside.sidebar {
 }
 
 .sidebar ul img {
-  max-width: 90px;    /* menü ikonları küçültüldü */
+  max-width: 90px;
   transform: scale(1.0);
   transition: transform 0.3s;
 }
@@ -107,13 +107,13 @@ aside.sidebar {
 }
 
 .hero-title img.hero-logo {
-  transform: scale(0.5); /* yarı boyut */
+  transform: scale(2); /* 2 kat büyütülmüş */
   display: inline-block;
 }
 
 /* Slider */
 .swiper {
-  margin: 120px auto 20px auto;
+  margin: 200px auto 20px auto; /* hero’nun hemen altında */
   width: 25%;
 }
 
