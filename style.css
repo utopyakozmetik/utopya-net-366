@@ -1,3 +1,4 @@
+/* Genel */
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
 }
 
 /* Sidebar */
@@ -24,6 +26,19 @@ aside.sidebar {
   display: block;
   margin: 0 auto 30px;
   filter: brightness(1.2) contrast(1.1);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar li {
+  margin-bottom: 15px;
+}
+.sidebar img {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Alt menü */
@@ -56,6 +71,13 @@ aside.sidebar {
   top: 0;
   left: 240px;
   z-index: 2000;
+}
+.search-box {
+  flex: 1;
+}
+.search-input {
+  padding: 8px;
+  width: 200px;
 }
 .user-menu ul {
   list-style: none;
@@ -199,4 +221,38 @@ aside.sidebar {
 .btn.outline:hover {
   background: #4CAF50;
   color: #fff;
+}
+
+/* Admin panel */
+.box {
+  background: #fff;
+  padding: 30px;
+  margin: 60px;
+  border: 1px solid #ddd;
+}
+.box h1, .box h2 {
+  margin-bottom: 20px;
+}
+.box a {
+  display: block;
+  margin: 12px 0;
+}
+form {
+  max-width: 600px;
+  margin: 60px;
+}
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+button {
+  padding: 10px 20px;
+  background: #a67c52;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #8b5e3c;
 }
