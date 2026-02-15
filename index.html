@@ -2,21 +2,20 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Ütopya Net</title>
+  <title>Ütopya.net</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
+
   <!-- Sidebar -->
   <aside class="sidebar">
+    <!-- Logo tıklanabilir -->
     <a href="index.html">
       <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
     </a>
+
     <ul>
-      <li>
-        <a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a>
-      </li>
+      <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
       <li>
         <a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a>
         <ul class="submenu">
@@ -39,7 +38,7 @@
   <!-- Topbar -->
   <div class="topbar">
     <div class="user-menu">
-      <a href="login.html"><img src="images/uye-girisi.png" alt="Üye Girişi"></a>
+      <a href="login.html">Üye Girişi</a>
       <a href="register.html">Üye Ol</a>
       <a href="orders.html">Siparişlerim</a>
       <a href="wishlist.html">Takip Listem</a>
@@ -49,65 +48,49 @@
     </div>
   </div>
 
-  <!-- Hero Title -->
+  <!-- Hero -->
   <div class="hero-title">
-    <img src="images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
+    <img src="images/background/hero.png" alt="Koku Ütopyasına Hoşgeldiniz" class="hero-logo">
   </div>
 
   <!-- Slider -->
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/slider/slide1.png" alt="Slide 1"></div>
-      <div class="swiper-slide"><img src="images/slider/slide2.png" alt="Slide 2"></div>
-      <div class="swiper-slide"><img src="images/slider/slide3.png" alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="images/slider/slide1.jpg" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="images/slider/slide2.jpg" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="images/slider/slide3.jpg" alt="Slide 3"></div>
     </div>
+    <!-- Slider okları -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
   </div>
 
-  <!-- Main content -->
+  <!-- Ürünler -->
   <div class="main-content">
     <div class="product-grid">
       <div class="product-card">
-        <img src="images/products/chanel-no5.png" alt="Chanel No.5">
-        <h3>Chanel No.5</h3>
-        <div class="price">2500 TL</div>
-        <div class="stock">Stokta var</div>
-        <button class="btn primary">Sepete Ekle</button>
+        <a href="urun-detay-creed.html">
+          <img src="images/products/creed.png" alt="Creed Aventus">
+          <h3>Creed Aventus</h3>
+          <p>Erkek parfümü, ananas ve misk notalarıyla efsanevi.</p>
+        </a>
       </div>
       <div class="product-card">
-        <img src="images/products/dior-sauvage.png" alt="Dior Sauvage">
-        <h3>Dior Sauvage</h3>
-        <div class="price">2200 TL</div>
-        <div class="stock">Stokta var</div>
-        <button class="btn primary">Sepete Ekle</button>
+        <a href="urun-detay-mfk.html">
+          <img src="images/products/mfk.png" alt="Maison Francis Kurkdjian Baccarat Rouge 540">
+          <h3>MFK Baccarat Rouge 540</h3>
+          <p>Uniseks parfüm, amber ve yasemin notalarıyla ikonik.</p>
+        </a>
+      </div>
+      <div class="product-card">
+        <a href="urun-detay-amouage.html">
+          <img src="images/products/amouage.png" alt="Amouage Interlude Man">
+          <h3>Amouage Interlude Man</h3>
+          <p>Baharatlı ve odunsu notalarıyla güçlü erkek parfümü.</p>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <div id="footer">
-    © 2026 Ütopya Net
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".swiper", {
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      autoplay: {
-        delay: 4000,
-      },
-    });
-  </script>
 </body>
 </html>
