@@ -16,14 +16,22 @@
     </div>
     <ul>
       <li><a href="/index.html"><img src="/images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li><a href="/parfumer/index.html"><img src="/images/menu/parfumer.png" alt="Parfümler"></a></li>
-      <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
-      <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage"></a></li>
+      <li>
+        <a href="/parfumer/index.html"><img src="/images/menu/parfumer.png" alt="Parfümler"></a>
+        <ul class="submenu">
+          <li><a href="/parfumer/kadin.html">Kadın</a></li>
+          <li><a href="/parfumer/erkek.html">Erkek</a></li>
+          <li><a href="/parfumer/uniseks.html">Uniseks</a></li>
+          <li><a href="/parfumer/nadir.html">Niş / Nadir / Vintage</a></li>
+        </ul>
+      </li>
+      <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri ve Yan Ürünler"></a></li>
+      <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage / Antika / Bit Pazarı"></a></li>
+      <li><a href="/kokunun-yolculugu.html"><img src="/images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
       <li><a href="/notalar.html"><img src="/images/menu/notalar.png" alt="Notalar"></a></li>
-      <li><a href="/brands/index.html"><img src="/images/menu/markalar.png" alt="Markalar"></a></li>
-      <li><a href="/hakkimizda.html"><img src="/images/menu/hakkimizda.png" alt="Hakkımızda"></a></li>
-      <li><a href="/iletisim.html"><img src="/images/menu/iletisim.png" alt="İletişim"></a></li>
-      <li><a href="/kampanyalar.html"><img src="/images/menu/kampanyalar.png" alt="Kampanyalar"></a></li>
+      <li><a href="/parfumorler.html"><img src="/images/menu/parfumorler.png" alt="Parfümörler"></a></li>
+      <li><a href="/markalar.html"><img src="/images/menu/markalar.png" alt="Parfüm Evleri ve Markalar"></a></li>
+      <li><a href="/biz.html"><img src="/images/menu/biz.png" alt="Biz"></a></li>
     </ul>
   </aside>
 
@@ -83,8 +91,8 @@
             <img src="${p.image}" alt="${p.name}">
             <h3>${p.brand} ${p.name}</h3>
             <p>${p.concentration} - ${p.ml}</p>
-            <p class="price">${p.price || '₺___'}</p>
-            <p>Stok: ${p.stock || '___'}</p>
+            <p class="price">${p.price}</p>
+            <p>Stok: ${p.stock}</p>
           </a>
         `).join('');
       });
@@ -103,35 +111,7 @@
     }
     showSlide(currentSlide);
     setInterval(nextSlide, 3000);
-
-    // Stripe checkout
-    const stripe = Stripe('STRIPE_PUBLIC_KEY'); // kendi public keyini buraya koy
-    const elements = stripe.elements();
-    const cardElement = elements.create('card');
-    cardElement.mount('#card-element');
-
-    const form = document.getElementById('payment-form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const { token, error } = await stripe.createToken(cardElement);
-      if (error) {
-        alert(error.message);
-      } else {
-        const res = await fetch('/checkout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount: 1000, currency: 'try', token: token.id })
-        });
-        const data = await res.json();
-        if (data.success) {
-          alert('Ödeme başarılı!');
-        } else {
-          alert('Ödeme hatası: ' + data.error);
-        }
-      }
-    });
   </script>
 
 </body>
 </html>
-

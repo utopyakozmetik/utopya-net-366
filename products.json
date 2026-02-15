@@ -1,59 +1,36 @@
-[
-  {
-    "id": "1234567890123",
-    "name": "Side Effect",
-    "brand": "Initio",
-    "logo": "/images/logos/initio.png",
-    "concentration": "EDP",
-    "ml": "100 ml",
-    "image": "/images/products/initio-side-1.jpg",
-    "story": "Initio Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar.",
-    "notes": {
-      "top": ["Rum", "Tütün"],
-      "middle": ["Vanilya", "Baharatlar"],
-      "base": ["Sandal ağacı", "Misk"]
-    },
-    "philosophy": "Duyguları harekete geçiren, bağımlılık yaratan bir parfüm felsefesi.",
-    "price": "₺3500",
-    "stock": "Stokta var",
-    "url": "/products/side-effect.html"
+{
+  "id": "1234567890123",
+  "barcode": "1234567890123",
+  "name": "Side Effect",
+  "brand": "Initio",
+  "logo": "/images/logos/initio.png",
+  "concentration": "EDP",
+  "ml": "100 ml",
+  "images": [
+    "/images/products/initio-side-1.jpg",
+    "/images/products/initio-side-2.jpg",
+    "/images/products/initio-side-3.jpg"
+  ],
+  "story": "Initio Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir. Bu parfüm, duyguları harekete geçiren ve bağımlılık yaratan bir karakter taşır.",
+  "notes": {
+    "top": ["Rum", "Tütün"],
+    "middle": ["Vanilya", "Baharatlar"],
+    "base": ["Sandal ağacı", "Misk"],
+    "images": [
+      {"name":"Rum","src":"/images/notes/rum.png"},
+      {"name":"Tütün","src":"/images/notes/tobacco.png"},
+      {"name":"Vanilya","src":"/images/notes/vanilla.png"},
+      {"name":"Baharatlar","src":"/images/notes/spices.png"},
+      {"name":"Sandal ağacı","src":"/images/notes/sandalwood.png"},
+      {"name":"Misk","src":"/images/notes/musk.png"}
+    ]
   },
-  {
-    "id": "9876543210987",
-    "name": "Aventus",
-    "brand": "Creed",
-    "logo": "/images/logos/creed.png",
-    "concentration": "EDP",
-    "ml": "100 ml",
-    "image": "/images/products/aventus.jpg",
-    "story": "Creed Aventus, güç ve başarıyı simgeleyen ikonik bir parfümdür.",
-    "notes": {
-      "top": ["Ananas", "Bergamot"],
-      "middle": ["Yasemin", "Paçuli"],
-      "base": ["Misk", "Meşe yosunu"]
-    },
-    "philosophy": "Modern erkeğin özgüvenini ve karizmasını yansıtır.",
-    "price": "₺4200",
-    "stock": "Stokta yok",
-    "url": "/products/aventus.html"
+  "fragrantica": {
+    "score": "4.3",
+    "url": "https://www.fragrantica.com/perfume/Initio/Side-Effect-12345.html"
   },
-  {
-    "id": "5555555555555",
-    "name": "La Vie Est Belle",
-    "brand": "Lancôme",
-    "logo": "/images/logos/lancome.png",
-    "concentration": "EDP",
-    "ml": "75 ml",
-    "image": "/images/products/la-vie-est-belle.jpg",
-    "story": "Lancôme La Vie Est Belle, mutluluğu ve özgürlüğü simgeleyen kadın parfümü.",
-    "notes": {
-      "top": ["Siyah frenk üzümü", "Armut"],
-      "middle": ["İris", "Yasemin", "Portakal çiçeği"],
-      "base": ["Pralin", "Vanilya", "Tonka fasulyesi", "Paçuli"]
-    },
-    "philosophy": "Hayatı güzel kılan küçük mutlulukları kutlar.",
-    "price": "₺2800",
-    "stock": "Stokta var",
-    "url": "/products/la-vie-est-belle.html"
-  }
-]
+  "price": "₺3500",
+  "stock": "Stokta var",
+  "url": "/products/side-effect.html",
+  "background_collage": "/images/background/initio-collage.jpg"
+}
