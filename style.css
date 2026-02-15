@@ -13,23 +13,23 @@ aside.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 260px; /* büyütüldü */
+  width: 280px; /* biraz daha büyütüldü */
   height: 100vh;
   background: url("images/background/motif.png") repeat fixed;
   background-size: cover;
-  padding: 15px 8px;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .sidebar .site-logo {
-  max-width: 140px; /* biraz büyütüldü */
+  max-width: 160px; /* logo büyütüldü */
   margin-bottom: 20px;
 }
 
 .sidebar ul img {
-  max-width: 110px; /* ikonlar büyütüldü */
+  max-width: 120px; /* ikonlar büyütüldü */
   transition: transform 0.3s;
 }
 
@@ -39,7 +39,7 @@ aside.sidebar {
 
 /* Topbar */
 .topbar {
-  margin-left: 260px;
+  margin-left: 280px;
   height: 60px;
   background: transparent;
   display: flex;
@@ -50,7 +50,7 @@ aside.sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  left: 260px;
+  left: 280px;
   z-index: 10;
 }
 
@@ -59,13 +59,13 @@ aside.sidebar {
   margin: 0;
   padding: 20px 0;
   text-align: center;
-  margin-left: 260px;
+  margin-left: 280px;
   background: transparent;
   position: relative;
 }
 
 .hero-title img.hero-logo {
-  max-width: 850px; /* daha büyük */
+  max-width: 900px; /* header görseli biraz daha büyük */
   width: 100%;
   height: auto;
   display: inline-block;
@@ -74,8 +74,8 @@ aside.sidebar {
 /* Slider */
 .swiper {
   margin: 40px auto;
-  width: 70%;
-  height: 400px; /* sabit yükseklik */
+  width: 50%; /* oran daraltıldı */
+  height: 300px; /* sabit yükseklik */
 }
 
 .swiper-slide img {
@@ -91,7 +91,7 @@ aside.sidebar {
 
 /* Main content */
 .main-content {
-  margin-left: 260px;
+  margin-left: 280px;
   padding: 20px;
 }
 
