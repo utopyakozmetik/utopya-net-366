@@ -25,7 +25,7 @@
   <!-- Main content -->
   <main class="main-content">
     <div class="product-grid">
-      <!-- ürün kartları -->
+      <!-- ürün kartları JSON’dan doldurulacak -->
     </div>
   </main>
 
@@ -34,6 +34,7 @@
 
   <!-- Include script -->
   <script>
+    // Header ve footer yükleme
     fetch('/header.html')
       .then(res => res.text())
       .then(html => { document.getElementById('header').innerHTML = html; });
@@ -41,6 +42,25 @@
     fetch('/footer.html')
       .then(res => res.text())
       .then(html => { document.getElementById('footer').innerHTML = html; });
+
+    // Ürünleri JSON’dan doldurma
+    fetch('/products.json')
+      .then(res => res.json())
+      .then(products => {
+        const grid = document.querySelector('.product-grid');
+        products.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p class="price">${p.price}</p>
+            <p>${p.brand} - ${p.year}</p>
+            <a href="${p.url}">Detaylar</a>
+          `;
+          grid.appendChild(card);
+        });
+      });
   </script>
 
 </body>

@@ -1,4 +1,3 @@
-/* Genel */
 body {
   margin: 0;
   padding: 0;
@@ -12,11 +11,11 @@ body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.25); /* daha şeffaf, motif kaybolmaz */
+  background: rgba(255,255,255,0.25);
   z-index: -1;
 }
 
-/* Sidebar (sabit ve tam blok) */
+/* Sidebar */
 aside.sidebar {
   width: 240px;
   height: 100vh;
@@ -30,13 +29,9 @@ aside.sidebar {
   flex-direction: column;
   align-items: center;
 }
-.logo {
-  margin-bottom: 30px;
-}
 .logo img {
-  max-width: 330px;
+  max-width: 200px;
   display: block;
-  filter: brightness(1.2) contrast(1.1);
 }
 .sidebar ul {
   list-style: none;
@@ -46,21 +41,30 @@ aside.sidebar {
 }
 .sidebar li {
   margin-bottom: 15px;
-  display: block;
-  width: 100%;
   text-align: center;
-}
-.sidebar a {
-  display: block;
-  width: 100%;
 }
 .sidebar img {
   max-width: 200px;
   display: block;
   margin: 0 auto;
 }
+/* Alt menü */
+.sidebar .submenu {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  text-align: center;
+}
+.sidebar .submenu li {
+  margin: 12px 0;
+}
+.sidebar .submenu img {
+  max-width: 140px;
+  display: block;
+  margin: 0 auto;
+}
 
-/* Topbar (sabit) */
+/* Topbar */
 .topbar {
   background: rgba(255,255,255,0.05);
   padding: 15px 20px;
@@ -73,8 +77,6 @@ aside.sidebar {
   left: 240px;
   z-index: 2000;
 }
-
-/* User menu sağa yana */
 .user-menu ul {
   list-style: none;
   margin: 0;
@@ -85,17 +87,9 @@ aside.sidebar {
 .user-menu li {
   display: inline-block;
 }
-.user-menu a {
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 18px;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  color: #FF5722;              /* logodan farklı turuncu ton */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-  transition: color 0.3s ease;
-}
-.user-menu a:hover {
-  color: #E64A19;              /* hover’da koyu turuncu */
+.user-menu img {
+  max-height: 40px;
+  display: block;
 }
 
 /* Hero Title */
@@ -107,8 +101,7 @@ aside.sidebar {
 .hero-title h1 {
   font-size: 36px;
   font-weight: 800;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  color: #8E24AA;              /* mor ton, logodan ayrışır */
+  color: #8E24AA;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
   margin-bottom: 40px;
 }
@@ -124,18 +117,10 @@ aside.sidebar {
 }
 .slider img {
   flex: 1;
-  max-width: 16.6%;
-  height: auto;
+  max-width: 30%;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   object-fit: cover;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 240px;
-  margin-top: 120px;
-  padding: 20px;
 }
 
 /* Product grid */
@@ -143,6 +128,7 @@ aside.sidebar {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
+  margin-top: 40px;
 }
 .product-card {
   background: rgba(255, 255, 255, 0.1);
@@ -161,14 +147,11 @@ aside.sidebar {
   height: 260px;
   object-fit: cover;
   border-radius: 12px;
-  filter: brightness(0.95) contrast(1.05) saturate(1.1);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 .product-card h3 {
   margin: 15px 0 10px;
   font-weight: 800;
   font-size: 20px;
-  font-family: 'Segoe UI Semibold', 'Helvetica Neue', Arial, sans-serif;
 }
 .product-card .price {
   font-weight: bold;
@@ -176,42 +159,7 @@ aside.sidebar {
   color: #4CAF50;
 }
 
-/* Ürün detay */
-.product-title {
-  font-size: 32px;
-  font-weight: 800;
-}
-.product-title .brand-link {
-  font-weight: 800;
-  font-size: 28px;
-  text-decoration: none;
-  color: #222;
-}
-.product-title .brand-link:hover {
-  color: #4CAF50;
-}
-.product-image {
-  max-width: 400px;
-  border-radius: 12px;
-  margin: 25px auto;
-  display: block;
-  filter: brightness(0.95) contrast(1.05) saturate(1.1);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-}
-.product-meta p {
-  font-size: 18px;
-  font-weight: 600;
-}
-.notes li {
-  font-size: 16px;
-  font-weight: 600;
-}
-.related-products h3 {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-/* Footer (sabit) */
+/* Footer */
 .site-footer {
   background: rgba(255,255,255,0.05);
   padding: 20px;
@@ -231,10 +179,4 @@ aside.sidebar {
 }
 .site-footer a:hover {
   text-decoration: underline;
-}
-.social-links {
-  margin-top: 10px;
-}
-.social-links a {
-  margin: 0 10px;
 }
