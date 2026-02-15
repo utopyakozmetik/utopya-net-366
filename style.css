@@ -13,7 +13,7 @@ aside.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 220px; /* genişletildi */
+  width: 220px;
   height: 100vh;
   background: url("images/background/motif.png") repeat fixed;
   background-size: cover;
@@ -25,6 +25,7 @@ aside.sidebar {
 
 .sidebar .site-logo {
   max-width: 140px;
+  transform: scale(2); /* logo 2 kat büyüt */
   margin-bottom: 20px;
 }
 
@@ -42,11 +43,12 @@ aside.sidebar {
 
 .sidebar ul img {
   max-width: 140px;
+  transform: scale(1.5); /* menü ikonları 1.5 kat büyüt */
   transition: transform 0.3s;
 }
 
 .sidebar ul img:hover {
-  transform: scale(1.05);
+  transform: scale(1.6);
 }
 
 .submenu {
@@ -62,11 +64,11 @@ aside.sidebar {
   justify-content: flex-end; /* menü sağa kaydırıldı */
   align-items: center;
   padding: 0 20px;
-  box-shadow: none; /* alt beyaz katman kaldırıldı */
-  position: fixed; /* sabit üstte */
+  box-shadow: none;
+  position: fixed;
   top: 0;
   right: 0;
-  left: 220px; /* sidebar boşluğu */
+  left: 220px;
   z-index: 10;
 }
 
@@ -78,7 +80,7 @@ aside.sidebar {
 .user-menu a {
   display: flex;
   align-items: center;
-  margin-left: 20px; /* sağa doğru boşluk */
+  margin-left: 20px;
   text-decoration: none;
   color: #6A1B9A;
   font-weight: 600;
@@ -102,20 +104,22 @@ aside.sidebar {
 
 /* Hero Title */
 .hero-title {
-  margin: 0 auto;              /* ortala */
-  text-align: center;          /* ortada hizala */
-  padding: 20px 0;             /* üst boşluk */
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  top: 0;
 }
 
 .hero-title img.hero-logo {
-  transform: scale(1.5);       /* 1,5 kat büyüt */
+  transform: scale(1.35); /* dengeli büyütme */
   display: inline-block;
 }
 
 /* Slider */
 .swiper {
-  margin: 20px auto;           /* ortala */
-  width: 25%;                  /* sayfanın 1/4’ü */
+  margin: 20px auto;
+  width: 25%; /* sayfanın 1/4’ü */
 }
 
 .swiper-slide img {
@@ -124,9 +128,15 @@ aside.sidebar {
   object-fit: cover;
 }
 
+/* Slider okları konsepte uygun renk */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #6A1B9A;
+}
+
 @media (max-width: 768px) {
   .swiper {
-    width: 100%;               /* mobilde tam genişlik */
+    width: 100%;
   }
   .swiper-slide img {
     max-height: 180px;
