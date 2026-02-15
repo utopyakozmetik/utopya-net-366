@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Chanel No.5 - Ütopya.net</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Ortak sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Ortak topbar -->
+  <div id="topbar"></div>
+
+  <!-- Ürün Detay -->
+  <main class="main-content product-detail">
+    <h1 class="product-title">
+      <a href="/markalar/chanel.html" class="brand-link">Chanel</a> No.5
+    </h1>
+
+    <img src="/images/products/chanel-no5.png" alt="Chanel No.5" class="product-image">
+
+    <div class="product-meta">
+      <p class="price">₺9250 (100 ml)</p>
+      <p>Kategori: Kadın</p>
+      <p>Çıkış yılı: 1921</p>
+      <p>Parfümör: <a href="/parfumorler.html#ernest-beaux">Ernest Beaux</a></p>
+      <p>Konsantrasyon: Eau de Parfum</p>
+      <p>Hacim: 100 ml</p>
+      <p>Koku Tipi: Çiçeksi, Aldehit</p>
+    </div>
+
+    <h3>Hikaye</h3>
+    <p>
+      Chanel No.5, Gabrielle “Coco” Chanel’in “kadın gibi kokan bir kadın parfümü” isteğiyle doğdu. 
+      Çiçeksi aldehit buketiyle zamansız ve efsanevi bir koku olarak kabul edilir. 
+      Minimalist şişe tasarımı ve ikonik kampanyalarıyla parfüm dünyasının en unutulmaz simgelerinden biridir.
+    </p>
+
+    <h3>Notalar</h3>
+    <ul class="notes">
+      <li>Üst: Aldehitler, Ylang-Ylang, Neroli, Bergamot, Limon</li>
+      <li>Orta: İris, Yasemin, Gül, Zambak</li>
+      <li>Dip: Vetiver, Misk, Sandal Ağacı, Vanilya, Amber, Paçuli</li>
+    </ul>
+
+    <div class="product-actions">
+      <button class="btn primary">Sepete Ekle</button>
+      <button class="btn outline">Takip Listene Ekle</button>
+      <button class="btn outline">Soru Sor</button>
+      <button class="btn outline">Yorum Yaz</button>
+    </div>
+
+    <!-- Marka ürünleri -->
+    <section class="related-products">
+      <h3>Chanel Markasından Diğer Ürünler</h3>
+      <div class="product-grid" id="relatedGrid"></div>
+    </section>
+  </main>
+
+  <!-- Ortak footer -->
+  <div id="footer"></div>
+
+  <!-- Include script -->
+  <script>
+    // Sidebar, topbar ve footer yükle
+    fetch('/sidebar.html').then(r=>r.text()).then(h=>{document.getElementById('sidebar').innerHTML=h});
+    fetch('/topbar.html').then(r=>r.text()).then(h=>{document.getElementById('topbar').innerHTML=h});
+    fetch('/footer.html').then(r=>r.text()).then(h=>{document.getElementById('footer').innerHTML=h});
+
+    // Chanel markasının ürünlerini listele
+    fetch('/parfumler/products.json')
+      .then(res => res.json())
+      .then(products => {
+        const related = products.filter(p => p.brand === "Chanel");
+        const grid = document.getElementById('relatedGrid');
+        grid.innerHTML = related.map(p => `
+          <div class="product-card">
+            <a href="/parfumler/${p.slug}.html">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+            </a>
+            <p class="price">${p.price}</p>
+          </div>
+        `).join('');
+      });
+  </script>
+
+</body>
+</html>

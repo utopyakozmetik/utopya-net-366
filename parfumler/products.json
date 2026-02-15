@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "chanel-no5",
+    "name": "Chanel No.5",
+    "brand": "Chanel",
+    "year": "1921",
+    "price": "₺3500",
+    "image": "/images/products/chanel-no5.png"
+  },
+  {
+    "slug": "dior-sauvage",
+    "name": "Dior Sauvage",
+    "brand": "Dior",
+    "year": "2015",
+    "price": "₺2800",
+    "image": "/images/products/dior-sauvage.png"
+  },
+  {
+    "slug": "tomford-oudwood",
+    "name": "Tom Ford Oud Wood",
+    "brand": "Tom Ford",
+    "year": "2007",
+    "price": "₺4200",
+    "image": "/images/products/tomford-oudwood.png"
+  },
+  {
+    "slug": "creed-aventus",
+    "name": "Creed Aventus",
+    "brand": "Creed",
+    "year": "2010",
+    "price": "₺5000",
+    "image": "/images/products/creed-aventus.png"
+  }
+]
