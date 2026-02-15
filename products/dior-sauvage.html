@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dior Sauvage - Ütopya.net</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Ortak sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Ortak topbar -->
+  <div id="topbar"></div>
+
+  <!-- Ürün Detay -->
+  <main class="main-content product-detail">
+    <h1 class="product-title">
+      <a href="/markalar/dior.html" class="brand-link">Dior</a> Sauvage
+    </h1>
+
+    <img src="/images/products/dior-sauvage.png" alt="Dior Sauvage" class="product-image">
+
+    <div class="product-meta">
+      <p class="price">₺2800</p>
+      <p>Kategori: Erkek</p>
+      <p>Çıkış yılı: 2015</p>
+      <p>Parfümör: <a href="/parfumorler.html#francois-demachy">François Demachy</a></p>
+      <p>Konsantrasyon: Eau de Toilette</p>
+      <p>Hacim: 100 ml</p>
+      <p>Koku Tipi: Aromatik, Ferah</p>
+    </div>
+
+    <h3>Hikaye</h3>
+    <p>
+      Dior Sauvage, özgürlük ve vahşi doğa ilhamıyla yaratıldı. Bergamot ve baharatların enerjisi,
+      ambroxan ve odunsu notalarla birleşerek modern, güçlü bir koku ortaya çıkarır.
+    </p>
+
+    <h3>Notalar</h3>
+    <ul class="notes">
+      <li>Üst: Bergamot, Karabiber</li>
+      <li>Orta: Lavanta, Sichuan Biberi, Elemi</li>
+      <li>Dip: Ambroxan, Vetiver, Paçuli</li>
+    </ul>
+
+    <div class="product-actions">
+      <button class="btn primary">Sepete Ekle</button>
+      <button class="btn outline">Takip Listene Ekle</button>
+      <button class="btn outline">Soru Sor</button>
+      <button class="btn outline">Yorum Yaz</button>
+    </div>
+
+    <!-- Marka ürünleri -->
+    <section class="related-products">
+      <h3>Dior Markasından Diğer Ürünler</h3>
+      <div class="product-grid" id="relatedGrid"></div>
+    </section>
+  </main>
+
+  <!-- Ortak footer -->
+  <div id="footer"></div>
+
+  <!-- Include script -->
+  <script>
+    fetch('sidebar.html').then(r=>r.text()).then(h=>{document.getElementById('sidebar').innerHTML=h});
+    fetch('topbar.html').then(r=>r.text()).then(h=>{document.getElementById('topbar').innerHTML=h});
+    fetch('footer.html').then(r=>r.text()).then(h=>{document.getElementById('footer').innerHTML=h});
+
+    // Dior markasının ürünlerini listele
+    fetch('/products.json')
+      .then(res => res.json())
+      .then(products => {
+        const related = products.filter(p => p.brand === "Dior");
+        const grid = document.getElementById('relatedGrid');
+        grid.innerHTML = related.map(p => `
+          <div class="product-card">
+            <a href="/products/${p.slug}.html">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+            </a>
+            <p class="price">${p.price}</p>
+          </div>
+        `).join('');
+      });
+  </script>
+
+</body>
+</html>
