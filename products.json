@@ -12,34 +12,16 @@
     "concentration": "Extrait de Parfum",
     "ml": "90 ml",
     "image": "/images/products/initio-side-1.jpg",
-    "images": [
-      "/images/products/initio-side-1.jpg",
-      "/images/products/initio-side-2.jpg",
-      "/images/products/initio-side-3.jpg"
-    ],
-    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.",
+    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar.",
     "notes": {
       "top": ["Rum", "Tütün"],
       "middle": ["Vanilya", "Baharatlar"],
-      "base": ["Sandal ağacı", "Misk"],
-      "images": [
-        {"name":"Rum","src":"/images/notes/rum.png"},
-        {"name":"Tütün","src":"/images/notes/tobacco.png"},
-        {"name":"Vanilya","src":"/images/notes/vanilla.png"},
-        {"name":"Baharatlar","src":"/images/notes/spices.png"},
-        {"name":"Sandal ağacı","src":"/images/notes/sandalwood.png"},
-        {"name":"Misk","src":"/images/notes/musk.png"}
-      ]
+      "base": ["Sandal ağacı", "Misk"]
     },
-    "fragrantica": {
-      "score": "4.3",
-      "url": "https://www.fragrantica.com/perfume/Initio/Side-Effect-12345.html"
-    },
-    "video": "https://www.youtube.com/embed/VIDEO_ID",
     "price": "€290",
     "stock": "Stokta var",
     "url": "/parfumler/side-effect.html",
-    "background_collage": "/images/background/initio-collage.jpg"
+    "category": "uniseks"
   },
   {
     "id": "9876543210987",
@@ -54,35 +36,39 @@
     "concentration": "Eau de Parfum",
     "ml": "100 ml",
     "image": "/images/products/aventus-1.jpg",
-    "images": [
-      "/images/products/aventus-1.jpg",
-      "/images/products/aventus-2.jpg",
-      "/images/products/aventus-3.jpg"
-    ],
     "story": "Creed Aventus, güç ve başarıyı simgeleyen ananas, bergamot ve misk karışımıyla ikonik bir parfümdür.",
     "notes": {
       "top": ["Ananas", "Bergamot", "Siyah Frenk Üzümü"],
       "middle": ["Yasemin", "Paçuli"],
-      "base": ["Misk", "Meşe Yosunu", "Ambergris"],
-      "images": [
-        {"name":"Ananas","src":"/images/notes/ananas.png"},
-        {"name":"Bergamot","src":"/images/notes/bergamot.png"},
-        {"name":"Siyah Frenk Üzümü","src":"/images/notes/blackcurrant.png"},
-        {"name":"Yasemin","src":"/images/notes/jasmine.png"},
-        {"name":"Paçuli","src":"/images/notes/patchouli.png"},
-        {"name":"Misk","src":"/images/notes/musk.png"},
-        {"name":"Meşe Yosunu","src":"/images/notes/oakmoss.png"},
-        {"name":"Ambergris","src":"/images/notes/ambergris.png"}
-      ]
+      "base": ["Misk", "Meşe Yosunu", "Ambergris"]
     },
-    "fragrantica": {
-      "score": "4.6",
-      "url": "https://www.fragrantica.com/perfume/Creed/Aventus-12345.html"
-    },
-    "video": "https://www.youtube.com/embed/VIDEO_ID",
     "price": "€350",
     "stock": "Stokta yok",
     "url": "/parfumler/aventus.html",
-    "background_collage": "/images/background/creed-collage.jpg"
+    "category": "erkek"
+  },
+  {
+    "id": "5555555555555",
+    "barcode": "5555555555555",
+    "name": "La Vie Est Belle",
+    "brand": "Lancôme",
+    "year": "2012",
+    "perfumer": "Anne Flipo",
+    "perfumerId": "anne-flipo",
+    "logo": "/images/logos/lancome.png",
+    "collection": "Main Collection",
+    "concentration": "Eau de Parfum",
+    "ml": "75 ml",
+    "image": "/images/products/la-vie-est-belle.jpg",
+    "story": "Lancôme La Vie Est Belle, tatlı ve çiçeksi kompozisyonuyla kadınların vazgeçilmezi.",
+    "notes": {
+      "top": ["Siyah Frenk Üzümü", "Armut"],
+      "middle": ["İris", "Yasemin", "Portakal Çiçeği"],
+      "base": ["Pralin", "Vanilya", "Tonka Fasulyesi", "Paçuli"]
+    },
+    "price": "€120",
+    "stock": "Stokta var",
+    "url": "/parfumler/la-vie-est-belle.html",
+    "category": "kadin"
   }
 ]

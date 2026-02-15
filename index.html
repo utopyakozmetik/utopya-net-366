@@ -15,8 +15,14 @@
       </a>
     </div>
     <ul>
-      <li><a href="/index.html"><img src="/images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li><a href="/parfumler/index.html"><img src="/images/menu/parfumler.png" alt="Parfümler"></a></li>
+      <li>
+        <a href="/parfumler/index.html"><img src="/images/menu/parfumler.png" alt="Parfümler"></a>
+        <ul class="submenu">
+          <li><a href="/parfumler/erkek.html">Erkek</a></li>
+          <li><a href="/parfumler/kadin.html">Kadın</a></li>
+          <li><a href="/parfumler/uniseks.html">Uniseks</a></li>
+        </ul>
+      </li>
       <li><a href="/hediye-setleri.html"><img src="/images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
       <li><a href="/vintage.html"><img src="/images/menu/vintage.png" alt="Vintage"></a></li>
       <li><a href="/kokunun-yolculugu.html"><img src="/images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
@@ -41,17 +47,17 @@
         <li><a href="/uye-kayit.html">Üye Kayıt</a></li>
         <li><a href="/siparis-takip.html">Sipariş Takip</a></li>
         <li><a href="/sepet.html">Sepetim</a></li>
-        <li><a href="/favoriler.html">Favorilerim</a></li>
+        <li><a href="/takip-listem.html">Takip Listem</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Slider -->
   <section class="slider">
-    <img src="/images/slider/slide1.png" alt="Slide 1">
-    <img src="/images/slider/slide2.png" alt="Slide 2">
-    <img src="/images/slider/slide3.png" alt="Slide 3">
-    <img src="/images/slider/slide4.png" alt="Slide 4">
+    <img src="/images/slider/slide1.jpeg" alt="Slide 1">
+    <img src="/images/slider/slide2.jpeg" alt="Slide 2">
+    <img src="/images/slider/slide3.jpeg" alt="Slide 3">
+    <img src="/images/slider/slide4.jpeg" alt="Slide 4">
   </section>
 
   <!-- Main Content -->
@@ -63,7 +69,6 @@
   </div>
 
   <script>
-    // Ürün grid doldurma
     fetch('/products.json')
       .then(res => res.json())
       .then(products => {
@@ -78,14 +83,6 @@
             <p class="price">${p.price}</p>
             <p>Çıkış yılı: ${p.year}</p>
             <p>Parfümör: <a href="/parfumorler.html#${p.perfumerId}">${p.perfumer}</a></p>
-            <div class="product-actions">
-              ${p.stock === "Stokta var" 
-                ? '<button class="btn primary">Sepete Ekle</button>' 
-                : '<button class="btn secondary">Stoğa Girince Haber Ver</button>'}
-              <button class="btn outline">Takip Listene Ekle</button>
-              <button class="btn outline" onclick="window.location.href='/admin-panel/sorular.html?product=${p.id}'">Soru Sor</button>
-              <button class="btn outline" onclick="window.location.href='/yorumlar/${p.id}.html'">Yorum Yaz</button>
-            </div>
           </div>
         `).join('');
       });
@@ -103,7 +100,7 @@
       showSlide(currentSlide);
     }
     showSlide(currentSlide);
-    setInterval(nextSlide, 3000);
+    setInterval(nextSlide, 4000);
   </script>
 
 </body>
