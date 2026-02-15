@@ -54,19 +54,22 @@ aside.sidebar {
   font-size: 16px;
 }
 
-/* Slider */
+/* Slider (revize) */
 .slider {
   margin-top: 100px;
   margin-left: 240px;
   width: calc(100% - 240px);
-  text-align: center;
+  display: flex;              /* yan yana diz */
+  justify-content: center;    /* ortala */
+  gap: 20px;                  /* aralarında boşluk */
 }
 .slider img {
-  width: 80%;
-  margin: 0 auto;
+  flex: 1;                    /* eşit genişlik */
+  max-width: 16.6%;           /* toplamda yarısı (3 görsel * ~16.6% = 50%) */
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  display: block;
+  object-fit: cover;
 }
 
 /* Main content */
