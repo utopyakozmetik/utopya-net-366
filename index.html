@@ -1,109 +1,45 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Ütopya.net</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Swiper CSS ve JS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-</head>
-<body>
+<!-- Hero -->
+<div class="hero-title">
+  <img src="images/kokularutopya.png" alt="Koku Ütopyasına Hoşgeldiniz" class="hero-logo">
+</div>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <a href="index.html">
-      <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
-    </a>
-    <ul>
-      <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li>
-        <a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a>
-        <ul class="submenu">
-          <li><a href="kadin.html"><img src="images/menu/kadin.png" alt="Kadın"></a></li>
-          <li><a href="erkek.html"><img src="images/menu/erkek.png" alt="Erkek"></a></li>
-          <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt="Uniseks"></a></li>
-          <li><a href="nisnadir.html"><img src="images/menu/nisnadir.png" alt="Niş/Nadir"></a></li>
-        </ul>
-      </li>
-      <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
-      <li><a href="vintage.html"><img src="images/menu/vintage.png" alt="Vintage"></a></li>
-      <li><a href="kokununyolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
-      <li><a href="notalar.html"><img src="images/menu/notalar.png" alt="Notalar"></a></li>
-      <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt="Parfümörler"></a></li>
-      <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Markalar"></a></li>
-      <li><a href="biz.html"><img src="images/menu/biz.png" alt="Biz"></a></li>
-    </ul>
-  </aside>
-
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="user-menu">
-      <a href="login.html">Üye Girişi</a>
-      <a href="register.html">Üye Ol</a>
-      <a href="orders.html">Siparişlerim</a>
-      <a href="wishlist.html">Takip Listem</a>
-    </div>
-    <div class="cart">
-      <a href="cart.html"><img src="images/menu/sepet.png" alt="Sepetim"></a>
-    </div>
+<!-- Slider -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/slider/slide1.png" alt="Slide 1"></div>
+    <div class="swiper-slide"><img src="images/slider/slide2.png" alt="Slide 2"></div>
+    <div class="swiper-slide"><img src="images/slider/slide3.png" alt="Slide 3"></div>
   </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
 
-  <!-- Hero -->
-  <div class="hero-title">
-    <img src="images/kokularutopya.png" alt="Koku Ütopyasına Hoşgeldiniz" class="hero-logo">
+<!-- Filtreleme ve Sıralama -->
+<div class="filter-sort">
+  <label for="sort">Sırala:</label>
+  <select id="sort">
+    <option value="populer">Popüler</option>
+    <option value="yeni">Yeni Gelenler</option>
+    <option value="fiyat-artan">Fiyat Artan</option>
+    <option value="fiyat-azalan">Fiyat Azalan</option>
+  </select>
+
+  <label for="filter">Filtrele:</label>
+  <select id="filter">
+    <option value="tum">Tümü</option>
+    <option value="kadin">Kadın</option>
+    <option value="erkek">Erkek</option>
+    <option value="uniseks">Uniseks</option>
+  </select>
+</div>
+
+<!-- Ürünler -->
+<div class="main-content">
+  <div class="product-grid">
+    <div class="product-card"><a href="#"><img src="images/products/creed.png"><h3>Creed Aventus</h3></a></div>
+    <div class="product-card"><a href="#"><img src="images/products/mfk.png"><h3>MFK Baccarat Rouge 540</h3></a></div>
+    <div class="product-card"><a href="#"><img src="images/products/amouage.png"><h3>Amouage Interlude Man</h3></a></div>
+    <div class="product-card"><a href="#"><img src="images/products/serge.png"><h3>Serge Lutens Chergui</h3></a></div>
+    <div class="product-card"><a href="#"><img src="images/products/diptyque.png"><h3>Diptyque Philosykos</h3></a></div>
   </div>
-
-  <!-- Slider -->
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/slider/slide1.png" alt="Slide 1"></div>
-      <div class="swiper-slide"><img src="images/slider/slide2.png" alt="Slide 2"></div>
-      <div class="swiper-slide"><img src="images/slider/slide3.png" alt="Slide 3"></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-
-  <!-- Filtreleme ve Sıralama -->
-  <div class="filter-sort">
-    <label for="sort">Sırala:</label>
-    <select id="sort">
-      <option value="populer">Popüler</option>
-      <option value="yeni">Yeni Gelenler</option>
-      <option value="fiyat-artan">Fiyat Artan</option>
-      <option value="fiyat-azalan">Fiyat Azalan</option>
-    </select>
-
-    <label for="filter">Filtrele:</label>
-    <select id="filter">
-      <option value="tum">Tümü</option>
-      <option value="kadin">Kadın</option>
-      <option value="erkek">Erkek</option>
-      <option value="uniseks">Uniseks</option>
-    </select>
-  </div>
-
-  <!-- Ürünler -->
-  <div class="main-content">
-    <div class="product-grid">
-      <div class="product-card"><a href="#"><img src="images/products/creed.png"><h3>Creed Aventus</h3></a></div>
-      <div class="product-card"><a href="#"><img src="images/products/mfk.png"><h3>MFK Baccarat Rouge 540</h3></a></div>
-      <div class="product-card"><a href="#"><img src="images/products/amouage.png"><h3>Amouage Interlude Man</h3></a></div>
-      <div class="product-card"><a href="#"><img src="images/products/serge.png"><h3>Serge Lutens Chergui</h3></a></div>
-      <div class="product-card"><a href="#"><img src="images/products/diptyque.png"><h3>Diptyque Philosykos</h3></a></div>
-    </div>
-  </div>
-
-  <script>
-    var swiper = new Swiper('.swiper', {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      loop: true
-    });
-  </script>
-
-</body>
-</html>
+</div>
