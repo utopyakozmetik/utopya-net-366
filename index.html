@@ -24,15 +24,15 @@
   <!-- Hero Title -->
   <section class="hero-title">
     <h1>Kokular Ütopyası</h1>
-    <img src="/images/kokularutopya.png" alt="Kokular Ütopyası">
+    <img src="images/kokularutopya.png" alt="Kokular Ütopyası">
   </section>
 
   <!-- Slider -->
   <section class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="/images/slider/slide1.png" alt="Slide 1"></div>
-      <div class="swiper-slide"><img src="/images/slider/slide2.png" alt="Slide 2"></div>
-      <div class="swiper-slide"><img src="/images/slider/slide3.png" alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="images/slider/slide1.png" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="images/slider/slide2.png" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="images/slider/slide3.png" alt="Slide 3"></div>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
@@ -49,7 +49,7 @@
 
   <!-- Include script -->
   <script>
-    // Ortak parçaları yükle
+    // Ortak parçaları yükle (relative path!)
     fetch('sidebar.html').then(r=>r.text()).then(h=>{document.getElementById('sidebar').innerHTML=h});
     fetch('topbar.html').then(r=>r.text()).then(h=>{document.getElementById('topbar').innerHTML=h});
     fetch('footer.html').then(r=>r.text()).then(h=>{document.getElementById('footer').innerHTML=h});
@@ -62,7 +62,7 @@
         grid.innerHTML = products.map(p => `
           <div class="product-card">
             <span class="badge">%20 İndirim</span>
-            <a href="/products/${p.slug}.html">
+            <a href="products/${p.slug}.html">
               <img src="${p.image}" alt="${p.name}">
               <h3>${p.name}</h3>
             </a>
