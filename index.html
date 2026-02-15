@@ -12,7 +12,7 @@
 
   <!-- Üst başlık -->
   <section class="hero-title">
-    <h1>Kokular Ütopyasına Hoşgeldiniz...</h1>
+    <img src="/images/kokularutopya.png" alt="Kokular Ütopyası">
   </section>
 
   <!-- Slider -->
@@ -24,9 +24,7 @@
 
   <!-- Main content -->
   <main class="main-content">
-    <div class="product-grid">
-      <!-- ürün kartları JSON’dan doldurulacak -->
-    </div>
+    <div class="product-grid"></div>
   </main>
 
   <!-- Ortak footer -->
@@ -52,11 +50,12 @@
           const card = document.createElement('div');
           card.className = 'product-card';
           card.innerHTML = `
-            <img src="${p.image}" alt="${p.name}">
-            <h3>${p.name}</h3>
-            <p class="price">${p.price}</p>
-            <p>${p.brand} - ${p.year}</p>
-            <a href="${p.url}">Detaylar</a>
+            <a href="${p.url}">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+              <p class="price">${p.price}</p>
+              <p>${p.brand} - ${p.year}</p>
+            </a>
           `;
           grid.appendChild(card);
         });
