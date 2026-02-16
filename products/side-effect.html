@@ -7,49 +7,81 @@
 </head>
 <body>
 
-  <!-- Sidebar ve Topbar sabit -->
-  <aside class="sidebar"> ... </aside>
-  <header class="topbar"> ... </header>
+  <!-- Ortak header -->
+  <div id="header"></div>
 
+  <!-- Ürün Detay -->
   <main class="main-content product-detail">
-    <h1>Initio Side Effect</h1>
-    <div class="product-info">
-      <img src="/images/products/initio-side-1.jpg" alt="Side Effect">
+    <h1 class="product-title">
+      <a href="/markalar/initio.html" class="brand-link">Initio</a> Side Effect
+    </h1>
+
+    <img src="/images/products/initio-side-1.jpg" alt="Side Effect" class="product-image">
+
+    <div class="product-meta">
       <p class="price">€290</p>
+      <p>Kategori: Uniseks</p>
       <p>Çıkış yılı: 2016</p>
       <p>Parfümör: <a href="/parfumorler.html#pierre-constantin-gueros">Pierre-Constantin Guéros</a></p>
-
-      <!-- Butonlar -->
-      <div class="product-actions">
-        <!-- Stok kontrolü -->
-        <button class="btn primary" id="cartBtn">Sepete Ekle</button>
-        <button class="btn secondary" id="notifyBtn" style="display:none;">Stoğa Girince Haber Ver</button>
-
-        <!-- Ekstra aksiyonlar -->
-        <button class="btn outline">Takip Listene Ekle</button>
-        <button class="btn outline">Soru Sor</button>
-        <button class="btn outline">Yorum Yaz</button>
-      </div>
+      <p>Konsantrasyon: Extrait de Parfum</p>
+      <p>Hacim: 90 ml</p>
+      <p>Koku Tipi: Odunsu, Baharatlı</p>
     </div>
+
+    <h3>Hikaye</h3>
+    <p>Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.</p>
+
+    <h3>Notalar</h3>
+    <ul class="notes">
+      <li>Üst: Rum, Tütün</li>
+      <li>Orta: Vanilya, Baharatlar</li>
+      <li>Dip: Sandal ağacı, Misk</li>
+    </ul>
+
+    <div class="product-actions">
+      <button class="btn primary">Sepete Ekle</button>
+      <button class="btn outline">Takip Listene Ekle</button>
+      <button class="btn outline">Soru Sor</button>
+      <button class="btn outline">Yorum Yaz</button>
+    </div>
+
+    <!-- Marka ürünleri -->
+    <section class="related-products">
+      <h3>Initio Markasından Diğer Ürünler</h3>
+      <div class="product-grid" id="relatedGrid"></div>
+    </section>
   </main>
 
+  <!-- Ortak footer -->
+  <div id="footer"></div>
+
+  <!-- Include script -->
   <script>
-    // Stok kontrolü
-    const inStock = true; // JSON'dan gelecek
-    if (!inStock) {
-      document.getElementById('cartBtn').style.display = 'none';
-      document.getElementById('notifyBtn').style.display = 'inline-block';
-    }
+    // Header ve footer yükle
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('header').innerHTML = html; });
 
-    // Soru Sor → admin paneline yönlendirme
-    document.querySelector('.btn.outline:nth-child(2)').addEventListener('click', () => {
-      window.location.href = "/admin-panel/sorular.html?product=side-effect";
-    });
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; });
 
-    // Yorum Yaz → yorum formuna yönlendirme
-    document.querySelector('.btn.outline:nth-child(3)').addEventListener('click', () => {
-      window.location.href = "/yorumlar/side-effect.html";
-    });
+    // Initio markasının ürünlerini listele
+    fetch('/products.json')
+      .then(res => res.json())
+      .then(products => {
+        const related = products.filter(p => p.brand === "Initio");
+        const grid = document.getElementById('relatedGrid');
+        grid.innerHTML = related.map(p => `
+          <div class="product-card">
+            <a href="${p.url}">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+            </a>
+            <p class="price">${p.price}</p>
+          </div>
+        `).join('');
+      });
   </script>
 
 </body>

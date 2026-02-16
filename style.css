@@ -1,22 +1,40 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url("images/background/motif.png") top center repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
 /* Sidebar */
 aside.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 340px;
   height: 100vh;
   background: rgba(255,255,255,0.05);
-  padding: 20px 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-right: 3px solid #2e4d2f;
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
-  overflow-y: auto;
+}
+
+.sidebar .site-logo {
+  max-width: 260px;
+  margin-bottom: 15px;
+  border: none;
+  box-shadow: none;
 }
 
 .sidebar ul img {
-  max-width: 120px;
+  max-width: 140px;
   margin: 6px 0;
   border: 2px solid #2e4d2f;
   border-radius: 6px;
@@ -25,87 +43,60 @@ aside.sidebar {
 }
 
 .sidebar ul img:hover {
-  transform: scale(1.1);
-}
-
-.sidebar .site-logo {
-  max-width: 320px;
-  margin-bottom: 25px;
-  border: none;
-  box-shadow: none;
-  align-self: flex-start;
+  transform: scale(1.15);
 }
 
 /* Topbar */
 .topbar {
   margin: 0;
-  padding: 0 30px;
-  height: 70px;
-  background: transparent;
+  padding: 0 20px;
+  height: 55px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
   top: 0;
   right: 0;
-  left: 300px;
+  left: 340px;
   z-index: 10;
+}
+
+/* Hero */
+.hero-title {
+  margin-left: 340px;
+  text-align: center;
+}
+
+.hero-title img.hero-logo {
+  max-width: 950px;
+  width: 100%;
+  height: auto;
   border: none;
-  box-shadow: none;
 }
 
-.user-menu {
-  display: flex;
-  gap: 20px;
-  font-size: 18px;
-  align-items: center;
-}
-
-.user-menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.login-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.login-icon {
-  width: 32px;
-  height: 32px;
-  border: 2px solid #2e4d2f;
-  border-radius: 6px;
-}
-
-/* İçeriklerin sola kayması */
-.hero-title,
-.filter-sort,
-.main-content {
-  margin-left: 300px;
-}
-
-/* Ürün grid */
+/* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 24px;
+  margin-left: 340px;
+  padding: 20px;
 }
 
 .product-card {
-  border: 1px solid #ddd;
-  padding: 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 15px;
   text-align: center;
-  transition: transform 0.3s;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .product-card img {
   max-width: 180px;
   margin-bottom: 12px;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
 }

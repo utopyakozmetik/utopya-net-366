@@ -1,16 +1,42 @@
-<div class="topbar">
-  <div class="user-menu">
-    <a href="login.html">
-      <img src="images/uye-girisi.png" alt="Üye Girişi"> Üye Girişi
-    </a>
-    <a href="register.html">Üye Ol</a>
-    <a href="orders.html">Siparişlerim</a>
-    <a href="wishlist.html">Takip Listem</a>
-  </div>
-  <div class="cart">
-    <a href="cart.html">
-      <img src="images/menu/sepet.png" alt="Sepetim">
-      <span class="cart-label">Sepetim</span>
-    </a>
-  </div>
-</div>
+.topbar {
+  margin: 0;
+  padding: 0 30px;
+  height: 70px;              /* daha büyük ve görünür */
+  background: transparent;
+  display: flex;
+  justify-content: flex-end; /* sağ üst hizalama */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 300px;               /* sidebar genişliğiyle uyumlu */
+  z-index: 10;
+  border: none;
+  box-shadow: none;
+}
+
+.user-menu {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  align-items: center;
+}
+
+.user-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.login-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-icon {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #2e4d2f;
+  border-radius: 6px;
+}

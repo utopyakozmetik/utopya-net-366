@@ -1,26 +1,36 @@
-<aside class="sidebar">
-  <!-- Logo artık tıklanabilir -->
-  <a href="index.html">
-    <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
-  </a>
+aside.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px; /* genişlik daraltıldı */
+  height: 100vh;
+  background: rgba(255,255,255,0.05);
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 3px solid #2e4d2f; /* çam yeşili */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  overflow-y: auto; /* içerik taşarsa kaydırma */
+}
 
-  <ul>
-    <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-    <li>
-      <a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a>
-      <ul class="submenu">
-        <li><a href="kadin.html"><img src="images/menu/kadin.png" alt="Kadın"></a></li>
-        <li><a href="erkek.html"><img src="images/menu/erkek.png" alt="Erkek"></a></li>
-        <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt="Uniseks"></a></li>
-        <li><a href="nisnadir.html"><img src="images/menu/nisnadir.png" alt="Niş/Nadir"></a></li>
-      </ul>
-    </li>
-    <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
-    <li><a href="vintage.html"><img src="images/menu/vintage.png" alt="Vintage"></a></li>
-    <li><a href="kokununyolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
-    <li><a href="notalar.html"><img src="images/menu/notalar.png" alt="Notalar"></a></li>
-    <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt="Parfümörler"></a></li>
-    <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Markalar"></a></li>
-    <li><a href="biz.html"><img src="images/menu/biz.png" alt="Biz"></a></li>
-  </ul>
-</aside>
+.sidebar ul img {
+  max-width: 120px;   /* ikon boyutu */
+  margin: 6px 0;      /* spacing */
+  border: 2px solid #2e4d2f;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.sidebar ul img:hover {
+  transform: scale(1.1);
+}
+
+.sidebar .site-logo {
+  max-width: 320px;   /* logo büyük */
+  margin-bottom: 25px;
+  border: none;
+  box-shadow: none;
+  align-self: flex-start; /* köşeye yaslı */
+}
