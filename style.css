@@ -1,148 +1,65 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: url("images/background/motif.png") top center repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: transparent; /* beyaz şerit yok */
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
-  overflow-x: hidden;
+/* Hero alanı */
+.hero {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #eaf5e1; /* sidebar ile uyumlu açık yeşil */
 }
 
-/* Sidebar */
-aside.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 340px; /* daha büyük */
-  height: 100vh;
-  background: rgba(255,255,255,0.1);
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-right: 3px solid #6A1B9A; /* çerçeve */
-  box-shadow: 2px 0 8px rgba(0,0,0,0.3); /* 3D efekti */
+.hero img {
+  max-width: 90%;
+  height: auto;
+  display: inline-block;
+  border: 3px solid #6aa84f; /* mor yerine yeşil çerçeve */
+  border-radius: 12px;
 }
 
-.sidebar .site-logo {
-  max-width: 220px; /* logo büyütüldü */
-  margin-bottom: 25px;
-  border: 2px solid #6A1B9A;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+/* Sidebar menü */
+.sidebar {
+  width: 240px;
+  background-color: #eaf5e1;
+  padding: 10px;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sidebar ul img {
-  max-width: 150px; /* menü ikonları büyütüldü */
-  margin: 12px 0;
-  border: 2px solid #6A1B9A;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
-
-.sidebar ul img:hover {
-  transform: scale(1.1);
-}
-
-/* Topbar */
-.topbar {
-  margin-left: 340px;
-  height: 60px;
-  background: transparent;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 20px;
-  box-shadow: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 340px;
-  z-index: 10;
-}
-
-/* Hero Title */
-.hero-title {
   margin: 0;
   padding: 0;
-  text-align: center;
-  margin-left: 340px;
-  background: transparent;
-  position: relative;
 }
 
-.hero-title img.hero-logo {
-  max-width: 950px;
-  width: 100%;
-  height: auto;
-  display: inline-block;
-  margin-top: 0; /* topbar’ın hemen altında */
+.sidebar ul li {
+  margin: 2px 0; /* spacing daraltıldı */
 }
 
-/* Slider */
-.swiper {
-  margin: 20px auto;
-  width: 35%;        /* eni dar */
-  aspect-ratio: 3/4; /* boy uzun */
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #6A1B9A;
-}
-
-/* Filtreleme ve Sıralama */
-.filter-sort {
-  margin-left: 340px;
-  padding: 10px 20px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 340px;
-  padding: 20px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 ürün yan yana */
-  gap: 20px;
-}
-
-.product-card {
-  background: rgba(255,255,255,0.2);
+.sidebar ul li img {
+  width: 64px;   /* görseller büyütüldü */
+  height: 64px;
+  border: 2px solid #6aa84f; /* yeşil çerçeve */
   border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 3D efekti */
-  border: 2px solid #6A1B9A;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
-.product-card a {
+.sidebar ul li a {
   text-decoration: none;
-  color: inherit;
-  display: block;
+  color: #333;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+/* Üye giriş butonu */
+.uye-giris {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.uye-giris img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #6aa84f;
+  border-radius: 8px;
+  cursor: pointer;
 }
