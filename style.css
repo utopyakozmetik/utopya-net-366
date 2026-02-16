@@ -23,16 +23,15 @@ aside.sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 3px solid #6aa84f; /* mor yerine yeşil */
+  border-right: 3px solid #2e4d2f; /* çam iğnesi yeşili */
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
 }
 
 .sidebar .site-logo {
-  max-width: 220px;
+  max-width: 280px;   /* logo büyütüldü */
   margin-bottom: 25px;
-  border: 2px solid #6aa84f; /* yeşil */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border: none;       /* çerçeve kaldırıldı */
+  box-shadow: none;   /* gölge kaldırıldı */
 }
 
 .sidebar ul {
@@ -46,9 +45,9 @@ aside.sidebar {
 }
 
 .sidebar ul img {
-  max-width: 64px; /* menü ikonları büyütüldü */
-  margin: 2px 0;   /* spacing daraltıldı */
-  border: 2px solid #6aa84f; /* yeşil */
+  max-width: 96px;    /* menü ikonları büyütüldü */
+  margin: 4px 0;      /* spacing ayarlandı */
+  border: 2px solid #2e4d2f; /* çam yeşili */
   border-radius: 6px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.3);
   transition: transform 0.3s;
@@ -60,18 +59,20 @@ aside.sidebar {
 
 /* Topbar */
 .topbar {
-  margin-left: 340px;
+  margin: 0;
+  padding: 0 20px;
   height: 60px;
   background: transparent;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px;
   position: fixed;
-  top: 0;
+  top: 0;                 /* en üste sabitlendi */
   right: 0;
   left: 340px;
   z-index: 10;
+  border: none;           /* çerçevesiz */
+  box-shadow: none;       /* gölgesiz */
 }
 
 /* Hero Title */
@@ -90,8 +91,8 @@ aside.sidebar {
   height: auto;
   display: inline-block;
   margin-top: 0;
-  border: 3px solid #6aa84f; /* yeşil çerçeve */
-  border-radius: 12px;
+  border: none;           /* çerçeve kaldırıldı */
+  border-radius: 0;
 }
 
 /* Filtreleme ve Sıralama */
@@ -121,7 +122,7 @@ aside.sidebar {
   padding: 15px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  border: 2px solid #6aa84f; /* yeşil */
+  border: none;           /* çerçeve kaldırıldı */
 }
 
 .product-card a {
@@ -131,10 +132,17 @@ aside.sidebar {
 }
 
 /* Üye giriş butonu */
-.uye-giris img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #6aa84f;
-  border-radius: 8px;
-  cursor: pointer;
+.login-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.login-icon {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #2e4d2f;
+  border-radius: 6px;
 }
