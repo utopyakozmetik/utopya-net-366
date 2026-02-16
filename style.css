@@ -1,53 +1,24 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: url("images/background/motif.png") top center repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: transparent;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
-  overflow-x: hidden;
-}
-
 /* Sidebar */
 aside.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 340px;
+  width: 300px;
   height: 100vh;
   background: rgba(255,255,255,0.05);
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 3px solid #2e4d2f; /* çam iğnesi yeşili */
+  border-right: 3px solid #2e4d2f;
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
-}
-
-.sidebar .site-logo {
-  max-width: 280px;   /* logo büyütüldü */
-  margin-bottom: 25px;
-  border: none;       /* çerçeve kaldırıldı */
-  box-shadow: none;   /* gölge kaldırıldı */
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow-y: auto;
 }
 
 .sidebar ul img {
-  max-width: 96px;    /* menü ikonları büyütüldü */
-  margin: 4px 0;      /* spacing ayarlandı */
-  border: 2px solid #2e4d2f; /* çam yeşili */
+  max-width: 120px;
+  margin: 6px 0;
+  border: 2px solid #2e4d2f;
   border-radius: 6px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.3);
   transition: transform 0.3s;
@@ -57,92 +28,84 @@ aside.sidebar {
   transform: scale(1.1);
 }
 
+.sidebar .site-logo {
+  max-width: 320px;
+  margin-bottom: 25px;
+  border: none;
+  box-shadow: none;
+  align-self: flex-start;
+}
+
 /* Topbar */
 .topbar {
   margin: 0;
-  padding: 0 20px;
-  height: 60px;
+  padding: 0 30px;
+  height: 70px;
   background: transparent;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  top: 0;                 /* en üste sabitlendi */
+  top: 0;
   right: 0;
-  left: 340px;
+  left: 300px;
   z-index: 10;
-  border: none;           /* çerçevesiz */
-  box-shadow: none;       /* gölgesiz */
+  border: none;
+  box-shadow: none;
 }
 
-/* Hero Title */
-.hero-title {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  margin-left: 340px;
-  background: transparent;
-  position: relative;
-}
-
-.hero-title img.hero-logo {
-  max-width: 950px;
-  width: 100%;
-  height: auto;
-  display: inline-block;
-  margin-top: 0;
-  border: none;           /* çerçeve kaldırıldı */
-  border-radius: 0;
-}
-
-/* Filtreleme ve Sıralama */
-.filter-sort {
-  margin-left: 340px;
-  padding: 10px 20px;
+.user-menu {
   display: flex;
   gap: 20px;
+  font-size: 18px;
   align-items: center;
 }
 
-/* Main content */
-.main-content {
-  margin-left: 340px;
-  padding: 20px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
-
-.product-card {
-  background: rgba(255,255,255,0.2);
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  border: none;           /* çerçeve kaldırıldı */
-}
-
-.product-card a {
+.user-menu a {
   text-decoration: none;
-  color: inherit;
-  display: block;
+  color: #333;
+  font-weight: 500;
 }
 
-/* Üye giriş butonu */
 .login-link {
   display: flex;
   align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: inherit;
+  gap: 8px;
 }
 
 .login-icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border: 2px solid #2e4d2f;
   border-radius: 6px;
+}
+
+/* İçeriklerin sola kayması */
+.hero-title,
+.filter-sort,
+.main-content {
+  margin-left: 300px;
+}
+
+/* Ürün grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 180px;
+  margin-bottom: 12px;
 }
