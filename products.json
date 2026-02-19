@@ -1,66 +1,25 @@
 [
   {
-    "slug": "aventus",
-    "title": "Creed Aventus",
-    "image": "images/products/aventus.webp",
-    "price": 5200,
-    "category": "erkek",
-    "notes": ["Ananas", "Bergamot", "Odunsu"]
-  },
-  {
-    "slug": "interlude-man",
-    "title": "Amouage Interlude Man",
-    "image": "images/products/interlude.webp",
-    "price": 4800,
-    "category": "erkek",
-    "notes": ["Tütsü", "Baharat", "Amber"]
-  },
-  {
     "slug": "side-effect",
     "title": "Initio Side Effect",
-    "image": "images/products/sideeffect.webp",
+    "image": "images/products/initio-side-effect1.jpg",
+    "gallery": [
+      "images/products/initio-side-effect1.jpg",
+      "images/products/initio-side-effect2.jpg"
+    ],
     "price": 4500,
     "category": "uniseks",
     "notes": ["Rom", "Tütün", "Vanilya"]
   },
   {
-    "slug": "irish-leather",
-    "title": "Memo Irish Leather",
-    "image": "images/products/irishleather.webp",
-    "price": 4300,
-    "category": "uniseks",
-    "notes": ["Deri", "Yeşil", "Baharat"]
-  },
-  {
-    "slug": "shalimar",
-    "title": "Guerlain Shalimar",
-    "image": "images/products/shalimar.webp",
-    "price": 4000,
-    "category": "kadin",
-    "notes": ["Vanilya", "Bergamot", "İris"]
-  },
-  {
-    "slug": "fleur-narcotique",
-    "title": "Ex Nihilo Fleur Narcotique",
-    "image": "images/products/fleurnarcotique.webp",
-    "price": 4200,
-    "category": "kadin",
-    "notes": ["Şeftali", "Misk", "Çiçeksi"]
-  },
-  {
-    "slug": "colonia",
-    "title": "Acqua di Parma Colonia",
-    "image": "images/products/colonia.webp",
+    "slug": "loewe7",
+    "title": "Loewe 7",
+    "image": "images/products/loewe7-1.jpg",
     "price": 3900,
-    "category": "uniseks",
-    "notes": ["Narenciye", "Lavanta", "Odunsu"]
+    "category": "erkek",
+    "notes": ["Tütsü", "Baharat", "Odunsu"]
   },
   {
-    "slug": "kylie-fragrance",
-    "title": "Kylie Jenner Fragrance",
-    "image": "images/products/kylie.webp",
-    "price": 3500,
-    "category": "kadin",
-    "notes": ["Meyveli", "Tatlı", "Modern"]
-  }
-]
+    "slug": "caron-aimez-moi-125ml",
+    "title": "Caron Aimez-Moi 125ml",
+    "image": "images

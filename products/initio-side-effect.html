@@ -2,124 +2,105 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Initio Side Effect - Ütopya.net</title>
+  <title>Initio Side Effect</title>
   <link rel="stylesheet" href="../style.css">
-  <style>
-    .slider {
-      position: relative;
-      max-width: 500px;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .slides img {
-      width: 100%;
-      flex-shrink: 0;
-    }
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-    .slider .prev { left: 10px; }
-    .slider .next { right: 10px; }
-  </style>
 </head>
 <body>
 
-  <!-- Ortak header -->
-  <div id="header"></div>
-
-  <!-- Ürün Detay -->
   <main class="main-content product-detail">
     <h1 class="product-title">
       <a href="../markalar/initio.html" class="brand-link">Initio</a> Side Effect
     </h1>
 
-    <!-- Slider -->
-    <div class="slider">
-      <div class="slides" id="slides">
-        <!-- Görseller JS ile eklenecek -->
+    <div class="product-layout">
+      <!-- Görsel Slider Sol -->
+      <div class="slider">
+        <div class="slides" id="slides"></div>
+        <button class="prev" onclick="moveSlide(-1)">‹</button>
+        <button class="next" onclick="moveSlide(1)">›</button>
       </div>
-      <button class="prev" onclick="moveSlide(-1)">‹</button>
-      <button class="next" onclick="moveSlide(1)">›</button>
+
+      <!-- Sağda Fiyat ve Butonlar -->
+      <div class="product-box">
+        <p class="price">₺5700</p>
+        <button id="cartBtn" class="btn primary">Sepete Ekle</button>
+
+        <!-- Fragrantica -->
+        <div class="fragrantica-rating">
+          <p>Fragrantica Puanı: ⭐ 4.3 / 5</p>
+          <a href="https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Side-Effect-48219.html" target="_blank" class="btn outline">
+            Fragrantica’da İncele
+          </a>
+        </div>
+
+        <!-- Resmi Site -->
+        <div class="official-link">
+          <a href="https://initioparfums.com/products/side-effect" target="_blank" class="btn outline">
+            Resmi Sitede Görüntüle
+          </a>
+        </div>
+
+        <!-- Ekstra Butonlar -->
+        <div class="extra-actions">
+          <button class="btn outline">Takip Et</button>
+          <button class="btn outline">Soru Sor</button>
+          <button class="btn outline">Yorum Yaz</button>
+        </div>
+      </div>
     </div>
 
+    <!-- Meta Bilgiler -->
     <div class="product-meta">
-      <p class="price">₺5700</p>
-      <p>Kategori: Uniseks</p>
-      <p>Çıkış yılı: 2016</p>
-      <p>Parfümör: <a href="../parfumorler.html#pierre-constantin-gueros">Pierre-Constantin Guéros</a></p>
-      <p>Konsantrasyon: Extrait de Parfum</p>
-      <p>Hacim: 100 ml</p>
-      <p>Koku Tipi: Odunsu, Baharatlı</p>
-    </div>
-
-    <section class="story">
-      <h3>Hikaye</h3>
-      <p>Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.</p>
-    </section>
-
-    <section class="notes">
-      <h3>Notalar</h3>
-      <ul>
-        <li>Üst: Rum, Tütün</li>
-        <li>Orta: Vanilya, Baharatlar</li>
-        <li>Dip: Sandal ağacı, Misk</li>
-      </ul>
-    </section>
-
-    <div class="product-actions">
-      <button class="btn primary">Sepete Ekle</button>
-      <button class="btn outline">Takip Listene Ekle</button>
-      <button class="btn outline">Soru Sor</button>
-      <button class="btn outline">Yorum Yaz</button>
+      <p>Kategori: <a href="../uniseks.html" class="meta-link">Uniseks</a></p>
+      <p>Çıkış yılı: <a href="../yillar/2016.html" class="meta-link">2016</a></p>
+      <p>Parfümör: <a href="../parfumorler.html#pierre-constantin-gueros" class="meta-link">Pierre-Constantin Guéros</a></p>
+      <p>Konsantrasyon: <a href="../konsantrasyon/extrait.html" class="meta-link">Extrait de Parfum</a></p>
+      <p>Hacim: <a href="../hacim/100ml.html" class="meta-link">100 ml</a></p>
+      <p>Koku Tipi: <a href="../kokutipleri/odunsu-baharatli.html" class="meta-link">Odunsu, Baharatlı</a></p>
     </div>
   </main>
 
-  <!-- Include script -->
+  <!-- Slider JS -->
   <script>
-    // Header yükle
-    fetch('../header.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('header').innerHTML = html; });
-
-    // Slider görsellerini yükle
     const slidesContainer = document.getElementById('slides');
     const images = [];
-    for (let i = 1; i <= 5; i++) { // max 5 görsel dene
+    const maxImages = 5; // en fazla 5 görsel dene
+
+    for (let i = 1; i <= maxImages; i++) {
       const imgPath = `../images/products/initio-side-effect${i}.jpg`;
       const img = new Image();
       img.src = imgPath;
       img.onload = () => {
-        images.push(imgPath);
+        images[i - 1] = imgPath;
         renderSlides();
       };
     }
 
     let currentIndex = 0;
+
     function renderSlides() {
-      slidesContainer.innerHTML = images.map(src => `<img src="${src}" alt="Initio Side Effect">`).join('');
+      const validImages = images.filter(src => src);
+      slidesContainer.innerHTML = validImages.map(src => `<img src="${src}" alt="Initio Side Effect">`).join('');
       updateSlide();
     }
 
     function moveSlide(step) {
-      currentIndex = (currentIndex + step + images.length) % images.length;
+      const validImages = images.filter(src => src);
+      currentIndex = (currentIndex + step + validImages.length) % validImages.length;
       updateSlide();
     }
 
     function updateSlide() {
       slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Stok kontrol örneği
+    let inStock = true;
+    const cartBtn = document.getElementById('cartBtn');
+    if (!inStock) {
+      cartBtn.textContent = "Gelince Haber Ver";
+      cartBtn.classList.remove("primary");
+      cartBtn.classList.add("outline");
     }
   </script>
 
