@@ -1,20 +1,18 @@
-{
-  "slug": "initio-side-effect",
-  "name": "Side Effect",
-  "brand": "Initio",
-  "price": "₺5700",
-  "volume": "100 ml",
-  "concentration": "Extrait de Parfum",
-  "gender": "Uniseks",
-  "fragrance_family": "Odunsu, Baharatlı",
-  "perfumer": "Pierre-Constantin Guéros",
-  "release_year": 2016,
-  "fragrantica_rating": 4.3,
-  "fragrantica_url": "https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Side-Effect-48219.html",
-  "official_url": "https://initioparfums.com/products/side-effect",
-  "images": [
-    "images/products/initio-side-effect1.jpg",
-    "images/products/initio-side-effect2.jpg",
-    "images/products/initio-side-effect3.jpg"
-  ]
-}
+[
+  {
+    "title": "Initio Side Effect",
+    "slug": "initio-side-effect",
+    "category": "uniseks",
+    "price": 3700,
+    "notes": ["Rom", "Tarçın", "Tütün", "Vanilya"],
+    "image": "images/products/initio-side-effect.png",
+    "link": "products/initio-side-effect.html"
+  },
+  {
+    "title": "Creed Aventus",
+    "slug": "creed-aventus",
+    "category": "erkek",
+    "price": 5200,
+    "notes": ["Ananas", "Misk", "Meşe yosunu"],
+    "image": "images/products/creed-aventus.png",
+    "link": "products/creed-avent

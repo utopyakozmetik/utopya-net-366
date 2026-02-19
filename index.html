@@ -12,40 +12,21 @@
     <a href="index.html">
       <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
     </a>
-    <ul>
-      <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li>
-        <a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a>
-        <ul class="submenu">
-          <li><a href="kadin.html"><img src="images/menu/kadin.png" alt="Kadın"></a></li>
-          <li><a href="erkek.html"><img src="images/menu/erkek.png" alt="Erkek"></a></li>
-          <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt="Uniseks"></a></li>
-          <li><a href="nisnadir.html"><img src="images/menu/nisnadir.png" alt="Niş/Nadir"></a></li>
-        </ul>
-      </li>
-      <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
-      <li><a href="vintage.html"><img src="images/menu/vintage.png" alt="Vintage"></a></li>
-      <li><a href="kokununyolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
-      <li><a href="notalar.html"><img src="images/menu/notalar.png" alt="Notalar"></a></li>
-      <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt="Parfümörler"></a></li>
-      <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Markalar"></a></li>
-      <li><a href="biz.html"><img src="images/menu/biz.png" alt="Biz"></a></li>
-    </ul>
+    <!-- Menü burada -->
   </aside>
 
   <!-- Topbar -->
   <div class="topbar">
     <div class="user-menu">
-      <a href="login.html" class="login-link">
-        <img src="images/uye-girisi.png" alt="Üye Girişi" class="login-icon">
-        Üye Girişi
-      </a>
+      <a href="login.html">Üye Girişi</a>
       <a href="register.html">Üye Ol</a>
       <a href="orders.html">Siparişlerim</a>
       <a href="wishlist.html">Takip Listem</a>
     </div>
     <div class="cart">
-      <a href="cart.html"><img src="images/menu/sepet.png" alt="Sepetim"></a>
+      <a href="cart.html">
+        <img id="cartIcon" src="images/sepetbos.webp" alt="Sepetim" class="cart-icon">
+      </a>
     </div>
   </div>
 
@@ -54,24 +35,30 @@
     <img src="images/kokularutopya.png" alt="Koku Ütopyasına Hoşgeldiniz" class="hero-logo">
   </div>
 
-  <!-- Ürünler -->
-  <div class="main-content">
-    <div class="product-grid">
-      <div class="product-card">
-        <a href="products/initio-side-effect.html">
-          <img src="images/products/initio-side-effect.png" alt="Initio Side Effect">
-          <h3>Initio Side Effect</h3>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="products/creed-aventus.html">
-          <img src="images/products/creed-aventus.png" alt="Creed Aventus">
-          <h3>Creed Aventus</h3>
-        </a>
-      </div>
-      <!-- diğer ürünler aynı mantıkla -->
-    </div>
+  <!-- Filtre Paneli -->
+  <div class="filter-bar" style="margin-left:340px; padding:20px;">
+    <input type="text" id="searchBox" placeholder="Parfüm ara..." />
+    <select id="categoryFilter">
+      <option value="">Kategori seç</option>
+      <option value="kadin">Kadın</option>
+      <option value="erkek">Erkek</option>
+      <option value="uniseks">Uniseks</option>
+      <option value="nisnadir">Niş/Nadir</option>
+    </select>
+    <select id="noteFilter">
+      <option value="">Nota seç</option>
+      <option value="Vanilya">Vanilya</option>
+      <option value="Tütün">Tütün</option>
+      <option value="Rom">Rom</option>
+      <option value="Tarçın">Tarçın</option>
+    </select>
+    <input type="range" id="priceFilter" min="0" max="10000" step="500" />
+    <span id="priceValue">Maks: 10000 ₺</span>
   </div>
 
+  <!-- Dinamik Grid -->
+  <div class="product-grid" id="productGrid"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
