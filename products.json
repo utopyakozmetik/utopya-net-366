@@ -1,16 +1,11 @@
 [
   {
-    "slug": "side-effect",
+    "slug": "initio-side-effect",
     "title": "Initio Side Effect",
     "brand": "Initio",
-    "url": "/products/product-side-effect.html",
-    "image": "images/products/initio-side-effect1.jpg",
-    "gallery": [
-      "images/products/initio-side-effect1.jpg",
-      "images/products/initio-side-effect2.jpg"
-    ],
+    "url": "initio-side-effect.html",
+    "image": "images/products/initio-side-effect1.png",
     "price": "€290",
-    "category": "uniseks",
     "year": 2016,
     "perfumer": "Pierre-Constantin Guéros",
     "concentration": "Extrait de Parfum",
@@ -21,26 +16,6 @@
       "top": ["Rum", "Tütün"],
       "heart": ["Vanilya", "Baharatlar"],
       "base": ["Sandal ağacı", "Misk"]
-    }
-  },
-  {
-    "slug": "loewe7",
-    "title": "Loewe 7",
-    "brand": "Loewe",
-    "url": "/products/product-loewe7.html",
-    "image": "images/products/loewe7-1.jpg",
-    "price": "€220",
-    "category": "erkek",
-    "year": 2010,
-    "perfumer": "Emilio Valeros",
-    "concentration": "Eau de Toilette",
-    "volume": "100 ml",
-    "type": "Baharatlı, Odunsu",
-    "story": "Loewe 7, tütsü ve baharatların gizemli karışımıyla modern bir erkek parfümü olarak öne çıkar.",
-    "notes": {
-      "top": ["Tütsü", "Baharat"],
-      "heart": ["Çiçeksi akorlar"],
-      "base": ["Odunsu notalar"]
     }
   }
 ]
