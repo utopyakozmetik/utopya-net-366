@@ -35,23 +35,4 @@ function filterProducts() {
 
   const filtered = products.filter(p => {
     const matchName = p.title.toLowerCase().includes(query);
-    const matchCategory = category ? p.category === category : true;
-    const matchNote = note ? p.notes.includes(note) : true;
-    const matchPrice = p.price <= maxPrice;
-    return matchName && matchCategory && matchNote && matchPrice;
-  });
-
-  renderProducts(filtered);
-}
-
-searchBox.addEventListener("input", filterProducts);
-categoryFilter.addEventListener("change", filterProducts);
-noteFilter.addEventListener("change", filterProducts);
-priceFilter.addEventListener("input", () => {
-  priceValue.textContent = `Maks: ${priceFilter.value} ₺`;
-  filterProducts();
-});
-
-function addToCart() {
-  const cartIcon = document.getElementById("cartIcon");
-  cartIcon.src = "images/sepetdolu.webp
+    const matchCategory
