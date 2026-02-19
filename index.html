@@ -2,73 +2,50 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Ütopya Kozmetik</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Kokular Ütopyası</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
-  <!-- Sidebar -->
   <aside class="sidebar">
     <a href="index.html" class="logo-link">
       <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
     </a>
     <ul class="menu">
       <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
-      <li><a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a></li>
-      <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Markalar"></a></li>
+      <li>
+        <a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a>
+        <ul class="submenu">
+          <li><a href="parfumler-kadin.html"><img src="images/menu/kadin.png" alt="Kadın"></a></li>
+          <li><a href="parfumler-erkek.html"><img src="images/menu/erkek.png" alt="Erkek"></a></li>
+          <li><a href="parfumler-uniseks.html"><img src="images/menu/uniseks.png" alt="Uniseks"></a></li>
+          <li><a href="parfumler-nisnadir.html"><img src="images/menu/nisnadir.png" alt="Niş / Nadir"></a></li>
+        </ul>
+      </li>
+      <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt="Hediye Setleri"></a></li>
+      <li><a href="kokunun-yolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt="Kokunun Yolculuğu"></a></li>
+      <li><a href="notalar.html"><img src="images/menu/notalar.png" alt="Notalar"></a></li>
+      <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt="Parfümörler"></a></li>
+      <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Parfüm Evleri ve Markalar"></a></li>
+      <li><a href="biz.html"><img src="images/menu/biz.png" alt="Biz"></a></li>
     </ul>
+
     <div class="music-player">
-      <audio id="player" controls></audio>
-      <button onclick="nextSong()">⏭️</button>
+      <audio id="player" controls src="music/intro.mp3"></audio>
     </div>
   </aside>
 
-  <!-- Top Menü -->
-  <div class="topbar">
-    <div class="user-menu">
-      <a href="login.html"><img src="images/uye-girisi.png" alt="Üye Girişi"></a>
-    </div>
-    <div class="cart">
-      <a href="cart.html">
-        <img id="cartIcon" src="images/sepetbos.webp" alt="Sepetim" class="cart-icon">
-      </a>
-    </div>
-  </div>
+  <header class="hero-title">
+    <h1>Kokular Ütopyası</h1>
+    <img src="images/background/hero-logo.png" alt="Hero Logo" class="hero-logo">
+  </header>
 
-  <!-- Hero -->
-  <div class="hero-title">
-    <img src="images/kokularutopya.png" alt="Koku Ütopyası" class="hero-logo">
-  </div>
-
-  <!-- Slider sabit kolaj -->
-  <div class="slider">
+  <section class="slider">
     <img src="images/slider/slide1.png" class="slide" alt="Slide 1">
     <img src="images/slider/slide2.png" class="slide" alt="Slide 2">
     <img src="images/slider/slide3.png" class="slide" alt="Slide 3">
-  </div>
+  </section>
 
-  <!-- Filtre Paneli -->
-  <div class="filter-bar">
-    <input type="text" id="searchBox" placeholder="Parfüm ara..." />
-    <select id="categoryFilter">
-      <option value="">Kategori</option>
-      <option value="kadin">Kadın</option>
-      <option value="erkek">Erkek</option>
-      <option value="uniseks">Uniseks</option>
-    </select>
-    <select id="noteFilter">
-      <option value="">Nota</option>
-      <option value="Vanilya">Vanilya</option>
-      <option value="Tütün">Tütün</option>
-      <option value="Rom">Rom</option>
-    </select>
-    <input type="range" id="priceFilter" min="0" max="10000" step="500" />
-    <span id="priceValue">Maks: 10000 ₺</span>
-  </div>
-
-  <!-- Ürün Grid -->
-  <div class="product-grid" id="productGrid"></div>
-
+  <section class="product-grid" id="products"></section>
   <script src="script.js"></script>
 </body>
 </html>

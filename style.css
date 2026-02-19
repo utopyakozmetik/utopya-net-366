@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: 'Parisienne', cursive;
   background: #000 url("images/background/motif.png") no-repeat center top;
-  background-size: cover;
+  background-size: contain; /* motif büyümesini engelledik */
   color: #fff;
 }
 
@@ -27,7 +27,20 @@ aside.sidebar {
   height: auto;
   display: block;
   margin: 20px auto;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* efekt eklendi */
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
+}
+
+/* Alt menü */
+.sidebar .submenu {
+  list-style: none;
+  padding-left: 20px;
+}
+.sidebar .submenu li {
+  margin: 6px 0;
+}
+.sidebar .submenu li img {
+  width: 120px;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.5));
 }
 
 /* Topbar */
@@ -45,12 +58,18 @@ aside.sidebar {
 .cart img { width: 36px; }
 
 /* Hero */
-.hero-title { margin-left: 160px; margin-top: 5px; text-align: center; }
+.hero-title { 
+  margin-left: 160px; 
+  margin-top: 0; 
+  text-align: center; 
+  position: relative; 
+  top: -20px; /* header daha yukarı çekildi */
+}
 .hero-logo { width: 75%; margin: 0 auto; }
 
 /* Slider sabit kolaj: hemen header’ın altında */
 .slider {
-  margin-top: 10px;
+  margin-top: 0; /* hero başlığın hemen altında */
   margin-left: 160px;
   width: calc(100% - 160px);
   display: flex;
@@ -132,3 +151,14 @@ aside.sidebar {
 .btn { padding: 10px 20px; border-radius: 6px; cursor: pointer; }
 .btn.primary { background: #fff; color: #000; }
 .btn.outline { background: transparent; border: 1px solid #fff; color: #fff; }
+
+/* Player hizalama */
+.music-player {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: 140px;
+}
+.music-player audio {
+  width: 100%;
+}

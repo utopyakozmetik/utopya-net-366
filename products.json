@@ -16,7 +16,7 @@
     "concentration": "Extrait de Parfum",
     "volume": "90 ml",
     "type": "Odunsu, Baharatlı",
-    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.",
+    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar.",
     "notes": {
       "top": ["Rum", "Tütün"],
       "heart": ["Vanilya", "Baharatlar"],
@@ -41,26 +41,6 @@
       "top": ["Tütsü", "Baharat"],
       "heart": ["Çiçeksi akorlar"],
       "base": ["Odunsu notalar"]
-    }
-  },
-  {
-    "slug": "caron-aimez-moi-125ml",
-    "title": "Caron Aimez-Moi 125ml",
-    "brand": "Caron",
-    "url": "/products/product-caron-aimez.html",
-    "image": "images/products/caron-aimez2.png",
-    "price": "€180",
-    "category": "kadin",
-    "year": 1996,
-    "perfumer": "Dominique Ropion",
-    "concentration": "Eau de Parfum",
-    "volume": "125 ml",
-    "type": "Çiçeksi, Baharatlı",
-    "story": "Caron Aimez-Moi, menekşe ve anasonun nostaljik romantizmini vanilya ile buluşturan ikonik bir parfümdür.",
-    "notes": {
-      "top": ["Menekşe", "Anason"],
-      "heart": ["Gül", "İris"],
-      "base": ["Vanilya", "Misk"]
     }
   }
 ]
