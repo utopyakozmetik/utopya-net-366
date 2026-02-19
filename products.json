@@ -2,24 +2,105 @@
   {
     "slug": "side-effect",
     "title": "Initio Side Effect",
+    "brand": "Initio",
+    "url": "/products/product-side-effect.html",
     "image": "images/products/initio-side-effect1.jpg",
     "gallery": [
       "images/products/initio-side-effect1.jpg",
       "images/products/initio-side-effect2.jpg"
     ],
-    "price": 4500,
+    "price": "€290",
     "category": "uniseks",
     "notes": ["Rom", "Tütün", "Vanilya"]
   },
   {
     "slug": "loewe7",
     "title": "Loewe 7",
+    "brand": "Loewe",
+    "url": "/products/product-loewe7.html",
     "image": "images/products/loewe7-1.jpg",
-    "price": 3900,
+    "price": "€220",
     "category": "erkek",
     "notes": ["Tütsü", "Baharat", "Odunsu"]
   },
   {
     "slug": "caron-aimez-moi-125ml",
     "title": "Caron Aimez-Moi 125ml",
-    "image": "images
+    "brand": "Caron",
+    "url": "/products/product-caron-aimez.html",
+    "image": "images/products/caron-aimez2.png",
+    "price": "€180",
+    "category": "kadin",
+    "notes": ["Menekşe", "Anason", "Vanilya"]
+  },
+  {
+    "slug": "aventus",
+    "title": "Creed Aventus",
+    "brand": "Creed",
+    "url": "/products/product-aventus.html",
+    "image": "images/products/aventus.webp",
+    "price": "€350",
+    "category": "erkek",
+    "notes": ["Ananas", "Bergamot", "Odunsu"]
+  },
+  {
+    "slug": "interlude-man",
+    "title": "Amouage Interlude Man",
+    "brand": "Amouage",
+    "url": "/products/product-interlude.html",
+    "image": "images/products/interlude.webp",
+    "price": "€310",
+    "category": "erkek",
+    "notes": ["Tütsü", "Baharat", "Amber"]
+  },
+  {
+    "slug": "irish-leather",
+    "title": "Memo Irish Leather",
+    "brand": "Memo",
+    "url": "/products/product-irish-leather.html",
+    "image": "images/products/irishleather.webp",
+    "price": "€270",
+    "category": "uniseks",
+    "notes": ["Deri", "Yeşil", "Baharat"]
+  },
+  {
+    "slug": "shalimar",
+    "title": "Guerlain Shalimar",
+    "brand": "Guerlain",
+    "url": "/products/product-shalimar.html",
+    "image": "images/products/shalimar.webp",
+    "price": "€240",
+    "category": "kadin",
+    "notes": ["Vanilya", "Bergamot", "İris"]
+  },
+  {
+    "slug": "fleur-narcotique",
+    "title": "Ex Nihilo Fleur Narcotique",
+    "brand": "Ex Nihilo",
+    "url": "/products/product-fleur-narcotique.html",
+    "image": "images/products/fleurnarcotique.webp",
+    "price": "€260",
+    "category": "kadin",
+    "notes": ["Şeftali", "Misk", "Çiçeksi"]
+  },
+  {
+    "slug": "colonia",
+    "title": "Acqua di Parma Colonia",
+    "brand": "Acqua di Parma",
+    "url": "/products/product-colonia.html",
+    "image": "images/products/colonia.webp",
+    "price": "€230",
+    "category": "uniseks",
+    "notes": ["Narenciye", "Lavanta", "Odunsu"]
+  },
+  {
+    "slug": "kylie-fragrance",
+    "title": "Kylie Jenner Fragrance",
+    "brand": "Kylie Jenner",
+    "url": "/products/product-kylie.html",
+    "image": "images/products/kylie.webp",
+    "price": "€200",
+    "category": "kadin",
+    "notes": ["Meyveli", "Tatlı", "Modern"]
+  }
+]
