@@ -55,4 +55,21 @@ priceFilter.addEventListener("input", () => {
 function addToCart() {
   const cartIcon = document.getElementById("cartIcon");
   cartIcon.src = "images/sepetdolu.webp";
-  const audio = new
+  const audio = new Audio("music/cart-sound.mp3");
+  audio.play();
+}
+
+// Radyo player
+const playlist = ["music/song1.mp3","music/song2.mp3"];
+let index = 0;
+const player = document.getElementById("player");
+player.src = playlist[index];
+player.load();
+player.onended = () => nextSong();
+
+function nextSong() {
+  index = (index + 1) % playlist.length;
+  player.src = playlist[index];
+  player.load();
+  player.play();
+}
