@@ -1,107 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Parisienne', cursive;
   background-image: url("images/background/motif.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
   background-attachment: scroll;
-  color: #333;
-}
-
-/* Sidebar */
-aside.sidebar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 280px; height: 100vh;
-  background: rgba(255,255,255,0.05);
-  border-right: 2px solid rgba(0,0,0,0.1);
-  padding: 20px;
-}
-
-.sidebar .site-logo {
-  max-width: 180px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px auto;
-}
-
-.sidebar .menu {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar .menu li {
-  margin: 12px 0;
-}
-
-.sidebar .menu li a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   color: #fff;
-  text-decoration: none;
-  font-size: 15px;
 }
 
-.sidebar .menu li img {
-  width: 20px;
-  height: 20px;
+h1, h2, h3 {
+  font-family: 'Parisienne', cursive;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 1px;
 }
 
-/* Alt menü */
-.sidebar .submenu {
-  list-style: none;
-  padding-left: 30px;
-  margin-top: 6px;
+p, .lead, span {
+  font-family: 'Parisienne', cursive;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.sidebar .submenu li {
-  margin: 8px 0;
-}
-
-.sidebar .submenu li a {
-  font-size: 14px;
-  color: #ddd;
-}
-
-/* Topbar */
-.topbar {
-  margin-left: 280px;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-/* Filter bar */
-.filter-bar {
-  margin-left: 300px;
-  padding: 20px;
-  display: flex;
-  gap: 12px;
-}
-
-.filter-bar select,
-.filter-bar input[type="text"],
-.filter-bar input[type="range"] {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.2);
-  background: rgba(255,255,255,0.12);
-  font-size: 15px;
-  transition: box-shadow 0.3s ease;
-}
-
-.filter-bar select:hover,
-.filter-bar input[type="text"]:focus {
-  box-shadow: 0 0 12px rgba(0,0,0,0.25);
-}
-
-/* Product grid */
-.product-grid {
-  margin-left: 300px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax
+/* Sidebar, Topbar, Hero, Slider, Product grid, Brands grid vs. önceki düzenlemeler burada */

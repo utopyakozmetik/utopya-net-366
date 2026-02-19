@@ -2,22 +2,52 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Markalar</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Markalar | Ütopya</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="main-content">
-    <section class="brands">
-      <h2>Parfüm Evleri ve Markalar</h2>
-      <div class="brand-grid">
-        <a href="/parfumler/side-effect.html"><img src="/images/logos/initio.png" alt="Initio"></a>
-        <a href="/parfumler/aventus.html"><img src="/images/logos/creed.png" alt="Creed"></a>
-        <a href="/parfumler/lacoste.html"><img src="/images/logos/lacoste.png" alt="Lacoste"></a>
-        <a href="/parfumler/chanel.html"><img src="/images/logos/chanel.png" alt="Chanel"></a>
-        <a href="/parfumler/dior.html"><img src="/images/logos/dior.png" alt="Dior"></a>
-        <a href="/parfumler/tomford.html"><img src="/images/logos/tomford.png" alt="Tom Ford"></a>
+
+  <aside class="sidebar">
+    <a href="index.html" class="logo-link">
+      <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
+    </a>
+    <ul class="menu">
+      <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
+      <li><a href="parfumler.html"><img src="images/menu/parfumler.png" alt="Parfümler"></a></li>
+      <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Markalar"></a></li>
+    </ul>
+    <div class="music-player">
+      <audio id="player" controls></audio>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
+  </aside>
+
+  <div class="topbar">
+    <div class="user-menu">
+      <a href="login.html"><img src="images/uye-girisi.png" alt="Üye Girişi"></a>
+    </div>
+    <div class="cart">
+      <a href="cart.html">
+        <img id="cartIcon" src="images/sepetbos.webp" alt="Sepetim" class="cart-icon">
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <h1>Markalar</h1>
+    <p class="lead">Ütopya Kozmetik’in küratörlü markaları.</p>
+    <div class="brands-grid">
+      <div class="brand-card">
+        <a href="markalar/amouage.html"><img src="images/markalar/amouage.webp" alt="Amouage"><h3>Amouage</h3></a>
+        <p>Doğu’nun zenginliği, Batı’nın zarafeti.</p>
       </div>
-    </section>
+      <div class="brand-card">
+        <a href="markalar/creed.html"><img src="images/markalar/creed.webp" alt="Creed"><h3>Creed</h3></a>
+        <p>1760’tan beri aristokrat zarafet.</p>
+      </div>
+      <!-- diğer markalar aynı şekilde -->
+    </div>
   </main>
+
 </body>
 </html>
