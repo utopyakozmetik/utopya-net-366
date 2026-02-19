@@ -1,3 +1,4 @@
+// Grid ve filtre elemanları
 const grid = document.getElementById("productGrid");
 const searchBox = document.getElementById("searchBox");
 const categoryFilter = document.getElementById("categoryFilter");
@@ -7,13 +8,16 @@ const priceValue = document.getElementById("priceValue");
 
 let products = [];
 
+// Ürünleri JSON'dan çek
 fetch("./products.json")
   .then(res => res.json())
   .then(data => {
     products = data;
     renderProducts(products);
-  });
+  })
+  .catch(err => console.error("Ürünler yüklenemedi:", err));
 
+// Ürünleri grid'e bas
 function renderProducts(list) {
   grid.innerHTML = list.map(p => `
     <div class="product-card">
@@ -27,6 +31,7 @@ function renderProducts(list) {
   `).join("");
 }
 
+// Filtreleme
 function filterProducts() {
   const query = searchBox.value.toLowerCase();
   const category = categoryFilter.value;
@@ -35,4 +40,43 @@ function filterProducts() {
 
   const filtered = products.filter(p => {
     const matchName = p.title.toLowerCase().includes(query);
-    const matchCategory
+    const matchCategory = category ? p.category === category : true;
+    const matchNote = note ? p.notes.includes(note) : true;
+    const matchPrice = p.price <= maxPrice;
+    return matchName && matchCategory && matchNote && matchPrice;
+  });
+
+  renderProducts(filtered);
+}
+
+// Filtre eventleri
+searchBox.addEventListener("input", filterProducts);
+categoryFilter.addEventListener("change", filterProducts);
+noteFilter.addEventListener("change", filterProducts);
+priceFilter.addEventListener("input", () => {
+  priceValue.textContent = `Maks: ${priceFilter.value} ₺`;
+  filterProducts();
+});
+
+// Sepete ekleme efekti
+function addToCart() {
+  const cartIcon = document.getElementById("cartIcon");
+  cartIcon.src = "images/sepetdolu.webp";
+  const audio = new Audio("music/cart-sound.mp3");
+  audio.play();
+}
+
+// Radyo player playlist
+const playlist = ["music/song1.mp3","music/song2.mp3"];
+let index = 0;
+const player = document.getElementById("player");
+player.src = playlist[index];
+player.load();
+player.onended = () => nextSong();
+
+function nextSong() {
+  index = (index + 1) % playlist.length;
+  player.src = playlist[index];
+  player.load();
+  player.play();
+}

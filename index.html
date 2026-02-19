@@ -14,17 +14,21 @@
     </a>
     <ul class="menu">
       <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt=""> Ana Sayfa</a></li>
-      <li><a href="parfumler.html"><img src="images/menu/parfumler.png" alt=""> Parfümler</a></li>
-      <li><a href="erkek.html"><img src="images/menu/erkek.png" alt=""> Erkek</a></li>
-      <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt=""> Uniseks</a></li>
-      <li><a href="vintage.html"><img src="images/menu/vintage.png" alt=""> Vintage</a></li>
-<li><a href="markalar.html"><img src="images/menu/markalar.png" alt=""> Markalar</a></li>
-      <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt=""> Parfümörler</a></li>
-      <li><a href="biz.html"><img src="images/menu/biz.png" alt=""> Biz</a></li>
-      <li><a href="kokunun-yolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt=""> Kokunun Yolculuğu</a></li>
+      <li>
+        <a href="parfumler.html"><img src="images/menu/parfumler.png" alt=""> Parfümler</a>
+        <ul class="submenu">
+          <li><a href="kadin.html"><img src="images/menu/kadin.png" alt=""> Kadın</a></li>
+          <li><a href="erkek.html"><img src="images/menu/erkek.png" alt=""> Erkek</a></li>
+          <li><a href="uniseks.html"><img src="images/menu/uniseks.png" alt=""> Uniseks</a></li>
+          <li><a href="vintage.html"><img src="images/menu/vintage.png" alt=""> Vintage / Niş / Nadir</a></li>
+        </ul>
+      </li>
       <li><a href="hediye-setleri.html"><img src="images/menu/hediye-setleri.png" alt=""> Hediye Setleri</a></li>
+      <li><a href="kokunun-yolculugu.html"><img src="images/menu/kokunun-yolculugu.png" alt=""> Kokunun Yolculuğu</a></li>
       <li><a href="notalar.html"><img src="images/menu/notalar.png" alt=""> Notalar</a></li>
-     <li><a href="miniatür.html"><img src="images/menu/miniatür.png" alt=""> Miniatür</a></li>
+      <li><a href="parfumorler.html"><img src="images/menu/parfumorler.png" alt=""> Parfümörler</a></li>
+      <li><a href="markalar.html"><img src="images/menu/markalar.png" alt=""> Markalar</a></li>
+      <li><a href="biz.html"><img src="images/menu/biz.png" alt=""> Biz</a></li>
     </ul>
   </aside>
 
@@ -56,24 +60,3 @@
   <div class="filter-bar">
     <input type="text" id="searchBox" placeholder="Parfüm ara..." />
     <select id="categoryFilter">
-      <option value="">Kategori</option>
-      <option value="kadin">Kadın</option>
-      <option value="erkek">Erkek</option>
-      <option value="uniseks">Uniseks</option>
-    </select>
-    <select id="noteFilter">
-      <option value="">Nota</option>
-      <option value="Vanilya">Vanilya</option>
-      <option value="Tütün">Tütün</option>
-      <option value="Rom">Rom</option>
-    </select>
-    <input type="range" id="priceFilter" min="0" max="10000" step="500" />
-    <span id="priceValue">Maks: 10000 ₺</span>
-  </div>
-
-  <!-- Dinamik Grid -->
-  <div class="product-grid" id="productGrid"></div>
-
-  <script src="script.js"></script>
-</body>
-</html>

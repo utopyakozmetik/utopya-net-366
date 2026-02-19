@@ -10,4 +10,15 @@
   {
     "slug": "creed-aventus",
     "title": "CREED AVENTUS",
-    "category": "
+    "category": "erkek",
+    "price": 5200,
+    "notes": ["Ananas", "Misk", "Meşe yosunu"],
+    "image": "images/products/creed-aventus.png"
+  },
+  {
+    "slug": "chanel-no5",
+    "title": "CHANEL NO.5",
+    "category": "kadin",
+    "price": 4500,
+    "notes": ["Yasemin", "Gül", "Misk"],
+    "image": "images/products/chanel-no5.png"
