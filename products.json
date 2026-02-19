@@ -1,18 +1,18 @@
 [
   {
-    "title": "Initio Side Effect",
     "slug": "initio-side-effect",
+    "title": "INITIO SIDE EFFECT",
     "category": "uniseks",
     "price": 3700,
     "notes": ["Rom", "Tarçın", "Tütün", "Vanilya"],
-    "image": "images/products/initio-side-effect.png",
-    "link": "products/initio-side-effect.html"
+    "image": "images/products/initio-side-effect.png"
   },
   {
-    "title": "Creed Aventus",
     "slug": "creed-aventus",
+    "title": "CREED AVENTUS",
     "category": "erkek",
     "price": 5200,
     "notes": ["Ananas", "Misk", "Meşe yosunu"],
-    "image": "images/products/creed-aventus.png",
-    "link": "products/creed-avent
+    "image": "images/products/creed-aventus.png"
+  }
+]

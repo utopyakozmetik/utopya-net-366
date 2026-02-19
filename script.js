@@ -7,7 +7,6 @@ const priceValue = document.getElementById("priceValue");
 
 let products = [];
 
-// JSON’dan ürünleri çek
 fetch("products.json")
   .then(res => res.json())
   .then(data => {
@@ -15,11 +14,10 @@ fetch("products.json")
     renderProducts(products);
   });
 
-// Grid render
 function renderProducts(list) {
   grid.innerHTML = list.map(p => `
     <div class="product-card">
-      <a href="${p.link}">
+      <a href="product.html?slug=${p.slug}">
         <img src="${p.image}" alt="${p.title}">
         <h3>${p.title}</h3>
       </a>
@@ -29,7 +27,6 @@ function renderProducts(list) {
   `).join("");
 }
 
-// Filtreleme
 function filterProducts() {
   const query = searchBox.value.toLowerCase();
   const category = categoryFilter.value;
@@ -47,7 +44,6 @@ function filterProducts() {
   renderProducts(filtered);
 }
 
-// Event listeners
 searchBox.addEventListener("input", filterProducts);
 categoryFilter.addEventListener("change", filterProducts);
 noteFilter.addEventListener("change", filterProducts);
@@ -56,10 +52,21 @@ priceFilter.addEventListener("input", () => {
   filterProducts();
 });
 
-// Sepet görsel değişimi + ses efekti
 function addToCart() {
   const cartIcon = document.getElementById("cartIcon");
   cartIcon.src = "images/sepetdolu.webp";
   const audio = new Audio("music/cart-sound.mp3");
   audio.play();
+}
+
+// Radyo playlist
+const playlist = ["music/song1.mp3","music/song2.mp3"];
+let index = 0;
+const player = document.getElementById("player");
+player.src = playlist[index];
+player.onended = () => nextSong();
+function nextSong() {
+  index = (index + 1) % playlist.length;
+  player.src = playlist[index];
+  player.play();
 }

@@ -12,11 +12,21 @@
     <a href="index.html">
       <img src="images/background/logo.png" alt="Ütopya Logo" class="site-logo">
     </a>
-    <!-- Menü burada -->
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="parfumler.html">Parfümler</a></li>
+      <li><a href="markalar.html">Markalar</a></li>
+      <li><a href="parfumorler.html">Parfümörler</a></li>
+      <li><a href="biz.html">Biz</a></li>
+    </ul>
   </aside>
 
   <!-- Topbar -->
   <div class="topbar">
+    <div class="radio-player">
+      <audio id="player" controls></audio>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
     <div class="user-menu">
       <a href="login.html">Üye Girişi</a>
       <a href="register.html">Üye Ol</a>
@@ -36,21 +46,19 @@
   </div>
 
   <!-- Filtre Paneli -->
-  <div class="filter-bar" style="margin-left:340px; padding:20px;">
+  <div class="filter-bar">
     <input type="text" id="searchBox" placeholder="Parfüm ara..." />
     <select id="categoryFilter">
-      <option value="">Kategori seç</option>
+      <option value="">Kategori</option>
       <option value="kadin">Kadın</option>
       <option value="erkek">Erkek</option>
       <option value="uniseks">Uniseks</option>
-      <option value="nisnadir">Niş/Nadir</option>
     </select>
     <select id="noteFilter">
-      <option value="">Nota seç</option>
+      <option value="">Nota</option>
       <option value="Vanilya">Vanilya</option>
       <option value="Tütün">Tütün</option>
       <option value="Rom">Rom</option>
-      <option value="Tarçın">Tarçın</option>
     </select>
     <input type="range" id="priceFilter" min="0" max="10000" step="500" />
     <span id="priceValue">Maks: 10000 ₺</span>
