@@ -1,24 +1,66 @@
 [
   {
-    "slug": "initio-side-effect",
-    "title": "INITIO SIDE EFFECT",
-    "category": "uniseks",
-    "price": 3700,
-    "notes": ["Rom", "Tarçın", "Tütün", "Vanilya"],
-    "image": "images/products/initio-side-effect.png"
-  },
-  {
-    "slug": "creed-aventus",
-    "title": "CREED AVENTUS",
-    "category": "erkek",
+    "slug": "aventus",
+    "title": "Creed Aventus",
+    "image": "images/products/aventus.webp",
     "price": 5200,
-    "notes": ["Ananas", "Misk", "Meşe yosunu"],
-    "image": "images/products/creed-aventus.png"
+    "category": "erkek",
+    "notes": ["Ananas", "Bergamot", "Odunsu"]
   },
   {
-    "slug": "chanel-no5",
-    "title": "CHANEL NO.5",
-    "category": "kadin",
+    "slug": "interlude-man",
+    "title": "Amouage Interlude Man",
+    "image": "images/products/interlude.webp",
+    "price": 4800,
+    "category": "erkek",
+    "notes": ["Tütsü", "Baharat", "Amber"]
+  },
+  {
+    "slug": "side-effect",
+    "title": "Initio Side Effect",
+    "image": "images/products/sideeffect.webp",
     "price": 4500,
-    "notes": ["Yasemin", "Gül", "Misk"],
-    "image": "images/products/chanel-no5.png"
+    "category": "uniseks",
+    "notes": ["Rom", "Tütün", "Vanilya"]
+  },
+  {
+    "slug": "irish-leather",
+    "title": "Memo Irish Leather",
+    "image": "images/products/irishleather.webp",
+    "price": 4300,
+    "category": "uniseks",
+    "notes": ["Deri", "Yeşil", "Baharat"]
+  },
+  {
+    "slug": "shalimar",
+    "title": "Guerlain Shalimar",
+    "image": "images/products/shalimar.webp",
+    "price": 4000,
+    "category": "kadin",
+    "notes": ["Vanilya", "Bergamot", "İris"]
+  },
+  {
+    "slug": "fleur-narcotique",
+    "title": "Ex Nihilo Fleur Narcotique",
+    "image": "images/products/fleurnarcotique.webp",
+    "price": 4200,
+    "category": "kadin",
+    "notes": ["Şeftali", "Misk", "Çiçeksi"]
+  },
+  {
+    "slug": "colonia",
+    "title": "Acqua di Parma Colonia",
+    "image": "images/products/colonia.webp",
+    "price": 3900,
+    "category": "uniseks",
+    "notes": ["Narenciye", "Lavanta", "Odunsu"]
+  },
+  {
+    "slug": "kylie-fragrance",
+    "title": "Kylie Jenner Fragrance",
+    "image": "images/products/kylie.webp",
+    "price": 3500,
+    "category": "kadin",
+    "notes": ["Meyveli", "Tatlı", "Modern"]
+  }
+]
