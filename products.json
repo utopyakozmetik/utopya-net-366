@@ -11,7 +11,17 @@
     ],
     "price": "€290",
     "category": "uniseks",
-    "notes": ["Rom", "Tütün", "Vanilya"]
+    "year": 2016,
+    "perfumer": "Pierre-Constantin Guéros",
+    "concentration": "Extrait de Parfum",
+    "volume": "90 ml",
+    "type": "Odunsu, Baharatlı",
+    "story": "Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.",
+    "notes": {
+      "top": ["Rum", "Tütün"],
+      "heart": ["Vanilya", "Baharatlar"],
+      "base": ["Sandal ağacı", "Misk"]
+    }
   },
   {
     "slug": "loewe7",
@@ -21,7 +31,17 @@
     "image": "images/products/loewe7-1.jpg",
     "price": "€220",
     "category": "erkek",
-    "notes": ["Tütsü", "Baharat", "Odunsu"]
+    "year": 2010,
+    "perfumer": "Emilio Valeros",
+    "concentration": "Eau de Toilette",
+    "volume": "100 ml",
+    "type": "Baharatlı, Odunsu",
+    "story": "Loewe 7, tütsü ve baharatların gizemli karışımıyla modern bir erkek parfümü olarak öne çıkar.",
+    "notes": {
+      "top": ["Tütsü", "Baharat"],
+      "heart": ["Çiçeksi akorlar"],
+      "base": ["Odunsu notalar"]
+    }
   },
   {
     "slug": "caron-aimez-moi-125ml",
@@ -31,76 +51,16 @@
     "image": "images/products/caron-aimez2.png",
     "price": "€180",
     "category": "kadin",
-    "notes": ["Menekşe", "Anason", "Vanilya"]
-  },
-  {
-    "slug": "aventus",
-    "title": "Creed Aventus",
-    "brand": "Creed",
-    "url": "/products/product-aventus.html",
-    "image": "images/products/aventus.webp",
-    "price": "€350",
-    "category": "erkek",
-    "notes": ["Ananas", "Bergamot", "Odunsu"]
-  },
-  {
-    "slug": "interlude-man",
-    "title": "Amouage Interlude Man",
-    "brand": "Amouage",
-    "url": "/products/product-interlude.html",
-    "image": "images/products/interlude.webp",
-    "price": "€310",
-    "category": "erkek",
-    "notes": ["Tütsü", "Baharat", "Amber"]
-  },
-  {
-    "slug": "irish-leather",
-    "title": "Memo Irish Leather",
-    "brand": "Memo",
-    "url": "/products/product-irish-leather.html",
-    "image": "images/products/irishleather.webp",
-    "price": "€270",
-    "category": "uniseks",
-    "notes": ["Deri", "Yeşil", "Baharat"]
-  },
-  {
-    "slug": "shalimar",
-    "title": "Guerlain Shalimar",
-    "brand": "Guerlain",
-    "url": "/products/product-shalimar.html",
-    "image": "images/products/shalimar.webp",
-    "price": "€240",
-    "category": "kadin",
-    "notes": ["Vanilya", "Bergamot", "İris"]
-  },
-  {
-    "slug": "fleur-narcotique",
-    "title": "Ex Nihilo Fleur Narcotique",
-    "brand": "Ex Nihilo",
-    "url": "/products/product-fleur-narcotique.html",
-    "image": "images/products/fleurnarcotique.webp",
-    "price": "€260",
-    "category": "kadin",
-    "notes": ["Şeftali", "Misk", "Çiçeksi"]
-  },
-  {
-    "slug": "colonia",
-    "title": "Acqua di Parma Colonia",
-    "brand": "Acqua di Parma",
-    "url": "/products/product-colonia.html",
-    "image": "images/products/colonia.webp",
-    "price": "€230",
-    "category": "uniseks",
-    "notes": ["Narenciye", "Lavanta", "Odunsu"]
-  },
-  {
-    "slug": "kylie-fragrance",
-    "title": "Kylie Jenner Fragrance",
-    "brand": "Kylie Jenner",
-    "url": "/products/product-kylie.html",
-    "image": "images/products/kylie.webp",
-    "price": "€200",
-    "category": "kadin",
-    "notes": ["Meyveli", "Tatlı", "Modern"]
+    "year": 1996,
+    "perfumer": "Dominique Ropion",
+    "concentration": "Eau de Parfum",
+    "volume": "125 ml",
+    "type": "Çiçeksi, Baharatlı",
+    "story": "Caron Aimez-Moi, menekşe ve anasonun nostaljik romantizmini vanilya ile buluşturan ikonik bir parfümdür.",
+    "notes": {
+      "top": ["Menekşe", "Anason"],
+      "heart": ["Gül", "İris"],
+      "base": ["Vanilya", "Misk"]
+    }
   }
 ]
