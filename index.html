@@ -39,12 +39,14 @@
           Tarayıcınız audio öğesini desteklemiyor.
         </audio>
         <div class="player-controls">
-          <button id="prev-btn">⏮</button>
-          <button id="play-btn">▶️</button>
-          <button id="pause-btn">⏸</button>
-          <button id="next-btn">⏭</button>
-          <button id="playlist-toggle">📂 Playlist</button>
-          <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+          <div class="buttons">
+            <button id="prev-btn">⏮</button>
+            <button id="play-btn">▶️</button>
+            <button id="pause-btn">⏸</button>
+            <button id="next-btn">⏭</button>
+            <button id="playlist-toggle">📂 Playlist</button>
+          </div>
+          <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
         </div>
         <div id="playlist" class="playlist hidden">
           <ul>

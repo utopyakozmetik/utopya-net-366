@@ -1,90 +1,10 @@
-body {
-  margin: 0;
-  font-family: 'Parisienne', cursive;
-  background: #000 url("images/background/motif.png") repeat top left;
-  background-size: auto;
-  color: #fff;
-}
-
-/* Sidebar logo */
-.logo-link {
-  display: block;
-  width: 340px;
-  height: 240px;
-  background: url("images/background/logo.png") no-repeat center top;
-  background-size: contain;
-  margin: 20px auto 0 auto;
-}
-
-/* Sidebar menü ikonları */
-.sidebar .menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
-.sidebar .menu li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar .menu img {
-  max-width: 220px;
-  height: auto;
-  display: block;
-  margin: 6px 0;
-}
-
-/* Alt menüler */
-.sidebar .submenu {
-  display: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.sidebar .submenu li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar .has-submenu.open > .submenu {
-  display: block;
-}
-
-/* Header */
-header.hero-title {
-  position: fixed;
-  top: 0;
-  left: 320px;
-  width: calc(100% - 320px);
-  height: 380px;
-  background: transparent;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 10px 40px 0 40px;
-}
-.header-left {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-.hero-logo {
-  width: 1200px;
-  height: auto;
-}
-
 /* Player */
-.music-player audio {
-  width: 200px;
-  border-radius: 12px;
-  background-color: rgba(255,255,255,0.1);
-  padding: 6px;
-}
 .player-controls {
   display: flex;
+  flex-direction: column; /* tuşlar üstte, volume altta */
   gap: 10px;
   margin-top: 8px;
+  align-items: flex-start;
 }
 .player-controls button {
   background: rgba(255,255,255,0.1);
@@ -95,47 +15,63 @@ header.hero-title {
   cursor: pointer;
 }
 .player-controls input[type=range] {
-  width: 100px;
-}
-.playlist {
-  margin-top: 10px;
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 8px;
-}
-.playlist.hidden {
-  display: none;
-}
-.playlist ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.playlist li {
-  padding: 6px;
+  -webkit-appearance: none;
+  width: 180px;
+  height: 6px;
+  background: linear-gradient(to right, #ff6699, #66ccff);
+  border-radius: 6px;
+  outline: none;
   cursor: pointer;
 }
-.playlist li:hover {
-  background: rgba(255,255,255,0.1);
+.player-controls input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ff6699;
+  cursor: pointer;
+}
+.player-controls input[type=range]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ff6699;
+  cursor: pointer;
 }
 
-/* Slider */
-.slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Ürün grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
-  margin-left: 320px;
-  margin-top: 380px;
+  margin: 40px 220px;
 }
-.slider .slide {
-  flex: 1 1 30%;
-  max-width: 30%;
-  height: auto;
-  opacity: 0.8;
+.product-card {
+  background: rgba(255,255,255,0.05);
   border-radius: 12px;
-  transition: opacity 0.3s;
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.3s, opacity 0.3s;
 }
-.slider .slide:hover {
-  opacity: 1;
+.product-card:hover {
+  transform: translateY(-6px);
+  opacity: 0.9;
+}
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.product-card h3 {
+  margin: 10px 0 4px;
+  font-size: 1.1em;
+}
+.product-card p {
+  margin: 2px 0;
+}
+.product-card .price {
+  font-weight: bold;
+  color: #ffcc66;
 }
