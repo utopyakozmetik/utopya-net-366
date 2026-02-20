@@ -8,6 +8,14 @@
 <body>
   <!-- Sidebar -->
   <aside class="sidebar">
+    <a href="index.html" class="logo-link"></a>
+    <div class="music-player">
+      <audio id="player" controls>
+        <source src="music/intro.mp3" type="audio/mpeg">
+        <source src="music/song1.mp3" type="audio/mpeg">
+        Tarayıcınız audio öğesini desteklemiyor.
+      </audio>
+    </div>
     <ul class="menu">
       <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
       <li class="has-submenu">
@@ -26,13 +34,6 @@
       <li><a href="markalar.html"><img src="images/menu/markalar.png" alt="Parfüm Evleri ve Markalar"></a></li>
       <li><a href="biz.html"><img src="images/menu/biz.png" alt="Biz"></a></li>
     </ul>
-    <div class="music-player">
-      <audio id="player" controls autoplay loop>
-        <source src="music/intro.mp3" type="audio/mpeg">
-        <source src="music/song1.mp3" type="audio/mpeg">
-        Tarayıcınız audio öğesini desteklemiyor.
-      </audio>
-    </div>
   </aside>
 
   <!-- Üst bar -->
@@ -41,12 +42,13 @@
     <nav class="top-nav">
       <a href="login.html">Üye Girişi</a>
       <a href="register.html">Kayıt Ol</a>
+      <a href="account.html">Hesabım</a>
       <a href="cart.html">Sepet</a>
     </nav>
   </header>
 
   <!-- Slider -->
-  <section class="slider" style="margin-left:320px; margin-top:400px;">
+  <section class="slider" style="margin-left:320px; margin-top:420px;">
     <img src="images/slider/slide1.png" class="slide" alt="Slide 1">
     <img src="images/slider/slide2.png" class="slide" alt="Slide 2">
     <img src="images/slider/slide3.png" class="slide" alt="Slide 3">
@@ -54,6 +56,27 @@
 
   <!-- Ürün grid -->
   <section class="product-grid" id="products" style="margin-left:320px; margin-top:40px;"></section>
+
+  <!-- Ürün detay -->
+  <section class="product-detail">
+    <div class="product-top">
+      <div class="product-left">
+        <div class="image-frame">
+          <img src="images/products/sample.png" alt="Ürün Adı">
+        </div>
+      </div>
+      <div class="product-right">
+        <h1 class="product-title">Ürün Adı</h1>
+        <p class="brand">Marka Adı</p>
+        <p class="price">₺999</p>
+        <button class="btn primary">Sepete Ekle</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h2>Ürün Açıklaması</h2>
+      <p>Burada ürünün detaylı açıklaması yer alacak.</p>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
