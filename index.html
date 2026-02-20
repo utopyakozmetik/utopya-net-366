@@ -38,6 +38,21 @@
           <source src="music/song1.mp3" type="audio/mpeg">
           Tarayıcınız audio öğesini desteklemiyor.
         </audio>
+        <div class="player-controls">
+          <button id="prev-btn">⏮</button>
+          <button id="play-btn">▶️</button>
+          <button id="pause-btn">⏸</button>
+          <button id="next-btn">⏭</button>
+          <button id="playlist-toggle">📂 Playlist</button>
+          <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+        </div>
+        <div id="playlist" class="playlist hidden">
+          <ul>
+            <li data-src="music/intro.mp3">Intro</li>
+            <li data-src="music/song1.mp3">Şarkı 1</li>
+            <li data-src="music/song2.mp3">Şarkı 2</li>
+          </ul>
+        </div>
       </div>
       <img src="images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
     </div>
@@ -53,14 +68,14 @@
   </header>
 
   <!-- Slider -->
-  <section class="slider" style="margin-left:320px; margin-top:380px;">
+  <section class="slider">
     <img src="images/slider/slide1.png" class="slide" alt="Slide 1">
     <img src="images/slider/slide2.png" class="slide" alt="Slide 2">
     <img src="images/slider/slide3.png" class="slide" alt="Slide 3">
   </section>
 
   <!-- Ürün grid -->
-  <section class="product-grid" id="products" style="margin-left:320px; margin-top:40px;"></section>
+  <section class="product-grid" id="products"></section>
 
   <script src="script.js"></script>
 </body>
