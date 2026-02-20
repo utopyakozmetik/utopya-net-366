@@ -15,6 +15,23 @@
         <source src="../music/song1.mp3" type="audio/mpeg">
         Tarayıcınız audio öğesini desteklemiyor.
       </audio>
+      <div class="player-controls">
+        <div class="buttons">
+          <button id="prev-btn">⏮</button>
+          <button id="play-btn">▶️</button>
+          <button id="pause-btn">⏸</button>
+          <button id="next-btn">⏭</button>
+          <button id="playlist-toggle">📂 Playlist</button>
+        </div>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+      </div>
+      <div id="playlist" class="playlist hidden">
+        <ul>
+          <li data-src="../music/intro.mp3">Intro</li>
+          <li data-src="../music/song1.mp3">Şarkı 1</li>
+          <li data-src="../music/song2.mp3">Şarkı 2</li>
+        </ul>
+      </div>
     </div>
     <ul class="menu">
       <li><a href="../index.html"><img src="../images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
