@@ -43,12 +43,15 @@
       <a href="login.html">Üye Girişi</a>
       <a href="register.html">Kayıt Ol</a>
       <a href="account.html">Hesabım</a>
-      <a href="cart.html">Sepet</a>
+      <button id="cart-btn" class="cart-btn">
+        <img src="images/sepetbos.webp" alt="Sepet">
+      </button>
+      <audio id="cart-sound" src="sounds/add-to-cart.mp3" preload="auto"></audio>
     </nav>
   </header>
 
   <!-- Slider -->
-  <section class="slider" style="margin-left:320px; margin-top:420px;">
+  <section class="slider" style="margin-left:320px; margin-top:380px;">
     <img src="images/slider/slide1.png" class="slide" alt="Slide 1">
     <img src="images/slider/slide2.png" class="slide" alt="Slide 2">
     <img src="images/slider/slide3.png" class="slide" alt="Slide 3">
@@ -56,27 +59,6 @@
 
   <!-- Ürün grid -->
   <section class="product-grid" id="products" style="margin-left:320px; margin-top:40px;"></section>
-
-  <!-- Ürün detay -->
-  <section class="product-detail">
-    <div class="product-top">
-      <div class="product-left">
-        <div class="image-frame">
-          <img src="images/products/sample.png" alt="Ürün Adı">
-        </div>
-      </div>
-      <div class="product-right">
-        <h1 class="product-title">Ürün Adı</h1>
-        <p class="brand">Marka Adı</p>
-        <p class="price">₺999</p>
-        <button class="btn primary">Sepete Ekle</button>
-      </div>
-    </div>
-    <div class="product-info">
-      <h2>Ürün Açıklaması</h2>
-      <p>Burada ürünün detaylı açıklaması yer alacak.</p>
-    </div>
-  </section>
 
   <script src="script.js"></script>
 </body>

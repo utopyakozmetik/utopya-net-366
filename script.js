@@ -1,5 +1,5 @@
-// Menü açılır/kapanır
 document.addEventListener("DOMContentLoaded", () => {
+  // Menü açılır/kapanır
   document.querySelectorAll('.menu > li > a').forEach(link => {
     link.addEventListener('click', e => {
       const parent = link.parentElement;
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Slider görsellerini düzenle
+  // Slider görselleri düzenle
   const slider = document.querySelector('.slider');
   if (slider) {
     const slides = slider.querySelectorAll('.slide');
@@ -41,16 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
       `).join('');
     });
 
-  // Ürün detay sayfası düzeni (örnek: sepete ekle butonu)
-  const addBtn = document.querySelector('.btn.primary');
-  if (addBtn) {
-    addBtn.addEventListener('click', () => {
-      alert("Ürün sepete eklendi!");
-      // Burada sepet görselini değiştirme veya event tetikleme yapılabilir
-      const cartLink = document.querySelector('.top-nav a[href="cart.html"]');
-      if (cartLink) {
-        cartLink.classList.add('cart-full'); // CSS ile dolu sepet görseli ayarlanabilir
-      }
+  // Sepet görseli + ses efekti
+  const cartBtn = document.getElementById('cart-btn');
+  if (cartBtn) {
+    const cartImg = cartBtn.querySelector('img');
+    const cartSound = document.getElementById('cart-sound');
+    const addBtn = document.querySelector('.btn.primary');
+
+    if (addBtn) {
+      addBtn.addEventListener('click', () => {
+        cartImg.src = "images/sepetdolu.webp"; // dolu sepet görseli
+        if (cartSound) {
+          cartSound.currentTime = 0;
+          cartSound.play(); // ses efekti çal
+        }
+      });
+    }
+
+    document.addEventListener('emptyCart', () => {
+      cartImg.src = "images/sepetbos.webp"; // boş sepet görseli
     });
   }
 });

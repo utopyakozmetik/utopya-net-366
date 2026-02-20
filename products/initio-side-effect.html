@@ -2,93 +2,93 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Initio Side Effect</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Initio Side Effect - Kokular Ütopyası</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
-  <!-- Ortak header -->
-  <div id="header"></div>
-
-  <!-- Ürün Detay -->
-  <main class="main-content product-detail">
-    <h1 class="product-title">
-      <a href="/markalar/initio.html" class="brand-link">Initio</a> Side Effect
-    </h1>
-
-    <!-- Ürün görselleri galeri -->
-    <div class="product-gallery">
-      <img src="/images/products/initio-side-effect1.png" alt="Side Effect Görsel 1" class="product-image">
-      <img src="/images/products/initio-side-effect2.png" alt="Side Effect Görsel 2" class="product-image">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="../index.html" class="logo-link"></a>
+    <div class="music-player">
+      <audio id="player" controls>
+        <source src="../music/intro.mp3" type="audio/mpeg">
+        <source src="../music/song1.mp3" type="audio/mpeg">
+        Tarayıcınız audio öğesini desteklemiyor.
+      </audio>
     </div>
-
-    <div class="product-meta">
-      <p class="price">€290</p>
-      <p>Kategori: Uniseks</p>
-      <p>Çıkış yılı: 2016</p>
-      <p>Parfümör: <a href="/parfumorler.html#pierre-constantin-gueros">Pierre-Constantin Guéros</a></p>
-      <p>Konsantrasyon: Extrait de Parfum</p>
-      <p>Hacim: 90 ml</p>
-      <p>Koku Tipi: Odunsu, Baharatlı</p>
-    </div>
-
-    <h3>Hikaye</h3>
-    <p>Side Effect, bağımlılık yaratan tütün ve vanilya karışımıyla öne çıkar. Rum ve baharatların sıcaklığı, sandal ağacı ve miskin derinliğiyle birleşir.</p>
-
-    <h3>Notalar</h3>
-    <ul class="notes">
-      <li>Üst: Rum, Tütün</li>
-      <li>Orta: Vanilya, Baharatlar</li>
-      <li>Dip: Sandal ağacı, Misk</li>
+    <ul class="menu">
+      <li><a href="../index.html"><img src="../images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
+      <li><a href="../parfumler.html"><img src="../images/menu/parfumler.png" alt="Parfümler"></a></li>
+      <!-- diğer menüler -->
     </ul>
+  </aside>
 
-    <div class="product-actions">
-      <button class="btn primary">Sepete Ekle</button>
-      <button class="btn outline">Takip Listene Ekle</button>
-      <button class="btn outline">Soru Sor</button>
-      <button class="btn outline">Yorum Yaz</button>
+  <!-- Üst bar -->
+  <header class="hero-title">
+    <img src="../images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
+    <nav class="top-nav">
+      <a href="../login.html">Üye Girişi</a>
+      <a href="../register.html">Kayıt Ol</a>
+      <a href="../account.html">Hesabım</a>
+      <button id="cart-btn" class="cart-btn">
+        <img src="../images/sepetbos.webp" alt="Sepet">
+      </button>
+      <audio id="cart-sound" src="../sounds/add-to-cart.mp3" preload="auto"></audio>
+    </nav>
+  </header>
+
+  <!-- Ürün detay -->
+  <section class="product-detail">
+    <div class="product-top">
+      <div class="product-left">
+        <div class="image-frame">
+          <img src="../images/products/initio-side-effect.png" alt="Initio Side Effect">
+        </div>
+      </div>
+      <div class="product-right">
+        <h1 class="product-title">Initio Side Effect</h1>
+        <p class="brand">Initio Parfums Privés</p>
+        <p class="price">₺4.250</p>
+        <button class="btn primary">Sepete Ekle</button>
+        <ul class="features">
+          <li><a href="#notes">Notalar</a></li>
+          <li><a href="#description">Açıklama</a></li>
+          <li><a href="#reviews">Yorumlar</a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Marka ürünleri -->
-    <section class="related-products">
-      <h3>Initio Markasından Diğer Ürünler</h3>
-      <div class="product-grid" id="relatedGrid"></div>
-    </section>
-  </main>
+    <div id="description" class="product-info">
+      <h2>Ürün Açıklaması</h2>
+      <p>Initio Side Effect, tütün, vanilya, rom ve tarçının eşsiz birleşimiyle baş döndürücü bir deneyim sunar.</p>
+    </div>
 
-  <!-- Ortak footer -->
-  <div id="footer"></div>
+    <div id="notes" class="notes-pyramid">
+      <h2>Notalar</h2>
+      <div class="pyramid">
+        <div class="note top">
+          <img src="../images/notes/cinnamon.png" alt="Tarçın">
+          <span>Tarçın</span>
+        </div>
+        <div class="note middle">
+          <img src="../images/notes/rum.png" alt="Rom">
+          <span>Rom</span>
+          <img src="../images/notes/tobacco.png" alt="Tütün">
+          <span>Tütün</span>
+        </div>
+        <div class="note base">
+          <img src="../images/notes/vanilla.png" alt="Vanilya">
+          <span>Vanilya</span>
+        </div>
+      </div>
+    </div>
 
-  <!-- Include script -->
-  <script>
-    // Header ve footer yükle
-    fetch('/header.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('header').innerHTML = html; });
+    <div id="reviews" class="product-reviews">
+      <h2>Yorumlar</h2>
+      <p>Kullanıcı yorumları burada listelenecek.</p>
+    </div>
+  </section>
 
-    fetch('/footer.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('footer').innerHTML = html; });
-
-    // Initio markasının ürünlerini listele
-    fetch('/products.json')
-      .then(res => res.json())
-      .then(products => {
-        const related = products.filter(p => p.brand === "Initio");
-        const grid = document.getElementById('relatedGrid');
-        grid.innerHTML = related.map(p => `
-          <div class="product-card">
-            <a href="${p.url}">
-              <div class="image-frame">
-                <img src="${p.image}" alt="${p.title}">
-              </div>
-              <h3>${p.title}</h3>
-            </a>
-            <p class="price">${p.price}</p>
-          </div>
-        `).join('');
-      });
-  </script>
-
+  <script src="../script.js"></script>
 </body>
 </html>
