@@ -9,13 +9,6 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <a href="index.html" class="logo-link"></a>
-    <div class="music-player">
-      <audio id="player" controls>
-        <source src="music/intro.mp3" type="audio/mpeg">
-        <source src="music/song1.mp3" type="audio/mpeg">
-        Tarayıcınız audio öğesini desteklemiyor.
-      </audio>
-    </div>
     <ul class="menu">
       <li><a href="index.html"><img src="images/menu/ana-sayfa.png" alt="Ana Sayfa"></a></li>
       <li class="has-submenu">
@@ -38,7 +31,16 @@
 
   <!-- Üst bar -->
   <header class="hero-title">
-    <img src="images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
+    <div class="header-left">
+      <div class="music-player">
+        <audio id="player" controls>
+          <source src="music/intro.mp3" type="audio/mpeg">
+          <source src="music/song1.mp3" type="audio/mpeg">
+          Tarayıcınız audio öğesini desteklemiyor.
+        </audio>
+      </div>
+      <img src="images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
+    </div>
     <nav class="top-nav">
       <a href="login.html">Üye Girişi</a>
       <a href="register.html">Kayıt Ol</a>
