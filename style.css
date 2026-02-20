@@ -3,6 +3,7 @@
   list-style: none; /* noktaları kaldır */
   padding: 0;
   margin: 0;
+  text-align: left; /* sola yapışsın */
 }
 .sidebar .menu li {
   margin: 0;
@@ -11,8 +12,7 @@
   max-width: 220px;
   height: auto;
   display: block;
-  margin: -12px auto 8px auto; /* üste ve sola kaydırıldı */
-  transform: translateX(-20px); /* sola yaklaşma */
+  margin: 6px 0; /* üste kaydırıldı, logoya yaklaştı */
 }
 
 /* Header düzeni */
@@ -24,12 +24,13 @@ header.hero-title {
   height: 380px; /* %10 küçültüldü */
   background: transparent;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* en tepeye hizala */
   justify-content: space-between;
+  padding-top: 10px;
 }
 .header-left {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px; /* player ile logo arasında boşluk */
 }
 .hero-logo { 
