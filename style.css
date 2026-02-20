@@ -20,10 +20,10 @@ aside.sidebar {
 
 /* Sidebar menü ikonları */
 .sidebar .menu img {
-  max-width: 100px;
+  max-width: 120px;   /* biraz büyütüldü */
   height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 6px; /* ikonlar birbirine daha yakın */
 }
 
 /* Üst bar sabit */
@@ -32,7 +32,7 @@ header.hero-title {
   top: 0;
   left: 160px;
   width: calc(100% - 160px);
-  height: 80px;
+  height: 100px; /* biraz daha yüksek */
   background: transparent; /* şeffaf */
   display: flex;
   align-items: center;
@@ -40,8 +40,11 @@ header.hero-title {
   z-index: 1000;
   box-shadow: none; /* gölgeyi kaldır */
 }
-.hero-logo { max-height: 70px; }
+.hero-logo { 
+  max-height: 90px; /* logo büyütüldü */
+}
 
+/* Üst bar navigasyon */
 .top-nav {
   position: absolute;
   right: 20px;
@@ -52,6 +55,15 @@ header.hero-title {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* Müzik player */
+.music-player {
+  margin-top: 20px;
+  text-align: center;
+}
+.music-player audio {
+  width: 160px; /* player genişliği */
 }
 
 /* Ürün grid */
@@ -90,3 +102,19 @@ header.hero-title {
   gap: 20px;
 }
 .product-info { margin-top: 40px; }
+
+/* Parfümler alt menü */
+.sidebar .submenu {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 öğeyi 2x2 grid halinde göster */
+  gap: 8px;
+}
+.sidebar .submenu li {
+  list-style: none;
+}
+.sidebar .submenu img {
+  max-width: 80px; /* alt menü ikonları daha küçük */
+  margin: 0 auto;
+  display: block;
+}
