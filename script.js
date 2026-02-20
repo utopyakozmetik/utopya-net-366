@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Slider görsellerini yan yana düzenle
+  const slider = document.querySelector('.slider');
+  if (slider) {
+    const slides = slider.querySelectorAll('.slide');
+    slides.forEach(slide => {
+      slide.style.width = "300px";   // küçültülmüş boyut
+      slide.style.height = "auto";
+    });
+  }
+
   // Ürünleri JSON’dan çek
   fetch('/products.json')
     .then(res => res.json())

@@ -13,17 +13,18 @@ aside.sidebar {
   left: 0;
   width: 160px;
   height: 100vh;
-  background: transparent; /* şeffaf */
-  padding: 10px;
-  box-shadow: none; /* gölgeyi kaldır */
+  background: transparent url("images/background/logo.png") no-repeat left top; /* sol üstte logo */
+  background-size: 140px auto; /* logo boyutu */
+  padding-top: 160px; /* menü ikonları logonun altında başlasın */
+  box-shadow: none;
 }
 
 /* Sidebar menü ikonları */
 .sidebar .menu img {
-  max-width: 120px;   /* biraz büyütüldü */
+  max-width: 120px;
   height: auto;
   display: block;
-  margin: 0 auto 6px; /* ikonlar birbirine daha yakın */
+  margin: 0 auto 6px;
 }
 
 /* Üst bar sabit */
@@ -32,16 +33,17 @@ header.hero-title {
   top: 0;
   left: 160px;
   width: calc(100% - 160px);
-  height: 100px; /* biraz daha yüksek */
-  background: transparent; /* şeffaf */
+  height: 200px; /* büyütüldü */
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  box-shadow: none; /* gölgeyi kaldır */
+  box-shadow: none;
 }
 .hero-logo { 
-  max-height: 90px; /* logo büyütüldü */
+  width: 500px; /* logo 5 kat büyütüldü */
+  height: auto;
 }
 
 /* Üst bar navigasyon */
@@ -63,7 +65,20 @@ header.hero-title {
   text-align: center;
 }
 .music-player audio {
-  width: 160px; /* player genişliği */
+  width: 160px;
+}
+
+/* Slider düzeni */
+.slider {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.slider .slide {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Ürün grid */
@@ -105,16 +120,19 @@ header.hero-title {
 
 /* Parfümler alt menü */
 .sidebar .submenu {
+  display: none;
   margin-top: 5px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 4 öğeyi 2x2 grid halinde göster */
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 .sidebar .submenu li {
   list-style: none;
 }
 .sidebar .submenu img {
-  max-width: 80px; /* alt menü ikonları daha küçük */
+  max-width: 80px;
   margin: 0 auto;
   display: block;
+}
+.sidebar .has-submenu.open .submenu {
+  display: grid;
 }
