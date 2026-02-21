@@ -1,200 +1,119 @@
-body {
-  margin: 0;
-  font-family: 'Parisienne', cursive;
-  background: #000 url("images/background/motif.png") repeat top left;
-  background-size: auto;
-  color: #fff;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Menü açılır/kapanır
+  document.querySelectorAll('.menu > li.has-submenu > a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const parent = link.parentElement;
+      // Diğer açık menüleri kapat
+      document.querySelectorAll('.menu > li.has-submenu.open').forEach(openItem => {
+        if (openItem !== parent) {
+          openItem.classList.remove('open');
+        }
+      });
+      // Tıklanan menüyü aç/kapat
+      parent.classList.toggle('open');
+    });
+  });
 
-/* Sidebar logo en sol üst köşe */
-.logo-link {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 120px;
-  background: url("images/background/logo.png") no-repeat left top;
-  background-size: contain;
-  z-index: 1000;
-}
+  // Slider görselleri düzenle
+  const slider = document.querySelector('.slider');
+  if (slider) {
+    const slides = slider.querySelectorAll('.slide');
+    slides.forEach(slide => {
+      slide.style.height = "auto";
+    });
+  }
 
-/* Sidebar menü ikonları */
-.sidebar .menu {
-  list-style: none;
-  padding: 0;
-  margin: 140px 0 0 0;
-  text-align: left;
-}
-.sidebar .menu li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar .menu img {
-  max-width: 220px;
-  height: auto;
-  display: block;
-  margin: 6px 0;
-}
+  // Ürün grid yükleme (yolu düzeltildi)
+  fetch('./products.json') // index.html ile aynı dizinde olmalı
+    .then(res => res.json())
+    .then(products => {
+      const grid = document.getElementById('products');
+      if (!grid) return;
+      grid.innerHTML = products.map(p => `
+        <div class="product-card">
+          <div class="image-frame">
+            <a href="${p.url}">
+              <img src="${p.image}" alt="${p.title}">
+            </a>
+          </div>
+          <h3>${p.title}</h3>
+          <p>${p.brand}</p>
+          <p class="price">${p.price}</p>
+          <a href="${p.url}" class="btn outline">Detay</a>
+        </div>
+      `).join('');
+    })
+    .catch(err => console.error("Ürünler yüklenemedi:", err));
 
-/* Alt menüler */
-.sidebar .submenu {
-  display: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.sidebar .submenu li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar .has-submenu.open > .submenu {
-  display: block;
-}
+  // Sepet görseli + ses efekti
+  const cartBtn = document.getElementById('cart-btn');
+  if (cartBtn) {
+    const cartImg = cartBtn.querySelector('img');
+    const cartSound = document.getElementById('cart-sound');
+    const addBtn = document.querySelector('.btn.primary');
 
-/* Header */
-header.hero-title {
-  position: fixed;
-  top: 0;
-  left: 220px;
-  width: calc(100% - 220px);
-  height: 200px;
-  background: transparent;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 10px;
-}
-.header-left {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-.hero-logo {
-  width: 800px;
-  height: auto;
-  margin-left: -100px;
-}
+    if (addBtn) {
+      addBtn.addEventListener('click', () => {
+        cartImg.src = "images/sepetdolu.webp";
+        if (cartSound) {
+          cartSound.currentTime = 0;
+          cartSound.play();
+        }
+      });
+    }
 
-/* Player */
-.player-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 8px;
-  align-items: flex-start;
-}
-.player-controls button {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.player-controls input[type=range] {
-  -webkit-appearance: none;
-  width: 180px;
-  height: 6px;
-  background: linear-gradient(to right, #ff6699, #333);
-  border-radius: 6px;
-  outline: none;
-  cursor: pointer;
-}
-.player-controls input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid #ff6699;
-  cursor: pointer;
-}
-.player-controls input[type=range]::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid #ff6699;
-  cursor: pointer;
-}
+    document.addEventListener('emptyCart', () => {
+      cartImg.src = "images/sepetbos.webp";
+    });
+  }
 
-/* Playlist */
-.playlist {
-  margin-top: 10px;
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 8px;
-}
-.playlist.hidden {
-  display: none;
-}
-.playlist ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.playlist li {
-  padding: 6px;
-  cursor: pointer;
-}
-.playlist li:hover {
-  background: rgba(255,255,255,0.1);
-}
+  // Player kontrolleri ve playlist
+  const player = document.getElementById('player');
+  const playBtn = document.getElementById('play-btn');
+  const pauseBtn = document.getElementById('pause-btn');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const volumeSlider = document.getElementById('volume');
+  const playlistToggle = document.getElementById('playlist-toggle');
+  const playlist = document.getElementById('playlist');
+  const tracks = playlist ? playlist.querySelectorAll('li') : [];
 
-/* Slider */
-.slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-left: 220px;
-  margin-top: 220px;
-}
-.slider .slide {
-  flex: 1 1 30%;
-  max-width: 30%;
-  height: auto;
-  opacity: 0.8;
-  border-radius: 12px;
-  transition: opacity 0.3s;
-}
-.slider .slide:hover {
-  opacity: 1;
-}
+  let currentIndex = 0;
 
-/* Ürün grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  margin: 40px 220px;
-}
-.product-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 12px;
-  text-align: center;
-  transition: transform 0.3s, opacity 0.3s;
-}
-.product-card:hover {
-  transform: translateY(-6px);
-  opacity: 0.9;
-}
-.product-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-.product-card h3 {
-  margin: 10px 0 4px;
-  font-size: 1.1em;
-}
-.product-card p {
-  margin: 2px 0;
-}
-.product-card .price {
-  font-weight: bold;
-  color: #ffcc66;
-}
+  if (playBtn) playBtn.addEventListener('click', () => player.play());
+  if (pauseBtn) pauseBtn.addEventListener('click', () => player.pause());
+
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+    player.src = tracks[currentIndex].dataset.src;
+    player.play();
+  });
+
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % tracks.length;
+    player.src = tracks[currentIndex].dataset.src;
+    player.play();
+  });
+
+  // Volume slider animasyonlu dolum efekti
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', () => {
+      player.volume = volumeSlider.value;
+      const percent = volumeSlider.value * 100;
+      volumeSlider.style.background = `linear-gradient(to right, #ff6699 ${percent}%, #333 ${percent}%)`;
+    });
+  }
+
+  if (playlistToggle) playlistToggle.addEventListener('click', () => {
+    playlist.classList.toggle('hidden');
+  });
+
+  tracks.forEach((track, index) => {
+    track.addEventListener('click', () => {
+      currentIndex = index;
+      player.src = track.dataset.src;
+      player.play();
+    });
+  });
+});

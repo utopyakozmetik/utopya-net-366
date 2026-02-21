@@ -11,8 +11,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
-  height: 120px;
+  width: 300px; /* büyütüldü */
+  height: 180px; /* büyütüldü */
   background: url("images/background/logo.png") no-repeat left top;
   background-size: contain;
   z-index: 1000;
@@ -59,11 +59,11 @@ header.hero-title {
   top: 0;
   left: 220px;
   width: calc(100% - 220px);
-  height: 200px;
+  height: 260px; /* büyütüldü */
   background: transparent;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: center; /* ortalandı */
   padding: 10px;
 }
 .header-left {
@@ -72,12 +72,17 @@ header.hero-title {
   gap: 20px;
 }
 .hero-logo {
-  width: 800px;
+  width: 1000px; /* büyütüldü */
   height: auto;
-  margin-left: -100px;
+  margin-left: -80px; /* biraz sola kaydırıldı */
 }
 
 /* Player */
+.music-player {
+  position: absolute;
+  top: 20px;
+  left: 240px; /* sidebar genişliği kadar */
+}
 .player-controls {
   display: flex;
   flex-direction: column;
@@ -156,7 +161,7 @@ header.hero-title {
   flex: 1 1 30%;
   max-width: 30%;
   height: auto;
-  opacity: 0.8;
+  opacity: 0.6; /* daha şeffaf */
   border-radius: 12px;
   transition: opacity 0.3s;
 }
@@ -197,4 +202,10 @@ header.hero-title {
 .product-card .price {
   font-weight: bold;
   color: #ffcc66;
+}
+
+/* Sepet ikonu küçültüldü */
+.cart-btn img {
+  width: 40px;
+  height: auto;
 }
