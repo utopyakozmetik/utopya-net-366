@@ -44,7 +44,9 @@
   <header class="hero-title">
     <img src="../images/kokularutopya.png" alt="Kokular Ütopyası" class="hero-logo">
     <nav class="top-nav">
-      <a href="../login.html">Üye Girişi</a>
+      <a href="../login.html" class="login-btn">
+        <img src="../images/uye-girisi.png" alt="Üye Girişi">
+      </a>
       <a href="../register.html">Kayıt Ol</a>
       <a href="../account.html">Hesabım</a>
       <button id="cart-btn" class="cart-btn">
@@ -58,13 +60,21 @@
   <section class="product-detail">
     <div class="product-top">
       <div class="product-left">
-        <div class="image-frame">
-          <img src="../images/products/initio-side-effect.png" alt="Initio Side Effect">
-        </div>
+        <!-- Çoklu görsel slider -->
+        <section class="slider">
+          <img src="../images/products/initio-side-effect1.jpg" class="slide" alt="Initio Side Effect 1">
+          <img src="../images/products/initio-side-effect2.jpg" class="slide" alt="Initio Side Effect 2">
+          <img src="../images/products/initio-side-effect3.jpg" class="slide" alt="Initio Side Effect 3">
+        </section>
       </div>
       <div class="product-right">
         <h1 class="product-title">Initio Side Effect</h1>
-        <p class="brand">Initio Parfums Privés</p>
+        <p class="brand"><a href="../markalar.html">Initio Parfums Privés</a></p>
+        <p class="perfumer"><a href="../parfumorler.html">Pierre-Constantin Guéros</a></p>
+        <p class="year">Yıl: 2016</p>
+        <p class="concentration">Extrait de Parfum</p>
+        <p class="volume">90 ml</p>
+        <p class="type">Odunsu, Baharatlı</p>
         <p class="price">₺4.250</p>
         <button class="btn primary">Sepete Ekle</button>
         <ul class="features">
@@ -72,12 +82,28 @@
           <li><a href="#description">Açıklama</a></li>
           <li><a href="#reviews">Yorumlar</a></li>
         </ul>
+        <div class="fragrantica-score">
+          <a href="https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Side-Effect-48287.html" target="_blank">
+            Fragrantica Puanı: ★★★★☆ (4.3/5)
+          </a>
+        </div>
       </div>
     </div>
 
-    <div id="description" class="product-info">
+    <div id="description" class="product-info product-story">
       <h2>Ürün Açıklaması</h2>
-      <p>Initio Side Effect, tütün, vanilya, rom ve tarçının eşsiz birleşimiyle baş döndürücü bir deneyim sunar.</p>
+      <p>
+        Initio Side Effect, sadece bir koku değil; bir ritüel, bir baştan çıkarma sanatı.
+        Romun sıcaklığı, tütünün derinliği ve vanilyanın tatlı sarhoşluğu, baharatların
+        ritmiyle birleşerek bağımlılık yaratan bir kontrast yaratır. Sandal ağacı ve misk,
+        bu hikâyeyi zemine oturtur; kalıcılığı ve derinliğiyle bir gölge gibi seni takip eder.
+      </p>
+      <p>
+        Side Effect, Initio’nun Carnal Blends serisinin bir parçasıdır. Bu seri, duyuların
+        sınırlarını zorlayan, tensel ve baştan çıkarıcı kokulara odaklanır. Side Effect,
+        özellikle tütün, rom ve vanilya üçlüsüyle “bağımlılık” temasını işler ve serinin
+        en ikonik carnal yorumlarından biri olarak öne çıkar.
+      </p>
     </div>
 
     <div id="notes" class="notes-pyramid">
@@ -98,6 +124,15 @@
           <span>Vanilya</span>
         </div>
       </div>
+    </div>
+
+    <div class="carnal-series">
+      <h3>Carnal Blends Serisi</h3>
+      <p>
+        Initio’nun Carnal Blends koleksiyonu, duyuların sınırlarını zorlayan ve tensel
+        baştan çıkarıcılığı ön plana çıkaran parfümlerden oluşur. Side Effect, bu serinin
+        en bağımlılık yaratan yorumlarından biridir.
+      </p>
     </div>
 
     <div id="reviews" class="product-reviews">
